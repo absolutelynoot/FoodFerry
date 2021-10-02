@@ -443,34 +443,30 @@
             </div>
         </section>
 
-        <!-- Badge -->
+        <!-- Card and badge -->
         <section class="bg-light py-5">
             <div class="container px-4 my-3">
                 <p class="h2">Upcoming collection <span class="badge bg-secondary">New</span></p>
                 <div class="card">
                     <div class="card-header fs-4 fw-bolder">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-8">
                                 Food Bank Singapore
                             </div>
-                            <div class="col text-end">
-                                <button class="btn btn-success">
+                            <div class="col-4 text-end">
+                                <button class="btn btn-success my-1">
                                     <i class="bi bi-check2"></i>
                                     Accept
                                 </button>
-                                <button class="btn btn-danger">
+                                <button class="btn btn-danger my-1">
                                     <i class="bi bi-x me-1"></i>Decline
                                 </button>
-                                <button class="btn btn-warning">
+                                <button class="btn btn-warning my-1">
                                     <i class="bi bi-calendar-event me-1"></i>
                                     Reschedule
                                 </button>
                             </div>
                         </div>
-                      
-                      
-                          
-
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">Special title treatment</h5>
@@ -480,6 +476,16 @@
                   <div class="card-footer text-muted">
                     2 days ago
                   </div>
+
+                  <!-- tooltip -->
+                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                    Tooltip on top
+                  </button>
+
+                  <br>
+                  
+                  <!-- popoverrs -->
+                  <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
             </div>
             
         </section>
@@ -488,10 +494,13 @@
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+            <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; FoodFerry 2021</p></div>
         </footer>
+
+        <!-- Propoer  JS -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
         <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
@@ -499,6 +508,28 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl)
+            })
+
+            var popover = new bootstrap.Popover(document.querySelector('.example-popover'), {
+                container: 'body'
+            })
+
+            var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+                trigger: 'focus'
+            })
+
+           
+        </script>
 
         
     </body>
