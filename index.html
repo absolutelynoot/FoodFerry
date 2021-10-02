@@ -14,20 +14,10 @@
         <link href="css/styles.css" rel="stylesheet" />
 
         <style>
-            .bd-placeholder-img {
-              font-size: 1.125rem;
-              text-anchor: middle;
-              -webkit-user-select: none;
-              -moz-user-select: none;
-              user-select: none;
-            }
-      
-            @media (min-width: 768px) {
-              .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-              }
-            }
-          </style>
+            .carousel-item {
+                height: 32rem;
+            }    
+        </style>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -68,6 +58,8 @@
                     <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-success mx-1" type="submit">Login</button>
+                    <button class="btn btn-light mx-1" type="submit">Register</button>
                     </form>
                 </div>
                 </div>
@@ -111,7 +103,7 @@
                     <div class="carousel-caption text-end">
                     <h1>One more for good measure.</h1>
                     <p>Some representative placeholder content for the third slide of this carousel.</p>
-                    <p><a class="btn btn-lg btn-sucess" href="#">Browse gallery</a></p>
+                    <p><a class="btn btn-success btn-lg px-4" href="#">Browse gallery</a></p>
                     </div>
                 </div>
                 </div>
@@ -241,7 +233,9 @@
                         <div class="card mb-4">
                             <div class="card-body p-4">
                                 <div class="d-flex">
-                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-info-square-fill text-success fs-1"></i>
+                                    </div>
                                     <div class="ms-4">
                                         <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, culpa at illo aut molestiae porro a soluta consequuntur voluptatem! Sequi ut soluta totam quam. Expedita amet sint qui quo blanditiis.</p>
                                         <div class="small text-muted">small text</div>
@@ -253,7 +247,9 @@
                         <div class="card">
                             <div class="card-body p-4">
                                 <div class="d-flex">
-                                    <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-primary fs-1"></i></div>
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
                                     <div class="ms-4">
                                         <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
                                         <div class="small text-muted">- Client Name, Location</div>
@@ -265,7 +261,7 @@
                 </div>
             </div>
         </section>
-        <!-- Contact section-->
+        <!-- Forms -->
         <section class="bg-light py-5">
             <div class="container px-5 my-5 px-5">
                 <div class="text-center mb-5">
@@ -337,15 +333,43 @@
                                 <div class="invalid-feedback" data-sb-feedback="radioButtons:required">One option is required.</div>
                             </div>
 
-                            <!-- Terms and conditions / checkbox -->
+                            <!-- checkbox -->
                             <div class="mb-3">
-                                <label class="form-label d-block"></label>
+                                <label class="form-label d-block">Checkbox</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="iAgreeToTermsAndConditions" type="checkbox" name="" data-sb-validations="required" />
-                                    <label class="form-check-label" for="iAgreeToTermsAndConditions">I agree to terms and conditions</label>
+                                    <input class="form-check-input" id="checkboxA" type="checkbox" name="checkbox" data-sb-validations="required" />
+                                    <label class="form-check-label" for="checkboxA">checkbox A</label>
                                 </div>
-                                <div class="invalid-feedback" data-sb-feedback=":required">Please agree to terms and conditions.</div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="checkboxB" type="checkbox" name="checkbox" data-sb-validations="required" />
+                                    <label class="form-check-label" for="checkboxB">checkbox B</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="checkboxC" type="checkbox" name="checkbox" data-sb-validations="required" />
+                                    <label class="form-check-label" for="checkboxC">checkbox C</label>
+                                </div>
+                                <div class="invalid-feedback" data-sb-feedback="checkbox:required">One option is required.</div>
                             </div>
+
+                            <!-- file picker -->
+                            <div class="mb-3">
+                                <label class="form-label" for="disabledCustomFile">Upload</label>
+                                <input type="file" class="form-control form-control-lg" aria-label="Large file input example">
+                              </div>
+
+                            <!-- social media buttons -->
+                            <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-4" type="submit">
+                                <i class="bi bi-twitter text-primary"></i>
+                                Sign up with Twitter
+                            </button>
+                            <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-4" type="submit">
+                                <i class="bi bi-facebook text-primary"></i>
+                                Sign up with Facebook
+                              </button>
+                              <button class="w-100 py-2 mb-2 btn btn-outline-dark rounded-4" type="submit">
+                                <i class="bi bi-google"></i>
+                                Sign up with Google
+                              </button>
 
                             <!-- Submit success message-->
                             <!---->
@@ -367,11 +391,101 @@
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
                             <div class="d-grid"><button class="btn btn-success btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                            
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- accordions -->
+        <section class="bg-dark py-5">
+            <div class="container px-4 my-3">
+                <h2 class="fw-bolder text-light justify-content-center text-center">Accordion</h2>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h4 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          Accordion Item #1
+                        </button>
+                      </h4>
+                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body">
+                          <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h4 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Accordion Item #2
+                        </button>
+                      </h4>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
+                        <div class="accordion-body">
+                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h4 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Accordion Item #3
+                        </button>
+                      </h4>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+
+        <!-- Badge -->
+        <section class="bg-light py-5">
+            <div class="container px-4 my-3">
+                <p class="h2">Upcoming collection <span class="badge bg-secondary">New</span></p>
+                <div class="card">
+                    <div class="card-header fs-4 fw-bolder">
+                        <div class="row">
+                            <div class="col">
+                                Food Bank Singapore
+                            </div>
+                            <div class="col text-end">
+                                <button class="btn btn-success">
+                                    <i class="bi bi-check2"></i>
+                                    Accept
+                                </button>
+                                <button class="btn btn-danger">
+                                    <i class="bi bi-x me-1"></i>Decline
+                                </button>
+                                <button class="btn btn-warning">
+                                    <i class="bi bi-calendar-event me-1"></i>
+                                    Reschedule
+                                </button>
+                            </div>
+                        </div>
+                      
+                      
+                          
+
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
+                  <div class="card-footer text-muted">
+                    2 days ago
+                  </div>
+            </div>
+            
+        </section>
+
+
+
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
