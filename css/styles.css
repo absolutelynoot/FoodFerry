@@ -301,6 +301,15 @@ svg {
   vertical-align: middle;
 }
 
+#carousel img {
+  margin-top: 60px;
+  padding-left:10rem;
+  padding-right:10rem;
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
 table {
   caption-side: bottom;
   border-collapse: collapse;
