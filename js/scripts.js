@@ -1,12 +1,6 @@
-/*!
-* Start Bootstrap - Business Frontpage v5.0.6 (https://startbootstrap.com/template/business-frontpage)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-business-frontpage/blob/master/LICENSE)
-*/
-// This file is intentionally blank
 // Use this file to add JavaScript to your project
 
-
+// popovers
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -24,3 +18,6 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
             var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
                 trigger: 'focus'
             })
+
+
+
