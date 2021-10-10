@@ -68,7 +68,7 @@
     position: absolute;
     left: 0;
     top: 25px;
-    z-index: -1
+    z-index: 0
 }
 
 #progressbar li.active:before,

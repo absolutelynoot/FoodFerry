@@ -27,7 +27,7 @@
 
 		<!-- jQuery -->
 		<script
-			src="https://code.jquery.com/jquery-1.11.3.min.js"
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 		></script>
 
 		<!-- Bootstrap Date-Picker Plugin -->
@@ -39,7 +39,7 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
 		/>
 	</head>
-	<body class="bg-light">
+	< class="bg-light">
 		<!-- Responsive navbar-->
 		<header>
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -110,10 +110,10 @@
 						<!-- Form Title [remain constant] -->
 						<h2 class="mb-4 fs-1"><strong>Donate Food Waste</strong></h2>
 						<div class="row">
-							<div class="col-md-12 mx-0">
+							<div class="col-md-12">
 								<form id="msform">
 									<!-- Progress Bar -->
-									<ul id="progressbar">
+									<ul id="progressbar" class='p-0'>
 										<li class="active" id="category">
 											<strong>Category</strong>
 										</li>
@@ -646,11 +646,13 @@
 			});
 
 			const steps = Array.from(document.getElementsByTagName("fieldset"));
+            const progressBar = Array.from(document.querySelectorAll('#progressbar li'));
 			const nextBtns = document.getElementsByClassName("next-btn");
 			const prevBtns = document.getElementsByClassName("prev-btn");
 			console.log(steps);
 			console.log(nextBtns);
 			console.log(prevBtns);
+            console.log(progressBar);
 
 			//add event listener to cards
 			var catItems = document.getElementsByClassName("cards");
@@ -687,12 +689,16 @@
 				if (btn === "next") {
 					index++;
 				} else if (btn === "prev") {
+                    progressBar[index].classList.remove("active");
 					index--;
 				}
+                progressBar[index].classList.add("active");
 				steps[index].classList.remove("d-none");
 				steps[index].classList.add("active");
 				console.log("new page: " + index);
 			}
 		</script>
+
+
 	</body>
 </html>
