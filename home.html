@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>FoodFerry - Home</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+            /* Changing by item ID */
+
+            #userDropdownBtn:focus{
+                outline: none;
+                box-shadow: none;       
+                
+            }
+
+            #userDropdownList{
+                left: auto;
+                right: 0;
+                margin-right: -10px;
+
+                background-color: #212529;
+
+            }
+
+            .userDropdownItem{
+                text-decoration: none;
+                background-color: #212529;
+                color: white; 
+
+                margin: 0;
+                padding: 0;
+                font-family: var(--bs-body-font-family);
+                font-size: var(--bs-body-font-size);
+                font-weight: var(--bs-body-font-weight);
+                line-height: var(--bs-body-line-height);
+                text-align: var(--bs-body-text-align);
+            }
+
+            .userDropdownListItem:hover{
+                background-color: #6c757d;
+                color: white;
+            }
+
+            .userDropdownListItem:hover > .userDropdownItem{
+                background-color: #6c757d;
+                color: white; 
+
+            }
+
+            .overflow-scroll{
+                max-width: 100%;
+                overflow-x: hidden;
+                height: 400px;
+                
+                
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <!-- Responsive navbar and header-->
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container-fluid">
+                <a class="navbar-brand px-3 fw-bolder fs-2" href="./index.html" style="color:#7ED7D3">FoodFerry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse fs-5 fw-bold px-3" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./donor_home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./donate.html">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./history.html">History</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav mb-2 mb-md-0">
+                        <li >
+                            <button id="userDropdownBtn" class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img id="userImg" src="http://placehold.it/30x30">
+                            </button>
+                            <!-- <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
+                                <img src="http://placehold.it/30x30" class="img-circle special-img"></a> --> 
+                            <ul class="dropdown-menu" id="userDropdownList">
+                                <li class="userDropdownListItem"><a href="#" class="userDropdownItem">User Profile</a></li>
+                                <li class="userDropdownListItem"><a href="#" class="userDropdownItem">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="userDropdownListItem"><a href="./index.html" class="userDropdownItem">Log Out</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Pending Deliveries -->
+        <section class="d-block pt-5 pb-2 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-left mb-5">
+                    <h2 class="fw-bolder">Deliveries</h2>
+                    <p class="lead mb-0">These deliveries need to be approved.</p>
+                </div>
+
+                <div class="overflow-scroll">
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Long-Term Deliveries -->
+        <section class="d-block py-2 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-left mb-5">
+                    <h2 class="fw-bolder">Long-Term Deliveries</h2>
+                    <p class="lead mb-0">Recurring deliveries that need to be fulfilled this week.</p>
+                </div>
+
+                <div class="overflow-scroll">
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Pending Deliveries -->
+        <section class="d-block py-2 border-bottom">
+            <div class="container px-5 my-3 px-5">
+                <div class="text-left mb-5">
+                    <h2 class="fw-bolder">Pending Deliveries</h2>
+                    <p class="lead mb-0">Deliveries awaiting delivery time confirmation from recipients.</p>
+                </div>
+
+                <div class="overflow-scroll">
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row justify-content-left">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <i class="bi bi-chat-right-quote-fill text-success fs-1"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed facilis nulla rem, dolorum eum omnis. Sint, voluptates eum. Tempore, voluptates!</p>
+                                        <div class="small text-muted">- Client Name, Location</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </di
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; FoodFerry 2021</p></div>
+        </footer>
+
+        <!-- Bootstrap and Propper core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+            
+
+        
+    </body>
+</html>

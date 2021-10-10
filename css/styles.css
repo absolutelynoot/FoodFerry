@@ -76,6 +76,7 @@
   }
 }
 
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -2813,6 +2814,8 @@ textarea.form-control-lg {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+
+}
 }
 
 .valid-feedback {
