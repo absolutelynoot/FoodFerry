@@ -24,6 +24,20 @@
 		<!-- Core theme CSS (includes Bootstrap)-->
 		<link href="/css/styles.css" rel="stylesheet" />
 		<link href="/css/donate.css" rel="stylesheet" />
+
+		<!-- jQuery -->
+		<script
+			src="https://code.jquery.com/jquery-1.11.3.min.js"
+		></script>
+
+		<!-- Bootstrap Date-Picker Plugin -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
+		/>
 	</head>
 	<body class="bg-light">
 		<!-- Responsive navbar-->
@@ -104,7 +118,7 @@
 											<strong>Category</strong>
 										</li>
 										<li id="food-details">
-											<strong>Food Details</strong>
+											<strong>Food Waste Details</strong>
 										</li>
 										<li id="partners">
 											<strong>Partners</strong>
@@ -117,13 +131,15 @@
 										</li>
 									</ul>
 
-									<!-- actual form -->
-									<fieldset>
+									<!-- actual forms -->
+
+									<!-- Form page 1 food category selection -->
+									<fieldset class="step step1 active">
 										<div class="row mx-2 mb-3">
 											<h1 class="fs-3">Select Food Waste Category</h1>
 										</div>
-										<div class="row mx-2 mb-3 g-3">
-											<div class="col-lg-4 col-md-6 col-sm-12">
+										<div class="row mx-3 mb-0 g-2">
+											<div class="col-md-6 col-sm-12">
 												<div class="card bg-dark text-white cards border-0">
 													<img
 														src="assets/non-perishable-category.jpg"
@@ -147,7 +163,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-lg-4 col-md-6 col-sm-12">
+											<div class="col-md-6 col-sm-12">
 												<div class="card bg-dark text-white cards border-0">
 													<img
 														src="assets/perishable.jpg"
@@ -171,8 +187,8 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-lg-4 col-md-6 col-sm-12">
-												<div class="card bg-dark text-white cards border-0">
+											<div class="col-md-6 col-sm-12">
+												<div class="card bg-dark text-white cards border-0 d-none">
 													<img
 														src="assets/peels.jpg"
 														class="card-img"
@@ -195,7 +211,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-lg-4 col-md-6 col-sm-12">
+											<div class="col-md-6 col-sm-12">
 												<div class="card bg-dark text-white cards border-0 d-none">
 													<img
 														src="assets/bottled-drinks.jpg"
@@ -219,7 +235,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-lg-4 col-md-6 col-sm-12">
+											<div class="col-md-6 col-sm-12">
 												<div class="card bg-dark text-white cards border-0 d-none">
 													<img
 														src="assets/dairy.jpg"
@@ -243,7 +259,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-lg-4 col-md-6 col-sm-12">
+											<div class="col-md-6 col-sm-12">
 												<div class="card bg-dark text-white cards border-0 d-none">
 													<img
 														src="assets/other-products.jpg"
@@ -272,18 +288,325 @@
 											<a href="" id="viewMoreCat">View More</a>
 										</div>
 
+										<!-- buttons -->
 										<!-- <div class="row mx-2 mb-4">
-                      <div class="col-lg-6 col-sm-12 d-grid mb-2">
-                        <button type="button" class="btn btn-danger btn-lg">
-                          Close
-                        </button>
-                      </div>
-                      <div class="col-lg-6 col-sm-12 d-grid mb-2">
-                        <button type="button" class="btn btn-success btn-lg next">
-                          Next
-                        </button>
-                      </div>
-                    </div> -->
+                                        <div class="col-lg-6 col-sm-12 d-grid mb-2">
+                                            <button type="button" class="btn btn-danger btn-lg">
+                                            Close
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-12 d-grid mb-2">
+                                            <button type="button" class="btn btn-success btn-lg next-btn">
+                                            Next
+                                            </button>
+                                        </div>
+                                        </div> -->
+									</fieldset>
+
+									<!-- Form page 2 food / product details  -->
+									<fieldset class="step step2 text-start d-none">
+										<div class="card mb-3">
+											<h1 class="card-header fs-3">
+												<strong>Step 1: Enter Contact and Delivery Details</strong>
+											</h1>
+											<div class="card-body">
+												<div class="row mx-2 mb-3 g-3 text-start">
+													<div class="col-lg-6 col-md-12">
+														<!-- Name input-->
+														<label for="ctcName" class="form-label"
+															>Food Donor Contact Name*</label
+														>
+														<input
+															type="text"
+															class="form-control"
+															id="ctcName"
+															placeholder=""
+															data-sb-validations="required"
+														/>
+														<div class="invalid-feedback" data-sb-feedback="ctcName:required">
+															Contact Name is required.
+														</div>
+													</div>
+													<div class="col-lg-3 col-md-6 col-sm-12">
+														<!-- Email address input-->
+														<label for="emailAddress" class="form-label"
+															>Email Address*</label
+														>
+														<input
+															type="email"
+															class="form-control"
+															id="emailAddress"
+															placeholder="example@abc.com"
+															data-sb-validations="required,email"
+														/>
+														<div
+															class="invalid-feedback"
+															data-sb-feedback="emailAddress:required"
+														>
+															Email Address is required.
+														</div>
+														<div
+															class="invalid-feedback"
+															data-sb-feedback="emailAddress:email"
+														>
+															Email Address Email is not valid.
+														</div>
+													</div>
+													<div class="col-lg-3 col-md-6 col-sm-12">
+														<!-- Mobile number input-->
+														<label for="ctcName" class="form-label">Mobile Number*</label>
+														<div class="input-group">
+															<span class="input-group-text" id="ctcName">+65</span>
+															<input
+																type="text"
+																class="form-control"
+																placeholder="96123456"
+																aria-label="Username"
+																aria-describedby="ctcName"
+															/>
+														</div>
+													</div>
+
+													<div class="col-12">
+														<!-- Company Name input-->
+														<label for="companyName" class="form-label">Company Name*</label>
+														<input
+															type="text"
+															class="form-control"
+															id="companyName"
+															placeholder=""
+														/>
+													</div>
+
+													<div class="col-lg-6 col-md-12">
+														<label for="address" class="form-label">Pick Up Address*</label>
+														<textarea class="form-control" id="address" rows="1"></textarea>
+													</div>
+													<div class="col-lg-6 col-md-12">
+														<div class="row row-cols-sm-1 row-cols-md-2">
+															<div class="col">
+																<label for="unitNo" class="form-label"
+																	>Floor / unit number*</label
+																>
+																<input
+																	type="text"
+																	class="form-control"
+																	id="unitNo"
+																	placeholder="#01-101"
+																/>
+															</div>
+															<div class="col">
+																<!-- Postal code input-->
+																<label for="postalCode" class="form-label">Postal Code*</label>
+																<div class="input-group">
+																	<span class="input-group-text" id="postalCode"
+																		>Singapore</span
+																	>
+																	<input
+																		type="text"
+																		class="form-control"
+																		placeholder="456832"
+																		aria-label="Postal Code"
+																		aria-describedby="postalCode"
+																	/>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-12"></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="card mb-3">
+											<h1 class="card-header fs-3">
+												<strong>Step 2: Enter Food Details</strong>
+											</h1>
+											<div class="card-body">
+												<div class="row mx-2 mb-3 g-3 text-start">
+													<div class="col-lg-6 col-md-12">
+														<!-- Product Name input-->
+														<label for="prodName" class="form-label"
+															>Product / Food Waste Name*</label
+														>
+														<input
+															type="text"
+															class="form-control"
+															id="prodName"
+															placeholder=""
+														/>
+													</div>
+													<div class="col-lg-4 col-md-8 col-sm-12">
+														<!-- Quantity input-->
+														<label for="qty" class="form-label">Quantity*</label>
+														<input
+															type="text"
+															class="form-control"
+															id="qty"
+															placeholder="example@abc.com"
+														/>
+													</div>
+													<div class="col-lg-2 col-md-4 col-sm-12">
+														<label for="unit" class="form-label">Unit*</label>
+														<select class="form-select" aria-label="Default select example">
+															<option selected>Choose..</option>
+															<option value="1">Kg</option>
+															<option value="2">Oz</option>
+															<option value="3">Litres</option>
+														</select>
+													</div>
+													<div class="col-lg-3 col-md-6 col-sm-12">
+														<label for="unit" class="form-label"
+															>Stability of products*</label
+														>
+														<select class="form-select" aria-label="Default select example">
+															<option selected>Choose..</option>
+															<option value="1">Shelf stable</option>
+															<option value="2">Refrigeration (0°C to 5°C)</option>
+															<option value="3">Frozen (below -18°C)</option>
+														</select>
+													</div>
+													<div class="col-lg-3 col-md-6 col-sm-12">
+														<!-- Shelf Life input-->
+														<label for="shelfLife" class="form-label">Shelf Life*</label>
+														<input
+															type="text"
+															class="form-control"
+															id="shelfLife"
+															placeholder="14 days / 2 weeks"
+														/>
+													</div>
+													<div class="col-lg-3 col-md-6 col-sm-12">
+														<!-- prod date input-->
+														<label for="prodDate" class="form-label">Production Date*</label>
+														<input
+															type="text"
+															class="form-control"
+															id="prodDate"
+															placeholder="dd/mm/yyyy"
+														/>
+													</div>
+													<div class="col-lg-3 col-md-6 col-sm-12">
+														<!-- prod date input-->
+														<label for="expDate" class="form-label">Expiry Date*</label>
+														<input
+															type="text"
+															class="form-control"
+															id="expDate"
+															placeholder="dd/mm/yyyy"
+														/>
+													</div>
+													<div class="col-12">
+														<label for="address" class="form-label"
+															>Additional Information / Remarks*</label
+														>
+														<textarea class="form-control" id="address" rows="4"></textarea>
+													</div>
+													<div class="col-12">
+														<label class="form-label" for="disabledCustomFile"
+															>Photo of Product / Food Waste*</label
+														>
+														<input
+															type="file"
+															class="form-control form-control-lg"
+															aria-label="Large file input example"
+														/>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- buttons -->
+										<div class="row mx-2 mb-4">
+											<div class="col-lg-6 col-sm-12 d-grid mb-2">
+												<button type="button" class="btn btn-light btn-lg prev-btn">
+													Previous
+												</button>
+											</div>
+											<div class="col-lg-6 col-sm-12 d-grid mb-2">
+												<button
+													type="button"
+													class="btn btn-success btn-lg next-btn"
+													id="nextButton"
+												>
+													Next
+												</button>
+											</div>
+										</div>
+									</fieldset>
+
+									<!-- step 3: select donation type -->
+									<fieldset class="step step3 d-none">
+										<div class="row mx-2 mb-3 justify-content-center">
+											<h1 class="fs-3 mb-3"><strong>Select Food Donation Type</strong></h1>
+											<div class="col col-lg-6 col-md-10">
+												<div class="card mb-3">
+													<div class="card-body p-5">
+														<div class="mb-3">
+															<span class="display-6 fw-bold">
+																<i class="bi bi-building"></i>
+																Long-Term Partnership</span
+															>
+														</div>
+														<ul class="list-unstyled mb-4">
+															<li class="mb-2">
+																<i class="bi bi-check text-primary"></i>
+																<strong>Lorem, ipsum dolor.</strong>
+															</li>
+															<li class="mb-2">
+																<i class="bi bi-check text-primary"></i>
+																Lorem ipsum dolor sit.
+															</li>
+															<li class="text-muted">
+																<i class="bi bi-x"></i>
+																Lorem, ipsum dolor.
+															</li>
+														</ul>
+														<div class="d-grid mb-2">
+															<a class="btn btn-success" href="#!">Select</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col col-lg-6 col-md-10">
+												<div class="card mb-3">
+													<div class="card-body p-5">
+														<div class="mb-3">
+															<span class="display-6 fw-bold">
+																<i class="bi bi-basket"></i>
+																Short-Term Listing</span
+															>
+														</div>
+														<ul class="list-unstyled mb-4">
+															<li class="mb-2">
+																<i class="bi bi-check text-primary"></i>
+																<strong>Lorem, ipsum dolor.</strong>
+															</li>
+															<li class="mb-2">
+																<i class="bi bi-check text-primary"></i>
+																Lorem ipsum dolor sit.
+															</li>
+															<li class="text-muted">
+																<i class="bi bi-x"></i>
+																Lorem, ipsum dolor.
+															</li>
+														</ul>
+														<div class="d-grid mb-2">
+															<a class="btn btn-success" href="#!">Select</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- buttons -->
+										<div class="row mx-2 mb-4 justify-content-center">
+											<div class="col-lg-12 col-sm-12 d-grid mb-2">
+												<button type="button" class="btn btn-light btn-lg prev-btn">
+													Previous
+												</button>
+											</div>
+										</div>
 									</fieldset>
 								</form>
 							</div>
@@ -300,11 +623,7 @@
 			crossorigin="anonymous"
 		></script>
 		<!-- Core theme JS-->
-		<script src="/js/scripts.js"></script>
-		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-		<!-- * *                               SB Forms JS                               * *-->
-		<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-		<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+		<!-- <script src="/js/scripts.js"></script> !-->
 		<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 		<script>
@@ -314,17 +633,66 @@
 				let categoryItems = document.getElementsByClassName("cards");
 
 				if (this.innerText == "View More") {
-					for (var i = 3; i < categoryItems.length; i++) {
+					for (var i = 2; i < categoryItems.length; i++) {
 						categoryItems[i].classList.remove("d-none");
 					}
 					this.innerText = "View Less";
 				} else {
-					for (var i = 3; i < categoryItems.length; i++) {
+					for (var i = 2; i < categoryItems.length; i++) {
 						categoryItems[i].classList.add("d-none");
 					}
 					this.innerText = "View More";
 				}
 			});
+
+			const steps = Array.from(document.getElementsByTagName("fieldset"));
+			const nextBtns = document.getElementsByClassName("next-btn");
+			const prevBtns = document.getElementsByClassName("prev-btn");
+			console.log(steps);
+			console.log(nextBtns);
+			console.log(prevBtns);
+
+			//add event listener to cards
+			var catItems = document.getElementsByClassName("cards");
+			for (item of catItems) {
+				item.addEventListener("click", (e) => {
+					changeStep("next");
+				});
+			}
+
+			//add event listener to next button
+			for (nextBtn of nextBtns) {
+				nextBtn.addEventListener("click", (e) => {
+					changeStep("next");
+				});
+			}
+
+			//add event listener to previous button
+			for (prevBtn of prevBtns) {
+				prevBtn.addEventListener("click", (e) => {
+					console.log(this.prevBtn);
+					changeStep("prev");
+				});
+			}
+
+			function changeStep(btn) {
+				console.log(btn);
+				let index = 0;
+				const active = document.querySelector("form fieldset.active");
+				console.log(active);
+				index = steps.indexOf(active);
+				console.log("old page: " + index);
+				steps[index].classList.remove("active");
+				steps[index].classList.add("d-none");
+				if (btn === "next") {
+					index++;
+				} else if (btn === "prev") {
+					index--;
+				}
+				steps[index].classList.remove("d-none");
+				steps[index].classList.add("active");
+				console.log("new page: " + index);
+			}
 		</script>
 	</body>
 </html>

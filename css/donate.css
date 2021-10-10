@@ -76,9 +76,6 @@
     background: skyblue
 }
 
-
-
-
 .cards {
     transition: all 0.2s ease;
     cursor: pointer
@@ -94,6 +91,3 @@
     opacity: 0.8
 }
 
-fieldset {
-    display: none;
-}
