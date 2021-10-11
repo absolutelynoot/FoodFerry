@@ -11292,3 +11292,12 @@ textarea.form-control-lg {
   width: 4rem;
   font-size: 2rem;
 }
+
+.feature-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+}
