@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>FoodFerry - Home</title>
+        <title>FoodFerry - History</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -20,6 +20,13 @@
                 outline: none;
                 box-shadow: none;       
                 
+            }
+
+            .navIcon{
+                color: white; 
+            }
+            .navIcon:hover{
+                color:white; 
             }
 
             #userDropdownList{
@@ -56,12 +63,66 @@
 
             }
 
+            #notifDropdownList{
+                left: 650px;
+                right: 0;
+                margin-right: -10px;
+
+                max-height: 300px;
+                overflow: scroll;
+
+                background-color: white;
+
+            }
+
+            .notifDropdownItem{
+                text-decoration: none;
+                background-color: white;
+                color: #212529; 
+
+                border-bottom: #212529;
+
+                margin: 0;
+                padding: 0;
+                font-family: var(--bs-body-font-family);
+                font-size: var(--bs-body-font-size);
+                font-weight: var(--bs-body-font-weight);
+                line-height: var(--bs-body-line-height);
+                text-align: var(--bs-body-text-align);
+            }
+
+            .notifDropdownListItem:hover{
+                background-color: #6c757d;
+                color: #212529;
+            }
+            .notifTime{
+                margin-bottom:2px;
+            }
+
+            .notifDropdownListItem:hover > .notifDropdownItem{
+                background-color: #6c757d;
+                color: white; 
+
+            }
+
             .overflow-scroll{
                 max-width: 100%;
                 overflow-x: hidden;
                 height: 400px;
                 
-                
+            }
+            /*This media query is to ensure that the order history is responsive at all screen sizes and looks good*/
+            @media (min-width: 1200px) { 
+                p {
+                    font-size:xx-large
+                }
+                h5 {
+                    font-size: 2.5rem
+                }
+
+                p.card-text {
+                    padding-left: 80px
+                }
             }
 
         </style>
@@ -91,15 +152,66 @@
                     </ul>
 
                     <ul class="navbar-nav mb-2 mb-md-0">
+                        <!-- Notifications-->
                         <li >
-                            <button id="userDropdownBtn" class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img id="userImg" src="http://placehold.it/30x30">
+                            <!-- Notifications button -->
+                            <button id="notifDropdownBtn" class="btn dropdown-toggle navIcon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                                  </svg>
                             </button>
-                            <!-- <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown">
-                                <img src="http://placehold.it/30x30" class="img-circle special-img"></a> --> 
+
+                            <!-- Notification dropdown -->
+                            <ul class="dropdown-menu" id="notifDropdownList">
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 1</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 2</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 3</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 4</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 5</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 6</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 7</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 8</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+
+                            </ul>
+                        </li>
+
+                        <!-- User settings -->
+                        <li>
+                            <!-- User button-->
+                            <button id="userDropdownBtn" class="btn dropdown-toggle navIcon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg id="userSvg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                </svg>
+                            </button>
+
+                            <!-- User dropdown -->
                             <ul class="dropdown-menu" id="userDropdownList">
-                                <li class="userDropdownListItem"><a href="#" class="userDropdownItem">User Profile</a></li>
-                                <li class="userDropdownListItem"><a href="#" class="userDropdownItem">Settings</a></li>
+                                <li class="userDropdownListItem"><a href="./profile.html" class="userDropdownItem">User Profile</a></li>
+                                <li class="userDropdownListItem"><a href="./settings.html" class="userDropdownItem">Settings</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li class="userDropdownListItem"><a href="./index.html" class="userDropdownItem">Log Out</a></li>
                             </ul>
@@ -121,15 +233,16 @@
                     <div class="col-md-4">
                         <img
                             src="assets/perishable.jpg"
-                            class="img-fluid rounded-start my-3 mx-2"
+                            class="img-fluid rounded-start my-3 mx-2 mw-50"
                         />
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 ">
                         <div class="card-body">
                             <h5 class="card-title text-center">Fruits and Greens</h5>
                             <div class="row mt-3 mx-2">
                                 <p class="card-text col-6">
                                     Donee: FoodBank <br>
+                                    Date: 13/03/2021 <br>
                                     Stability: Stable <br />
                                     Quantity: 300 <br />
                                     Unit: 5kg
@@ -161,6 +274,7 @@
                             <div class="row mt-3 mx-2">
                                 <p class="card-text col-6">
                                     Donee: Food from the Heart <br>
+                                    Date: 01/03/2021 <br>
                                     Stability: Stable <br />
                                     Quantity: 200 <br />
                                     Unit: 6kg
@@ -192,6 +306,7 @@
                             <div class="row mt-3 mx-2">
                                 <p class="card-text col-6">
                                     Donee: Free Food For All <br>
+                                    Date: 15/02/2021 <br>
                                     Stability: Stable <br />
                                     Quantity: 200 <br />
                                     Unit: 6kg
@@ -223,6 +338,7 @@
                             <div class="row mt-3 mx-2">
                                 <p class="card-text col-6">
                                     Donee: FoodBank  <br>
+                                    Date: 06/01/2021 <br>
                                     Stability: Stable <br />
                                     Quantity: 200 <br />
                                     Unit: 2kg
