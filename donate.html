@@ -38,68 +38,122 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
 		/>
+		<link href="css/home-nav.css" rel="stylesheet" />
 	</head>
-	< class="bg-light">
-		<!-- Responsive navbar-->
-		<header>
-			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<div class="container-fluid">
-					<a
-						class="navbar-brand px-3 fw-bolder fs-2"
-						href="./index.html"
-						style="color: #7ed7d3"
-						>FoodFerry</a
-					>
-					<button
-						class="navbar-toggler"
-						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarCollapse"
-						aria-controls="navbarCollapse"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div
-						class="collapse navbar-collapse fs-5 fw-bold px-3"
-						id="navbarCollapse"
-					>
-						<ul class="navbar-nav me-auto mb-2 mb-md-0">
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="./index.html"
-									>Home</a
-								>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="./about.html">About</a>
-							</li>
-						</ul>
-						<form class="d-flex">
-							<input
-								class="form-control me-2"
-								type="search"
-								placeholder="Search"
-								aria-label="Search"
-							/>
-							<button class="btn btn-outline-success" type="submit">Search</button>
-						</form>
-						<ul class="navbar-nav mb-2 mb-md-0">
-							<li>
-								<a class="btn btn-success mx-1" type="submit" href="./login.html"
-									>Login</a
-								>
-							</li>
-							<li>
-								<a class="btn btn-light mx-1" type="submit" href="./register.html">
-									Register
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</header>
+
+	
+	<header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand px-3 fw-bolder fs-2" href="./index.html" style="color:#7ED7D3">FoodFerry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse fs-5 fw-bold px-3" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./donate.html">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./history.html">History</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav mb-2 mb-md-0">
+                        <!-- Notifications-->
+                        <li>
+                            <!-- Notifications button -->
+                            <button id="notifDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                                </svg>
+                            </button>
+
+                            <!-- Notification dropdown -->
+                            <ul class="dropdown-menu" id="notifDropdownList">
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
+                                        class="notifDropdownItem">
+                                        <p class="mb-0 text-left">Notification 1</p>
+                                        <p class="text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
+                                        class="notifDropdownItem">
+                                        <p class="mb-0 text-left">Notification 2</p>
+                                        <p class="text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
+                                        class="notifDropdownItem">
+                                        <p class="mb-0 text-left">Notification 3</p>
+                                        <p class="text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
+                                        class="notifDropdownItem">
+                                        <p class="mb-0 text-left">Notification 4</p>
+                                        <p class="text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
+                                        class="notifDropdownItem">
+                                        <p class="mb-0 text-left">Notification 5</p>
+                                        <p class="text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
+                                        class="notifDropdownItem">
+                                        <p class="mb-0 text-left">Notification 6</p>
+                                        <p class="text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
+                                        class="notifDropdownItem">
+                                        <p class="mb-0 text-left">Notification 7</p>
+                                        <p class="text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
+                                        class="notifDropdownItem">
+                                        <p class="mb-0 text-left">Notification 8</p>
+                                        <p class="text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+
+                            </ul>
+                        </li>
+
+                        <!-- User settings -->
+                        <li>
+                            <!-- User button-->
+                            <button id="userDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg id="userSvg" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                            </button>
+
+                            <!-- User dropdown -->
+                            <ul class="dropdown-menu" id="userDropdownList">
+                                <li class="userDropdownListItem"><a href="./profile.html" class="userDropdownItem">User
+                                        Profile</a></li>
+                                <li class="userDropdownListItem"><a href="./settings.html"
+                                        class="userDropdownItem">Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="userDropdownListItem"><a href="./index.html" class="userDropdownItem">Log
+                                        Out</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
 
 		<div class="container-md mt-5">
 			<div class="row ">
