@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>FoodFerry - History</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+            /* Changing by item ID */
+
+            #userDropdownBtn:focus{
+                outline: none;
+                box-shadow: none;       
+                
+            }
+
+            .navIcon{
+                color: white; 
+            }
+            .navIcon:hover{
+                color:white; 
+            }
+
+            #userDropdownList{
+                left: auto;
+                right: 0;
+                margin-right: -10px;
+
+                background-color: #212529;
+
+            }
+
+            .userDropdownItem{
+                text-decoration: none;
+                background-color: #212529;
+                color: white; 
+
+                margin: 0;
+                padding: 0;
+                font-family: var(--bs-body-font-family);
+                font-size: var(--bs-body-font-size);
+                font-weight: var(--bs-body-font-weight);
+                line-height: var(--bs-body-line-height);
+                text-align: var(--bs-body-text-align);
+            }
+
+            .userDropdownListItem:hover{
+                background-color: #6c757d;
+                color: white;
+            }
+
+            .userDropdownListItem:hover > .userDropdownItem{
+                background-color: #6c757d;
+                color: white; 
+
+            }
+
+            #notifDropdownList{
+                left: 650px;
+                right: 0;
+                margin-right: -10px;
+
+                max-height: 300px;
+                overflow: scroll;
+
+                background-color: white;
+
+            }
+
+            .notifDropdownItem{
+                text-decoration: none;
+                background-color: white;
+                color: #212529; 
+
+                border-bottom: #212529;
+
+                margin: 0;
+                padding: 0;
+                font-family: var(--bs-body-font-family);
+                font-size: var(--bs-body-font-size);
+                font-weight: var(--bs-body-font-weight);
+                line-height: var(--bs-body-line-height);
+                text-align: var(--bs-body-text-align);
+            }
+
+            .notifDropdownListItem:hover{
+                background-color: #6c757d;
+                color: #212529;
+            }
+            .notifTime{
+                margin-bottom:2px;
+            }
+
+            .notifDropdownListItem:hover > .notifDropdownItem{
+                background-color: #6c757d;
+                color: white; 
+
+            }
+
+            .overflow-scroll{
+                max-width: 100%;
+                overflow-x: hidden;
+                height: 400px;
+                
+            }
+            /*This media query is to ensure that the order history is responsive at all screen sizes and looks good*/
+            @media (min-width: 1200px) { 
+                p {
+                    font-size:xx-large
+                }
+                h5 {
+                    font-size: 2.5rem
+                }
+
+                p.card-text {
+                    padding-left: 80px
+                }
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <!-- Responsive navbar and header-->
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container-fluid">
+                <a class="navbar-brand px-3 fw-bolder fs-2" href="./index.html" style="color:#7ED7D3">FoodFerry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse fs-5 fw-bold px-3" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./donor_home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./donate.html">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./history.html">History</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav mb-2 mb-md-0">
+                        <!-- Notifications-->
+                        <li >
+                            <!-- Notifications button -->
+                            <button id="notifDropdownBtn" class="btn dropdown-toggle navIcon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                                  </svg>
+                            </button>
+
+                            <!-- Notification dropdown -->
+                            <ul class="dropdown-menu" id="notifDropdownList">
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 1</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 2</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 3</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 4</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 5</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 6</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 7</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+                                <li class="notifDropdownListItem border-bottom"><a href="./home.html" class="notifDropdownItem">
+                                    <p class="mb-0 text-left">Notification 8</p>
+                                    <p class="text-end notifTime"><small>Time</small></p>
+                                </a></li>
+
+                            </ul>
+                        </li>
+
+                        <!-- User settings -->
+                        <li>
+                            <!-- User button-->
+                            <button id="userDropdownBtn" class="btn dropdown-toggle navIcon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg id="userSvg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                </svg>
+                            </button>
+
+                            <!-- User dropdown -->
+                            <ul class="dropdown-menu" id="userDropdownList">
+                                <li class="userDropdownListItem"><a href="./profile.html" class="userDropdownItem">User Profile</a></li>
+                                <li class="userDropdownListItem"><a href="./settings.html" class="userDropdownItem">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="userDropdownListItem"><a href="./index.html" class="userDropdownItem">Log Out</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Donation History -->
+        <section class="d-block pt-5 pb-2 my-5 mx-5">
+
+            <h1>My Donation History</h1>
+            <!-- Individual Donation History Cards -->
+            <div class="card mb-3 mt-4">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img
+                            src="assets/perishable.jpg"
+                            class="img-fluid rounded-start my-3 mx-2 mw-50"
+                        />
+                    </div>
+                    <div class="col-md-8 ">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Fruits and Greens</h5>
+                            <div class="row mt-3 mx-2">
+                                <p class="card-text col-6">
+                                    Donee: FoodBank <br>
+                                    Date: 13/03/2021 <br>
+                                    Stability: Stable <br />
+                                    Quantity: 300 <br />
+                                    Unit: 5kg
+                                </p>
+                                <p class="card-text col-6">
+                                    Category: Perishable <br />
+                                    Shelf Life: 3 months <br />
+                                    Production Date: 12/04/2020 <br />
+                                    Expiry Date: 12/04/2021 <br />
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img
+                            src="assets/other-products.jpg"
+                            class="img-fluid rounded-start my-3 mx-2"
+                        />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Assorted Grains</h5>
+                            <div class="row mt-3 mx-2">
+                                <p class="card-text col-6">
+                                    Donee: Food from the Heart <br>
+                                    Date: 01/03/2021 <br>
+                                    Stability: Stable <br />
+                                    Quantity: 200 <br />
+                                    Unit: 6kg
+                                </p>
+                                <p class="card-text col-6">
+                                    Category: Perishable <br />
+                                    Shelf Life: 3 months <br>
+                                    Production Date: 07/04/2020 <br />
+                                    Expiry Date: 07/05/2021 <br />
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img
+                            src="assets/peels.jpg"
+                            class="img-fluid rounded-start my-3 mx-2"
+                        />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Fruit Peels</h5>
+                            <div class="row mt-3 mx-2">
+                                <p class="card-text col-6">
+                                    Donee: Free Food For All <br>
+                                    Date: 15/02/2021 <br>
+                                    Stability: Stable <br />
+                                    Quantity: 200 <br />
+                                    Unit: 6kg
+                                </p>
+                                <p class="card-text col-6">
+                                    Category: Perishable <br />
+                                    Shelf Life: 3 months <br>
+                                    Production Date: 20/07/2020 <br />
+                                    Expiry Date: 20/07/2021 <br />
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card sm-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img
+                            src="assets/beans.jpeg"
+                            class="img-fluid rounded-start my-3 mx-2"
+                        />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Canned Beans</h5>
+                            <div class="row mt-3 mx-2">
+                                <p class="card-text col-6">
+                                    Donee: FoodBank  <br>
+                                    Date: 06/01/2021 <br>
+                                    Stability: Stable <br />
+                                    Quantity: 200 <br />
+                                    Unit: 2kg
+                                </p>
+                                <p class="card-text col-6">
+                                    Category: Non-Perishable <br />
+                                    Shelf Life: 24 months <br>
+                                    Production Date: 03/05/2019 <br />
+                                    Expiry Date: 03/05/2021 <br />
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </body>
+</html>
