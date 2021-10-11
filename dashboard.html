@@ -192,12 +192,12 @@
                                                     <li class="list-group-item">
                                                         <div class="row">
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(upcomingDelivery1)>
+                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(upcomingDelivery1)>
                                                                     <i class="bi bi-x me-1"></i>Decline
                                                                 </button>
                                                             </div>
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(upcomingDelivery1)>
+                                                                <button class="btn btn-success my-1" onclick=acceptConfirm(upcomingDelivery1)>
                                                                     <i class="bi bi-check2" ></i>Accept
                                                                 </button>
                                                             </div>
@@ -241,12 +241,12 @@
                                                     <li class="list-group-item">
                                                         <div class="row">
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(upcomingDelivery2)>
+                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(upcomingDelivery2)>
                                                                     <i class="bi bi-x me-1"></i>Decline
                                                                 </button>
                                                             </div>
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(upcomingDelivery2)>
+                                                                <button class="btn btn-success my-1" onclick=acceptConfirm(upcomingDelivery2)>
                                                                     <i class="bi bi-check2"></i>Accept
                                                                 </button>
                                                             </div>
@@ -290,12 +290,12 @@
                                                     <li class="list-group-item">
                                                         <div class="row">
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(upcomingDelivery3)>
+                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(upcomingDelivery3)>
                                                                     <i class="bi bi-x me-1"></i>Decline
                                                                 </button>
                                                             </div>
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(upcomingDelivery3)>
+                                                                <button class="btn btn-success my-1" onclick=acceptConfirm(upcomingDelivery3)>
                                                                     <i class="bi bi-check2"></i>Accept
                                                                 </button>
                                                             </div>
@@ -339,12 +339,12 @@
                                                     <li class="list-group-item">
                                                         <div class="row">
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(upcomingDelivery4)>
+                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(upcomingDelivery4)>
                                                                     <i class="bi bi-x me-1"></i>Decline
                                                                 </button>
                                                             </div>
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(upcomingDelivery4)>
+                                                                <button class="btn btn-success my-1" onclick=acceptConfirm(upcomingDelivery4)>
                                                                     <i class="bi bi-check2" ></i>Accept
                                                                 </button>
                                                             </div>
@@ -398,21 +398,16 @@
                                                 <ul class="list-group list-group-flus m-0 p-0">
                                                     <li class="list-group-item">
                                                         <div class="row">
-                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(longDelivery1)>
-                                                                    <i class="bi bi-x me-1"></i>Decline
-                                                                </button>
-                                                            </div>
-                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-success my-1">
-                                                                    <i class="bi bi-check2"></i>Accept
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(longDelivery1)>
+                                                                    <i class="bi bi-x me-1"></i>Cancel
                                                                 </button>
                                                             </div>
                                                         </div>
                                                     <li class="list-group-item">
                                                         <div class="row">
                                                             <div class="col d-grid">
-                                                                <button class="btn btn-warning my-1" onclick=deleteDelivery(longDelivery1)>
+                                                                <button class="btn btn-warning my-1" >
                                                                     <i class="bi bi-calendar-event me-1"></i>
                                                                     Reschedule
                                                                 </button>
@@ -447,14 +442,9 @@
                                                 <ul class="list-group list-group-flus m-0 p-0">
                                                     <li class="list-group-item">
                                                         <div class="row">
-                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(longDelivery2)>
-                                                                    <i class="bi bi-x me-1"></i>Decline
-                                                                </button>
-                                                            </div>
-                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(longDelivery2)>
-                                                                    <i class="bi bi-check2"></i>Accept
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(longDelivery2)>
+                                                                    <i class="bi bi-x me-1"></i>Cancel
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -507,14 +497,9 @@
                                                 <ul class="list-group list-group-flus m-0 p-0">
                                                     <li class="list-group-item">
                                                         <div class="row">
-                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(pendingDelivery1)>
-                                                                    <i class="bi bi-x me-1"></i>Decline
-                                                                </button>
-                                                            </div>
-                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(pendingDelivery1)>
-                                                                    <i class="bi bi-check2"></i>Accept
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(pendingDelivery1)>
+                                                                    <i class="bi bi-x me-1"></i>Cancel
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -556,14 +541,9 @@
                                                 <ul class="list-group list-group-flus m-0 p-0">
                                                     <li class="list-group-item">
                                                         <div class="row">
-                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(pendingDelivery2)>
-                                                                    <i class="bi bi-x me-1"></i>Decline
-                                                                </button>
-                                                            </div>
-                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(pendingDelivery2)>
-                                                                    <i class="bi bi-check2"></i>Accept
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(pendingDelivery2)>
+                                                                    <i class="bi bi-x me-1"></i>Cancel
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -610,10 +590,25 @@
 
 <script>
     function deleteDelivery(delivery) {
-        console.log(delivery);
         delivery.remove(this);
     }
+
+    function acceptConfirm(delivery){
+        if (confirm("Do you want to accept this delivery?")) {
+            deleteDelivery(delivery); 
+        } 
+
+    }
+
+    function declineConfirm(delivery){
+        if (confirm("Do you want to decline this delivery?")) {
+            deleteDelivery(delivery); 
+        } 
+    }
+
 </script>
+    
+
 
 <script>
     function upcomingEmpty(row){
