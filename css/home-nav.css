@@ -1,4 +1,4 @@
- header {
+header {
     position: relative;
 }
 
@@ -17,36 +17,11 @@
 }
 
 #userDropdownList {
-    left: auto;
+    left: 1250px;
     right: 0;
     margin-right: -10px;
 
-    background-color: #212529;
-
-}
-
-.userDropdownItem {
-    text-decoration: none;
-    background-color: #212529;
-    color: white;
-
-    margin: 0;
-    padding: 0;
-    font-family: var(--bs-body-font-family);
-    font-size: var(--bs-body-font-size);
-    font-weight: var(--bs-body-font-weight);
-    line-height: var(--bs-body-line-height);
-    text-align: var(--bs-body-text-align);
-}
-
-.userDropdownListItem:hover {
-    background-color: #6c757d;
-    color: white;
-}
-
-.userDropdownListItem:hover>.userDropdownItem {
-    background-color: #6c757d;
-    color: white;
+    background-color: white;
 
 }
 
@@ -62,14 +37,14 @@
 
 }
 
-.notifDropdownItem {
+.navDropdownItem {
     text-decoration: none;
     background-color: white;
     color: #212529;
 
     border-bottom: #212529;
 
-    margin: 0;
+    margin: 10px;
     padding: 0;
     font-family: var(--bs-body-font-family);
     font-size: var(--bs-body-font-size);
@@ -78,20 +53,24 @@
     text-align: var(--bs-body-text-align);
 }
 
-.notifDropdownListItem:hover {
+.navDropdownListItem:hover{
+        background-color: #6c757d;
+        color: white;
+    }
+
+.navDropdownListItem:hover > .navDropdownItem{
     background-color: #6c757d;
-    color: #212529;
+    color: white; 
+
 }
 
 .notifTime {
-    margin-bottom: 2px;
+    margin-bottom: 0px;
 }
 
-.notifDropdownListItem:hover>.notifDropdownItem {
-    background-color: #6c757d;
-    color: white;
 
-}
+
+
 
 .overflow-scroll {
     max-width: 100%;
