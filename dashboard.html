@@ -93,7 +93,7 @@
                                 <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
                                         class="navDropdownItem">
                                         <p class="mb-0 mx-3 my-0 text-left">Notification 8</p>
-                                        <p class="text-mx-3 my-0 end notifTime"><small>Time</small></p>
+                                        <p class="text-mx-3 my-0 text-end notifTime"><small>Time</small></p>
                                     </a></li>
 
                             </ul>
@@ -120,8 +120,8 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li class="navDropdownListItem"><a href="./index.html" class="navDropdownItem">Log
-                                        Out</a></li>
+                                <li class="navDropdownListItem"><a href="./index.html" class="navDropdownItem">
+                                    Log Out</a></li>
                             </ul>
                         </li>
 
@@ -154,120 +154,446 @@
             <div class="col col-lg-10 col-md-12 ">
                 <div class="card">
                     <div class="card-header">
-                        <ul class="nav nav-tabs card-header-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="true" href="#">Upcoming Delivery</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Long-Term Deliveries</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">Current Listing</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-body">
-                        <div class="row row-cols-lg-3 g-2 g-lg-3 gx-1">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="card">
-                                    <img src="https://images.pexels.com/photos/4033025/pexels-photo-4033025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                                        class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
-                                    <div class="card-body mb-0 pb-0">
-                                        <h5 class="card-title">Fresh Orange Peels</h5>
-                                        <h6 class="card-subtitle text-muted mb-3">5kg</h6>
-                                        <p class="card-text">Request from <b>Food Bank Singapore</b></p>
-                                        <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
-                                        <p class="card-text mb-0">
-                                            <ul>
-                                                <li>
-                                                    Date: 25 Oct 2021
-                                                </li>
-                                                <li>
-                                                    Time: 12:00 - 15:00
-                                                </li>
-                                            </ul>
-                                        </p>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-upcoming-tab" data-bs-toggle="tab" data-bs-target="#nav-upcoming" type="button" role="tab" aria-controls="nav-upcoming" aria-selected="true">Upcoming</button>
+                            <button class="nav-link" id="nav-long-tab" data-bs-toggle="tab" data-bs-target="#nav-long" type="button" role="tab" aria-controls="nav-long" aria-selected="false">Long-term</button>
+                            <button class="nav-link" id="nav-pending-tab" data-bs-toggle="tab" data-bs-target="#nav-pending" type="button" role="tab" aria-controls="nav-pending" aria-selected="false">Pending</button>
+                          </div>
+                        </nav>
+
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <!-- Upcoming deliveries-->
+                            <div class="tab-pane fade show active" id="nav-upcoming" role="tabpanel" aria-labelledby="nav-upcoming-tab">
+
+                                <div class="card-body">
+                                    <div id="upcomingDeliveryRow" class="row row-cols-lg-3 g-2 g-lg-3 gx-1">
+                                        <div id="upcomingDelivery1" class="col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <img src="https://images.pexels.com/photos/4033025/pexels-photo-4033025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
+                                                <div class="card-body mb-0 pb-0">
+                                                    <h5 class="card-title">Fresh Orange Peels</h5>
+                                                    <h6 class="card-subtitle text-muted mb-3">5kg</h6>
+                                                    <p class="card-text">Request from <b>Food Bank Singapore</b></p>
+                                                    <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
+                                                    <p class="card-text mb-0">
+                                                        <ul>
+                                                            <li>
+                                                                Date: 25 Oct 2021
+                                                            </li>
+                                                            <li>
+                                                                Time: 12:00 - 15:00
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <ul class="list-group list-group-flus m-0 p-0">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(upcomingDelivery1)>
+                                                                    <i class="bi bi-x me-1"></i>Decline
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(upcomingDelivery1)>
+                                                                    <i class="bi bi-check2" ></i>Accept
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-warning my-1">
+                                                                    <i class="bi bi-calendar-event me-1"></i>
+                                                                    Reschedule
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                            </div>
+                                        </div>
+
+                                        <div id = "upcomingDelivery2" class="col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <img src="assets/fruit-juice.png"
+                                                    class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
+                                                <div class="card-body mb-0 pb-0">
+                                                    <h5 class="card-title">Fresh Orange Juice</h5>
+                                                    <h6 class="card-subtitle text-muted mb-3">12 litres</h6>
+                                                    <p class="card-text">Request from <b>Food Bank Singapore</b></p>
+                                                    <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
+                                                    <p class="card-text mb-0">
+                                                        <ul>
+                                                            <li>
+                                                                Date: 29 Oct 2021
+                                                            </li>
+                                                            <li>
+                                                                Time: 09:00 - 12:00
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <ul class="list-group list-group-flus m-0 p-0">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(upcomingDelivery2)>
+                                                                    <i class="bi bi-x me-1"></i>Decline
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(upcomingDelivery2)>
+                                                                    <i class="bi bi-check2"></i>Accept
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-warning my-1">
+                                                                    <i class="bi bi-calendar-event me-1"></i>
+                                                                    Reschedule
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                            </div>
+                                        </div>
+
+                                        <div id = "upcomingDelivery3" class="col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <img src="assets/fruit-juice.png"
+                                                    class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
+                                                <div class="card-body mb-0 pb-0">
+                                                    <h5 class="card-title">Fresh Orange Juice</h5>
+                                                    <h6 class="card-subtitle text-muted mb-3">12 litres</h6>
+                                                    <p class="card-text">Request from <b>Food Bank Singapore</b></p>
+                                                    <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
+                                                    <p class="card-text mb-0">
+                                                        <ul>
+                                                            <li>
+                                                                Date: 29 Oct 2021
+                                                            </li>
+                                                            <li>
+                                                                Time: 09:00 - 12:00
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <ul class="list-group list-group-flus m-0 p-0">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(upcomingDelivery3)>
+                                                                    <i class="bi bi-x me-1"></i>Decline
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(upcomingDelivery3)>
+                                                                    <i class="bi bi-check2"></i>Accept
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-warning my-1">
+                                                                    <i class="bi bi-calendar-event me-1"></i>
+                                                                    Reschedule
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                            </div>
+                                        </div>
+
+                                        <div id="upcomingDelivery4" class="col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <img src="https://images.pexels.com/photos/4033025/pexels-photo-4033025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
+                                                <div class="card-body mb-0 pb-0">
+                                                    <h5 class="card-title">Fresh Orange Peels</h5>
+                                                    <h6 class="card-subtitle text-muted mb-3">5kg</h6>
+                                                    <p class="card-text">Request from <b>Food Bank Singapore</b></p>
+                                                    <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
+                                                    <p class="card-text mb-0">
+                                                        <ul>
+                                                            <li>
+                                                                Date: 25 Oct 2021
+                                                            </li>
+                                                            <li>
+                                                                Time: 12:00 - 15:00
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <ul class="list-group list-group-flus m-0 p-0">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(upcomingDelivery4)>
+                                                                    <i class="bi bi-x me-1"></i>Decline
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(upcomingDelivery4)>
+                                                                    <i class="bi bi-check2" ></i>Accept
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-warning my-1">
+                                                                    <i class="bi bi-calendar-event me-1"></i>
+                                                                    Reschedule
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                            </div>
+                                        </div>
+                                        
+                                        
                                     </div>
-                                    <ul class="list-group list-group-flus m-0 p-0">
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                    <button class="btn btn-danger my-1">
-                                                        <i class="bi bi-x me-1"></i>Decline
-                                                    </button>
-                                                </div>
-                                                <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                    <button class="btn btn-success my-1">
-                                                        <i class="bi bi-check2"></i>Accept
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col d-grid">
-                                                    <button class="btn btn-warning my-1">
-                                                        <i class="bi bi-calendar-event me-1"></i>
-                                                        Reschedule
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                    
                                 </div>
+
                             </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="card">
-                                    <img src="assets/fruit-juice.png"
-                                        class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
-                                    <div class="card-body mb-0 pb-0">
-                                        <h5 class="card-title">Fresh Orange Juice</h5>
-                                        <h6 class="card-subtitle text-muted mb-3">12 litres</h6>
-                                        <p class="card-text">Request from <b>Food Bank Singapore</b></p>
-                                        <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
-                                        <p class="card-text mb-0">
-                                            <ul>
-                                                <li>
-                                                    Date: 29 Oct 2021
-                                                </li>
-                                                <li>
-                                                    Time: 09:00 - 12:00
-                                                </li>
-                                            </ul>
-                                        </p>
+
+                            <!-- Long-Term deliveries-->
+                            <div class="tab-pane fade" id="nav-long" role="tabpanel" aria-labelledby="nav-long-tab">
+                                <div class="card-body">
+                                    <div class="row row-cols-lg-3 g-2 g-lg-3 gx-1">
+                                        <div id="longDelivery1" class="col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <img src="assets/fruit-juice.png"
+                                                    class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
+                                                <div class="card-body mb-0 pb-0">
+                                                    <h5 class="card-title">Fresh Orange Juice</h5>
+                                                    <h6 class="card-subtitle text-muted mb-3">12 litres</h6>
+                                                    <p class="card-text">Request from <b>Food Bank Singapore</b></p>
+                                                    <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
+                                                    <p class="card-text mb-0">
+                                                        <ul>
+                                                            <li>
+                                                                Date: 29 Oct 2021
+                                                            </li>
+                                                            <li>
+                                                                Time: 09:00 - 12:00
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <ul class="list-group list-group-flus m-0 p-0">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(longDelivery1)>
+                                                                    <i class="bi bi-x me-1"></i>Decline
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1">
+                                                                    <i class="bi bi-check2"></i>Accept
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-warning my-1" onclick=deleteDelivery(longDelivery1)>
+                                                                    <i class="bi bi-calendar-event me-1"></i>
+                                                                    Reschedule
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                            </div>
+                                        </div>
+
+                                        <div id="longDelivery2" class="col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <img src="https://images.pexels.com/photos/4033025/pexels-photo-4033025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                                    class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
+                                                <div class="card-body mb-0 pb-0">
+                                                    <h5 class="card-title">Long-term</h5>
+                                                    <h6 class="card-subtitle text-muted mb-3">5kg</h6>
+                                                    <p class="card-text">Request from <b>Food Bank Singapore</b></p>
+                                                    <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
+                                                    <p class="card-text mb-0">
+                                                        <ul>
+                                                            <li>
+                                                                Date: 25 Oct 2021
+                                                            </li>
+                                                            <li>
+                                                                Time: 12:00 - 15:00
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <ul class="list-group list-group-flus m-0 p-0">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(longDelivery2)>
+                                                                    <i class="bi bi-x me-1"></i>Decline
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(longDelivery2)>
+                                                                    <i class="bi bi-check2"></i>Accept
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-warning my-1" >
+                                                                    <i class="bi bi-calendar-event me-1"></i>
+                                                                    Reschedule
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                            </div>
+                                        </div>
+
+                                        
                                     </div>
-                                    <ul class="list-group list-group-flus m-0 p-0">
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                    <button class="btn btn-danger my-1">
-                                                        <i class="bi bi-x me-1"></i>Decline
-                                                    </button>
-                                                </div>
-                                                <div class="col-lg-6 col-sm-12 d-sm-grid">
-                                                    <button class="btn btn-success my-1">
-                                                        <i class="bi bi-check2"></i>Accept
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col d-grid">
-                                                    <button class="btn btn-warning my-1">
-                                                        <i class="bi bi-calendar-event me-1"></i>
-                                                        Reschedule
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                    
                                 </div>
+
                             </div>
-                            
+
+                            <!-- Pending deliveries-->
+                            <div class="tab-pane fade" id="nav-pending" role="tabpanel" aria-labelledby="nav-pending-tab">
+                                <div class="card-body">
+                                    <div class="row row-cols-lg-3 g-2 g-lg-3 gx-1">
+                                        <div id="pendingDelivery1" class="col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <img src="assets/fruit-juice.png"
+                                                    class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
+                                                <div class="card-body mb-0 pb-0">
+                                                    <h5 class="card-title">Fresh Orange Juice</h5>
+                                                    <h6 class="card-subtitle text-muted mb-3">12 litres</h6>
+                                                    <p class="card-text">Request from <b>Food Bank Singapore</b></p>
+                                                    <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
+                                                    <p class="card-text mb-0">
+                                                        <ul>
+                                                            <li>
+                                                                Date: 29 Oct 2021
+                                                            </li>
+                                                            <li>
+                                                                Time: 09:00 - 12:00
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <ul class="list-group list-group-flus m-0 p-0">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(pendingDelivery1)>
+                                                                    <i class="bi bi-x me-1"></i>Decline
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(pendingDelivery1)>
+                                                                    <i class="bi bi-check2"></i>Accept
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-warning my-1">
+                                                                    <i class="bi bi-calendar-event me-1"></i>
+                                                                    Reschedule
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                            </div>
+                                        </div>
+
+                                        <div id="pendingDelivery2" class="col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <img src="assets/fruit-juice.png"
+                                                    class="card-img-top" alt="..." style="height:120px;object-fit: cover;" >
+                                                <div class="card-body mb-0 pb-0">
+                                                    <h5 class="card-title">Fresh Orange Juice</h5>
+                                                    <h6 class="card-subtitle text-muted mb-3">12 litres</h6>
+                                                    <p class="card-text">Request from <b>Food Bank Singapore</b></p>
+                                                    <p class="card-text mb-0"><strong>Pick Up Schedule:</strong></p>
+                                                    <p class="card-text mb-0">
+                                                        <ul>
+                                                            <li>
+                                                                Date: 29 Oct 2021
+                                                            </li>
+                                                            <li>
+                                                                Time: 09:00 - 12:00
+                                                            </li>
+                                                        </ul>
+                                                    </p>
+                                                </div>
+                                                <ul class="list-group list-group-flus m-0 p-0">
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-danger my-1" onclick=deleteDelivery(pendingDelivery2)>
+                                                                    <i class="bi bi-x me-1"></i>Decline
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deleteDelivery(pendingDelivery2)>
+                                                                    <i class="bi bi-check2"></i>Accept
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    <li class="list-group-item">
+                                                        <div class="row">
+                                                            <div class="col d-grid">
+                                                                <button class="btn btn-warning my-1">
+                                                                    <i class="bi bi-calendar-event me-1"></i>
+                                                                    Reschedule
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="card-footer text-muted">Posted on 5 Oct 2021</div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+
+                                
+                            </div>
+
+
                         </div>
-                        
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -283,10 +609,28 @@
 
 
 <script>
-    function deleteItem(notif) {
-        notif.remove(this);
+    function deleteDelivery(delivery) {
+        console.log(delivery);
+        delivery.remove(this);
     }
 </script>
+
+<script>
+    function upcomingEmpty(row){
+
+        if(row.contents().length == 0 ) {
+            newNode = document.createElement('div');
+            newText = document.createTextNode('There are no upcoming deliveries.');
+            newNode.appendChild(newText);
+
+            row.appendChild(newNode);
+        }
+
+    }
+
+    upcomingEmpty(upcomingDeliveryRow);
+</script>
+
 <!-- Bootstrap and Propper core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
