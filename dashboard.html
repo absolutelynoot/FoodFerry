@@ -36,36 +36,11 @@
         }
 
         #userDropdownList {
-            left: auto;
+            left: 1250px;
             right: 0;
             margin-right: -10px;
 
-            background-color: #212529;
-
-        }
-
-        .userDropdownItem {
-            text-decoration: none;
-            background-color: #212529;
-            color: white;
-
-            margin: 0;
-            padding: 0;
-            font-family: var(--bs-body-font-family);
-            font-size: var(--bs-body-font-size);
-            font-weight: var(--bs-body-font-weight);
-            line-height: var(--bs-body-line-height);
-            text-align: var(--bs-body-text-align);
-        }
-
-        .userDropdownListItem:hover {
-            background-color: #6c757d;
-            color: white;
-        }
-
-        .userDropdownListItem:hover>.userDropdownItem {
-            background-color: #6c757d;
-            color: white;
+            background-color: white;
 
         }
 
@@ -81,14 +56,14 @@
 
         }
 
-        .notifDropdownItem {
+        .navDropdownItem {
             text-decoration: none;
             background-color: white;
             color: #212529;
 
             border-bottom: #212529;
 
-            margin: 0;
+            margin: 10px;
             padding: 0;
             font-family: var(--bs-body-font-family);
             font-size: var(--bs-body-font-size);
@@ -97,20 +72,24 @@
             text-align: var(--bs-body-text-align);
         }
 
-        .notifDropdownListItem:hover {
+        .navDropdownListItem:hover{
+                background-color: #6c757d;
+                color: white;
+            }
+
+        .navDropdownListItem:hover > .navDropdownItem{
             background-color: #6c757d;
-            color: #212529;
+            color: white; 
+
         }
 
         .notifTime {
-            margin-bottom: 2px;
+            margin-bottom: 0px;
         }
 
-        .notifDropdownListItem:hover>.notifDropdownItem {
-            background-color: #6c757d;
-            color: white;
 
-        }
+
+
 
         .overflow-scroll {
             max-width: 100%;
@@ -141,7 +120,7 @@
                 <div class="collapse navbar-collapse fs-5 fw-bold px-3" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="./dashboard.html">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./donate.html">Donate</a>
@@ -166,45 +145,45 @@
 
                             <!-- Notification dropdown -->
                             <ul class="dropdown-menu" id="notifDropdownList">
-                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
-                                        class="notifDropdownItem">
-                                        <p class="mb-0 text-left">Notification 1</p>
-                                        <p class="text-end notifTime"><small>Time</small></p>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 1</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
                                     </a></li>
-                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
-                                        class="notifDropdownItem">
-                                        <p class="mb-0 text-left">Notification 2</p>
-                                        <p class="text-end notifTime"><small>Time</small></p>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 2</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
                                     </a></li>
-                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
-                                        class="notifDropdownItem">
-                                        <p class="mb-0 text-left">Notification 3</p>
-                                        <p class="text-end notifTime"><small>Time</small></p>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 3</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
                                     </a></li>
-                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
-                                        class="notifDropdownItem">
-                                        <p class="mb-0 text-left">Notification 4</p>
-                                        <p class="text-end notifTime"><small>Time</small></p>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 4</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
                                     </a></li>
-                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
-                                        class="notifDropdownItem">
-                                        <p class="mb-0 text-left">Notification 5</p>
-                                        <p class="text-end notifTime"><small>Time</small></p>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 5</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
                                     </a></li>
-                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
-                                        class="notifDropdownItem">
-                                        <p class="mb-0 text-left">Notification 6</p>
-                                        <p class="text-end notifTime"><small>Time</small></p>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 6</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
                                     </a></li>
-                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
-                                        class="notifDropdownItem">
-                                        <p class="mb-0 text-left">Notification 7</p>
-                                        <p class="text-end notifTime"><small>Time</small></p>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 7</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
                                     </a></li>
-                                <li class="notifDropdownListItem border-bottom"><a href="./home.html"
-                                        class="notifDropdownItem">
-                                        <p class="mb-0 text-left">Notification 8</p>
-                                        <p class="text-end notifTime"><small>Time</small></p>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 8</p>
+                                        <p class="text-mx-3 my-0 end notifTime"><small>Time</small></p>
                                     </a></li>
 
                             </ul>
@@ -224,14 +203,14 @@
 
                             <!-- User dropdown -->
                             <ul class="dropdown-menu" id="userDropdownList">
-                                <li class="userDropdownListItem"><a href="./profile.html" class="userDropdownItem">User
-                                        Profile</a></li>
-                                <li class="userDropdownListItem"><a href="./settings.html"
-                                        class="userDropdownItem">Settings</a></li>
+                                <li class="navDropdownListItem"><a href="./profile.html" class="navDropdownItem">
+                                    User Profile</a></li>
+                                <li class="navDropdownListItem"><a href="./settings.html" class="navDropdownItem">
+                                    Settings</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li class="userDropdownListItem"><a href="./index.html" class="userDropdownItem">Log
+                                <li class="navDropdownListItem"><a href="./index.html" class="navDropdownItem">Log
                                         Out</a></li>
                             </ul>
                         </li>
