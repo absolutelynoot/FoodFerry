@@ -114,16 +114,37 @@
             /*This media query is to ensure that the order history is responsive at all screen sizes and looks good*/
             @media (min-width: 1200px) { 
                 .card p {
-                    font-size:x-large
+                    font-size:large
                 }
                 h5 {
-                    font-size: 2.5rem
+                    font-size: 1.5rem
                 }
 
                 p.card-text {
                     padding-left: 80px
                 }
+
+                .donationHistory { /* makes it such that it has better spacing on laptop screens */
+                    height: 248px;
+                }
+
+                .donationPic {
+                    max-height: 248px;
+                    padding-left: 30px;
+                    display:block;
+                    margin:auto;
+                }
             }
+
+            #donationPage {
+                /* margin-left: 10vw;
+                margin-right: 10vw; */
+                max-width: 90vw;
+                margin: auto;
+            }
+            /* .card {
+                display: block;
+            } */
 
         </style>
 
@@ -224,30 +245,30 @@
         </header>
 
         <!-- Donation History -->
-        <section class="d-block pt-5 pb-2 my-5 mx-5">
+        <section class="d-block pt-5 pb-2 my-5 mx-5" id="donationPage">
 
-            <h1>My Donation History</h1>
+            <h3 class="mx-5 mt-0 mb-3">My Donation History</h3>
             <!-- Individual Donation History Cards -->
-            <div class="card mb-3 mt-4">
-                <div class="row g-0">
+            <div class="card mb-3 mt-2 mx-5 donationHistory">
+                <div class="row g-0 donationHistory">
                     <div class="col-md-4">
                         <img
                             src="assets/perishable.jpg"
-                            class="img-fluid rounded-start my-3 mx-2 mw-50"
+                            class="img-fluid rounded-start py-3 mw-50 h-80 donationPic"
                         />
                     </div>
                     <div class="col-md-8 ">
                         <div class="card-body">
                             <h5 class="card-title text-center">Fruits and Greens</h5>
                             <div class="row mt-3 mx-2">
-                                <p class="card-text col-6">
-                                    Donee: FoodBank <br>
+                                <p class="card-text lead col-6">
+                                    Receiver: FoodBank Singapore <br>
                                     Date: 13/03/2021 <br>
                                     Stability: Stable <br />
-                                    Quantity: 300 <br />
-                                    Unit: 5kg
+                                    Quantity donated: 300 <br />
+                                    Unit (Weight): 5kg
                                 </p>
-                                <p class="card-text col-6">
+                                <p class="card-text lead col-6">
                                     Category: Perishable <br />
                                     Shelf Life: 3 months <br />
                                     Production Date: 12/04/2020 <br />
@@ -260,31 +281,31 @@
                 </div>
             </div>
 
-            <div class="card mb-3">
-                <div class="row g-0">
+            <div class="card mb-3 mt-4 mx-5 donationHistory">
+                <div class="row g-0 donationHistory">
                     <div class="col-md-4">
                         <img
                             src="assets/other-products.jpg"
-                            class="img-fluid rounded-start my-3 mx-2"
+                            class="img-fluid rounded-start py-3 mw-50 h-100 donationPic"
                         />
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 ">
                         <div class="card-body">
                             <h5 class="card-title text-center">Assorted Grains</h5>
                             <div class="row mt-3 mx-2">
-                                <p class="card-text col-6">
-                                    Donee: Food from the Heart <br>
+                                <p class="card-text lead col-6">
+                                    Receiver: Food from the Heart <br>
                                     Date: 01/03/2021 <br>
                                     Stability: Stable <br />
-                                    Quantity: 200 <br />
-                                    Unit: 6kg
+                                    Quantity donated: 200 <br />
+                                    Unit (Weight): 6kg
                                 </p>
-                                <p class="card-text col-6">
+                                <p class="card-text lead col-6">
                                     Category: Perishable <br />
-                                    Shelf Life: 3 months <br>
+                                    Shelf Life: 3 months <br />
                                     Production Date: 07/04/2020 <br />
                                     Expiry Date: 07/05/2021 <br />
-                                    
+
                                 </p>
                             </div>
                         </div>
@@ -292,31 +313,31 @@
                 </div>
             </div>
 
-            <div class="card mb-3">
-                <div class="row g-0">
+            <div class="card mb-3 mt-4 mx-5 donationHistory">
+                <div class="row g-0 donationHistory">
                     <div class="col-md-4">
                         <img
                             src="assets/peels.jpg"
-                            class="img-fluid rounded-start my-3 mx-2"
+                            class="img-fluid rounded-start py-3 mw-50 h-100 donationPic"
                         />
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 ">
                         <div class="card-body">
                             <h5 class="card-title text-center">Fruit Peels</h5>
                             <div class="row mt-3 mx-2">
-                                <p class="card-text col-6">
-                                    Donee: Free Food For All <br>
+                                <p class="card-text lead col-6">
+                                    Receiver: Free Food For All <br>
                                     Date: 15/02/2021 <br>
                                     Stability: Stable <br />
-                                    Quantity: 200 <br />
-                                    Unit: 6kg
+                                    Quantity donated: 200 <br />
+                                    Unit (Weight): 2kg
                                 </p>
-                                <p class="card-text col-6">
+                                <p class="card-text lead col-6">
                                     Category: Perishable <br />
-                                    Shelf Life: 3 months <br>
-                                    Production Date: 20/07/2020 <br />
-                                    Expiry Date: 20/07/2021 <br />
-                                    
+                                    Shelf Life: 1 months <br />
+                                    Production Date: 20/01/2021 <br />
+                                    Expiry Date: 20/03/2021 <br />
+
                                 </p>
                             </div>
                         </div>
@@ -324,31 +345,30 @@
                 </div>
             </div>
 
-            <div class="card sm-3">
-                <div class="row g-0">
+            <div class="card mb-3 mt-4 mx-5 donationHistory">
+                <div class="row g-0 donationHistory">
                     <div class="col-md-4">
                         <img
-                            src="assets/beans.jpeg"
-                            class="img-fluid rounded-start my-3 mx-2"
+                            src="assets/beans_resized.jpeg"
+                            class="img-fluid rounded-start py-3 mw-50 h-100 donationPic"
                         />
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 ">
                         <div class="card-body">
                             <h5 class="card-title text-center">Canned Beans</h5>
                             <div class="row mt-3 mx-2">
-                                <p class="card-text col-6">
-                                    Donee: FoodBank  <br>
+                                <p class="card-text lead col-6">
+                                    Receiver: FoodBank Singapore <br>
                                     Date: 06/01/2021 <br>
                                     Stability: Stable <br />
-                                    Quantity: 200 <br />
-                                    Unit: 2kg
+                                    Quantity donated: 200 <br />
+                                    Unit (Weight): 2kg
                                 </p>
-                                <p class="card-text col-6">
+                                <p class="card-text lead col-6">
                                     Category: Non-Perishable <br />
-                                    Shelf Life: 24 months <br>
+                                    Shelf Life: 24 months <br />
                                     Production Date: 03/05/2019 <br />
                                     Expiry Date: 03/05/2021 <br />
-                                    
                                 </p>
                             </div>
                         </div>
