@@ -22,8 +22,8 @@
 			crossorigin="anonymous"
 		></script>
 		<!-- Core theme CSS (includes Bootstrap)-->
-		<link href="css/styles.css" rel="stylesheet" />
 		<link href="css/donate.css" rel="stylesheet" />
+		<link href="css/home-nav.css" rel="stylesheet" />
 
 		<!-- jQuery -->
 		<script
@@ -45,7 +45,7 @@
                 <div class="collapse navbar-collapse fs-5 fw-bold px-3" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="./home.html">Home</a>
+                            <a class="nav-link " aria-current="page" href="dashboard.html">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="./donate.html">Donate</a>
@@ -159,14 +159,14 @@
 								<form class="needs-validation" id="pickUpForm" novalidate>
 									<!-- Progress Bar -->
 									<ul id="progressbar" class='p-0'>
+										<li class="active" id="food-details">
+											<strong>Donation Details</strong>
+										</li>
 										<li class="active" id="pick-up">
 											<strong>Pick Up</strong>
 										</li>
-										<li id="food-details">
-											<strong>Donation Details</strong>
-										</li>
-										<li id="partners">
-											<strong>Partners</strong>
+										<li id="type">
+											<strong>Donation Type</strong>
 										</li>
 										<li id="availability">
 											<strong>Availability</strong>
@@ -429,7 +429,7 @@
 					sessionStorage.setItem('pickUpDetails', JSON.stringify(pickUpDetails))
 					console.log("form details are captured successfully");
 					console.log(sessionStorage.getItem('pickUpDetails'));
-					window.location.href = "donate-details.html";
+					window.location.href = "donate-type.html";
 				}
 
 				pickUpForm.classList.add('was-validated')

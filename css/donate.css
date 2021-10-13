@@ -30,7 +30,7 @@
     content: "\f550"
 }
 
-#progressbar #partners:before {
+#progressbar #type:before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f0c0"
