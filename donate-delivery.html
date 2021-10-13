@@ -30,15 +30,7 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 		></script>
 
-		<!-- Bootstrap Date-Picker Plugin -->
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"
-		></script>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
-		/>
-		<link href="css/home-nav.css" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	</head>
 
 	
@@ -165,11 +157,11 @@
 						<h2 class="mb-4 fs-1"><strong>Donate Food Waste</strong></h2>
 						<div class="row">
 							<div class="col-md-12">
-								<form id="msform">
+								<form class="needs-validation" id="pickUpForm" novalidate>
 									<!-- Progress Bar -->
 									<ul id="progressbar" class='p-0'>
-										<li class="active" id="category">
-											<strong>Category</strong>
+										<li class="active" id="pick-up">
+											<strong>Pick Up</strong>
 										</li>
 										<li id="food-details">
 											<strong>Donation Details</strong>
@@ -187,557 +179,168 @@
 
 									<!-- actual forms -->
 
-									<!-- Form page 1 food category selection -->
+									<!-- Form page 1 delivery details -->
 									<fieldset class="step step1 active">
 										<div class="row mx-2 mb-3">
-											<h1 class="fs-3">Select Food Waste Category</h1>
+											<h1 class="fs-3">Enter Pick Up Details</h1>
 										</div>
 										<div class="row mx-3 mb-0 g-2">
-											<div class="col-md-6 col-sm-12">
-												<div class="card bg-dark text-white cards border-0">
-													<img
-														src="assets/non-perishable-category.jpg"
-														class="card-img"
-														alt="Non-Perishable"
-													/>
-													<div
-														class="
-															card-img-overlay
-															d-flex
-															flex-column
-															align-items-center
-															justify-content-center
-														"
-													>
-														<h5 class="card-title">Non Perishable</h5>
-														<p class="card-text">
-															Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-															ut!
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="card bg-dark text-white cards border-0">
-													<img
-														src="assets/perishable.jpg"
-														class="card-img"
-														alt="Non-Perishable"
-													/>
-													<div
-														class="
-															card-img-overlay
-															d-flex
-															flex-column
-															align-items-center
-															justify-content-center
-														"
-													>
-														<h5 class="card-title">Perishable</h5>
-														<p class="card-text">
-															Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-															ut!
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="card bg-dark text-white cards border-0 d-none">
-													<img
-														src="assets/peels.jpg"
-														class="card-img"
-														alt="Non-Perishable"
-													/>
-													<div
-														class="
-															card-img-overlay
-															d-flex
-															flex-column
-															align-items-center
-															justify-content-center
-														"
-													>
-														<h5 class="card-title">Fruit and Vegetable Peels</h5>
-														<p class="card-text">
-															Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-															ut!
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="card bg-dark text-white cards border-0 d-none">
-													<img
-														src="assets/bottled-drinks.jpg"
-														class="card-img"
-														alt="Non-Perishable"
-													/>
-													<div
-														class="
-															card-img-overlay
-															d-flex
-															flex-column
-															align-items-center
-															justify-content-center
-														"
-													>
-														<h5 class="card-title">Beverages</h5>
-														<p class="card-text">
-															Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-															ut!
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="card bg-dark text-white cards border-0 d-none">
-													<img
-														src="assets/dairy.jpg"
-														class="card-img"
-														alt="Non-Perishable"
-													/>
-													<div
-														class="
-															card-img-overlay
-															d-flex
-															flex-column
-															align-items-center
-															justify-content-center
-														"
-													>
-														<h5 class="card-title">Dairy Products</h5>
-														<p class="card-text">
-															Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-															ut!
-														</p>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="card bg-dark text-white cards border-0 d-none">
-													<img
-														src="assets/other-products.jpg"
-														class="card-img"
-														alt="Non-Perishable"
-													/>
-													<div
-														class="
-															card-img-overlay
-															d-flex
-															flex-column
-															align-items-center
-															justify-content-center
-														"
-													>
-														<h5 class="card-title">Other byproducts</h5>
-														<p class="card-text">
-															Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum,
-															ut!
-														</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="row mx-2 mb-3">
-											<a href="" id="viewMoreCat">View More</a>
-										</div>
-
-										<!-- buttons -->
-										<!-- <div class="row mx-2 mb-4">
-                                        <div class="col-lg-6 col-sm-12 d-grid mb-2">
-                                            <button type="button" class="btn btn-danger btn-lg">
-                                            Close
-                                            </button>
-                                        </div>
-                                        <div class="col-lg-6 col-sm-12 d-grid mb-2">
-                                            <button type="button" class="btn btn-success btn-lg next-btn">
-                                            Next
-                                            </button>
-                                        </div>
-                                        </div> -->
-									</fieldset>
-
-									<!-- Form page 2 food / product details  -->
-									<fieldset class="step step2 text-start d-none">
-										<div class="card mb-3">
-											<h1 class="card-header fs-3">
-												<strong>Step 1: Enter Contact and Delivery Details</strong>
-											</h1>
-											<div class="card-body">
-												<div class="row mx-2 mb-3 g-3 text-start">
-													<div class="col-lg-6 col-md-12">
-														<!-- Name input-->
-														<label for="ctcName" class="form-label"
-															>Food Donor Contact Name*</label
-														>
-														<input
-															type="text"
-															class="form-control"
-															id="ctcName"
-															placeholder=""
-															data-sb-validations="required"
-														/>
-														<div class="invalid-feedback" data-sb-feedback="ctcName:required">
-															Contact Name is required.
+											<div class="card mb-3">
+												<h1 class="card-header fs-3">
+													<strong>Enter Contact and Pick Up Details</strong>
+												</h1>
+												<div class="card-body">
+													<div class="row mx-2 mb-3 g-3 text-start">
+														<div class="col-lg-12 col-md-12 col-sm-12">
+															<div class="row">
+																<div class="col-lg-6">
+																	<label for="unit" class="form-label fw-bolder">Select Default Contact*</label>
+																</div>
+																<div class="col-lg-6 justify-content-end text-end">
+																	<div class="text-success" onclick="addNewCtc()"><strong>+ Add New Contact</strong></div>
+																</div>
+															</div>
+															
+															<select class="form-select" aria-label="Default Contact"
+																id="defaultCtc">
+																<option value="0">New</option>
+																<option value="1" selected>Edward, Sales Manager (MuffinFactory)</option>
+																<option value="2">Jack, Production Manager (Muffin Factory)</option>
+															</select>
 														</div>
-													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
-														<!-- Email address input-->
-														<label for="emailAddress" class="form-label"
-															>Email Address*</label
-														>
-														<input
-															type="email"
-															class="form-control"
-															id="emailAddress"
-															placeholder="example@abc.com"
-															data-sb-validations="required,email"
-														/>
-														<div
-															class="invalid-feedback"
-															data-sb-feedback="emailAddress:required"
-														>
-															Email Address is required.
+														<div class="ms-2 form-check form-check-inline">
+															<input class="form-check-input" id="checkboxA" type="checkbox"
+																name="checkbox" checked />
+															<label class="form-check-label" for="checkboxA">Make this contact
+																default in the future</label>
 														</div>
-														<div
-															class="invalid-feedback"
-															data-sb-feedback="emailAddress:email"
-														>
-															Email Address Email is not valid.
-														</div>
-													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
-														<!-- Mobile number input-->
-														<label for="ctcName" class="form-label">Mobile Number*</label>
-														<div class="input-group">
-															<span class="input-group-text" id="ctcName">+65</span>
+														<hr>
+														<div class="col-lg-6 col-md-12">
+															<!-- Name input-->
+															<label for="ctcName" class="form-label"
+																>Food Donor Contact Name*</label
+															>
 															<input
 																type="text"
 																class="form-control"
-																placeholder="96123456"
-																aria-label="Username"
-																aria-describedby="ctcName"
+																id="ctcName"
+																placeholder=""
+																required
 															/>
+															<div class="invalid-feedback">
+																Contact Name is required.
+															</div>
 														</div>
-													</div>
-
-													<div class="col-12">
-														<!-- Company Name input-->
-														<label for="companyName" class="form-label">Company Name*</label>
-														<input
-															type="text"
-															class="form-control"
-															id="companyName"
-															placeholder=""
-														/>
-													</div>
-
-													<div class="col-lg-6 col-md-12">
-														<label for="address" class="form-label">Pick Up Address*</label>
-														<textarea class="form-control" id="address" rows="1"></textarea>
-													</div>
-													<div class="col-lg-6 col-md-12">
-														<div class="row row-cols-sm-1 row-cols-md-2">
-															<div class="col">
-																<label for="unitNo" class="form-label"
-																	>Floor / unit number*</label
-																>
+														<div class="col-lg-3 col-md-6 col-sm-12">
+															<!-- Email address input-->
+															<label for="emailAddress" class="form-label"
+																>Email Address*</label
+															>
+															<input
+																type="email"
+																class="form-control"
+																id="emailAddress"
+																placeholder=""
+																required
+															/>
+															<div
+																class="invalid-feedback"
+															>
+																Email Address Email is not valid.
+															</div>
+														</div>
+														<div class="col-lg-3 col-md-6 col-sm-12">
+															<!-- Mobile number input-->
+															<label for="ctcNo" class="form-label">Contact Number*</label>
+															<div class="input-group">
+																<span class="input-group-text" id="ctcNo65">+65</span>
 																<input
 																	type="text"
 																	class="form-control"
-																	id="unitNo"
-																	placeholder="#01-101"
+																	placeholder=""
+																	aria-label="Username"
+																	aria-describedby="ctcNo"
+																	id="ctcNo"
+																	required
 																/>
 															</div>
-															<div class="col">
-																<!-- Postal code input-->
-																<label for="postalCode" class="form-label">Postal Code*</label>
-																<div class="input-group">
-																	<span class="input-group-text" id="postalCode"
-																		>S</span
+														</div>
+	
+														<div class="col-12">
+															<!-- Company Name input-->
+															<label for="companyName" class="form-label">Company Name*</label>
+															<input
+																type="text"
+																class="form-control"
+																id="companyName"
+																placeholder=""
+																required
+															/>
+														</div>
+	
+														<div class="col-lg-6 col-md-12">
+															<label for="address" class="form-label">Pick Up Address*</label>
+															<textarea class="form-control" id="address" rows="1"></textarea>
+														</div>
+														<div class="col-lg-6 col-md-12">
+															<div class="row row-cols-sm-1 row-cols-md-2">
+																<div class="col">
+																	<label for="unitNo" class="form-label"
+																		>Floor / unit number*</label
 																	>
 																	<input
 																		type="text"
 																		class="form-control"
-																		placeholder="456832"
-																		aria-label="Postal Code"
-																		aria-describedby="postalCode"
+																		id="unitNo"
+																		placeholder=""
 																	/>
+																</div>
+																<div class="col">
+																	<!-- Postal code input-->
+																	<label for="postalCode" class="form-label">Postal Code*</label>
+																	<div class="input-group">
+																		<span class="input-group-text" 
+																			>S</span
+																		>
+																		<input
+																			type="text"
+																			class="form-control"
+																			placeholder=""
+																			aria-label="Postal Code"
+																			aria-describedby="postalCode"
+																			id="postalCode"
+																		/>
+																	</div>
 																</div>
 															</div>
 														</div>
-													</div>
-													<div class="col-lg-6 col-md-6 col-sm-12"></div>
-												</div>
-											</div>
-										</div>
-
-										<div class="card mb-3">
-											<h1 class="card-header fs-3">
-												<strong>Step 2: Enter Food Details</strong>
-											</h1>
-											<div class="card-body">
-												<div class="row mx-2 mb-3 g-3 text-start">
-													<div class="col-lg-6 col-md-12">
-														<!-- Product Name input-->
-														<label for="prodName" class="form-label"
-															>Product / Food Waste Name*</label
-														>
-														<input
-															type="text"
-															class="form-control"
-															id="prodName"
-															placeholder=""
-														/>
-													</div>
-													<div class="col-lg-4 col-md-8 col-sm-12">
-														<!-- Quantity input-->
-														<label for="qty" class="form-label">Quantity*</label>
-														<input
-															type="text"
-															class="form-control"
-															id="qty"
-															placeholder=""
-														/>
-													</div>
-													<div class="col-lg-2 col-md-4 col-sm-12">
-														<label for="unit" class="form-label">Unit*</label>
-														<select class="form-select" aria-label="Default select example">
-															<option selected>Choose..</option>
-															<option value="1">Kg</option>
-															<option value="2">Oz</option>
-															<option value="3">Litres</option>
-														</select>
-													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
-														<label for="unit" class="form-label"
-															>Stability of products*</label
-														>
-														<select class="form-select" aria-label="Default select example">
-															<option selected>Choose..</option>
-															<option value="1">Shelf stable</option>
-															<option value="2">Refrigeration (0°C to 5°C)</option>
-															<option value="3">Frozen (below -18°C)</option>
-														</select>
-													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
-														<!-- Shelf Life input-->
-														<label for="shelfLife" class="form-label">Shelf Life*</label>
-														<input
-															type="text"
-															class="form-control"
-															id="shelfLife"
-															placeholder="14 days / 2 weeks"
-														/>
-													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
-														<!-- prod date input-->
-														<label for="prodDate" class="form-label">Production Date*</label>
-														<input
-															type="text"
-															class="form-control"
-															id="prodDate"
-															placeholder="dd/mm/yyyy"
-														/>
-													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
-														<!-- prod date input-->
-														<label for="expDate" class="form-label">Expiry Date*</label>
-														<input
-															type="text"
-															class="form-control"
-															id="expDate"
-															placeholder="dd/mm/yyyy"
-														/>
-													</div>
-													<div class="col-12">
-														<label for="address" class="form-label"
-															>Additional Information / Remarks*</label
-														>
-														<textarea class="form-control" id="address" rows="4"></textarea>
-													</div>
-													<div class="col-12">
-														<label class="form-label" for="disabledCustomFile"
-															>Photo of Product / Food Waste*</label
-														>
-														<input
-															type="file"
-															class="form-control form-control-lg"
-															aria-label="Large file input example"
-														/>
+														<div class="col-lg-6 col-md-6 col-sm-12"></div>
 													</div>
 												</div>
 											</div>
-										</div>
-
-										<!-- buttons -->
+											<!-- buttons -->
 										<div class="row mx-2 mb-4">
 											<div class="col-lg-6 col-sm-12 d-grid mb-2">
-												<button type="button" class="btn btn-light btn-lg prev-btn">
+												<button type="button" class="btn btn-light btn-lg prev-btn border-success">
 													Previous
 												</button>
 											</div>
 											<div class="col-lg-6 col-sm-12 d-grid mb-2">
 												<button
-													type="button"
+													type="submit"
 													class="btn btn-success btn-lg next-btn"
-													id="nextButton"
+													id="submitBtn"
 												>
 													Next
 												</button>
 											</div>
 										</div>
+
+										</div>
+										
 									</fieldset>
 
-									<!-- step 3: select donation type -->
-									<fieldset class="step step3 d-none">
-										<div class="row mx-2 mb-3 justify-content-center">
-											<h1 class="fs-3 mb-3"><strong>Select Food Donation Type</strong></h1>
-											<div class="col col-lg-6 col-md-10">
-												<div class="card mb-3">
-													<div class="card-body p-5">
-														<div class="mb-3">
-															<span class="display-6 fw-bold">
-																<i class="bi bi-building"></i>
-																Long-Term Partnership</span
-															>
-														</div>
-														<ul class="list-unstyled mb-4">
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																<strong>1 to 5 years</strong>
-															</li>
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																Priority in receiving pickups
-															</li>
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																Regular schedule of donations
-															</li>
-														</ul>
-														<div class="d-grid mb-2">
-															<a class="btn btn-success next-btn" href="#!">Select</a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col col-lg-6 col-md-10">
-												<div class="card mb-3">
-													<div class="card-body p-5">
-														<div class="mb-3">
-															<span class="display-6 fw-bold">
-																<i class="bi bi-basket"></i>
-																Short-Term Listing</span
-															>
-														</div>
-														<ul class="list-unstyled mb-4">
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																<strong>One time donation.</strong>
-															</li>
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																Fastest way to donate food.
-															</li>
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																Ad-Hoc.
-															</li>
-														</ul>
-														<div class="d-grid mb-2">
-															<a class="btn btn-success" href="#!">Select</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-
-										<!-- buttons -->
-										<div class="row mx-2 mb-4 justify-content-center">
-											<div class="col-lg-12 col-sm-12 d-grid mb-2">
-												<button type="button" class="btn btn-light btn-lg prev-btn">
-													Previous
-												</button>
-											</div>
-										</div>
-									</fieldset>
-
-									<!-- step 3a: select donation type -->
-									<fieldset class="step step4 d-none">
-										<div class="row mx-2 mb-3 justify-content-center">
-											<h1 class="fs-3 mb-3"><strong>Select Long-Term Partnership</strong></h1>
-											<div class="col col-lg-6 col-md-10">
-												<div class="card mb-3">
-													<div class="card-body p-5">
-														<div class="mb-3">
-															<span class="display-6 fw-bold">
-																<i class="bi bi-building"></i>
-																Long-Term Partnership</span
-															>
-														</div>
-														<ul class="list-unstyled mb-4">
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																<strong>1 to 5 years</strong>
-															</li>
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																Priority in receiving pickups
-															</li>
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																Regular schedule of donations
-															</li>
-														</ul>
-														<div class="d-grid mb-2">
-															<a class="btn btn-success" href="#!">Select</a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="col col-lg-6 col-md-10">
-												<div class="card mb-3">
-													<div class="card-body p-5">
-														<div class="mb-3">
-															<span class="display-6 fw-bold">
-																<i class="bi bi-basket"></i>
-																Short-Term Listing</span
-															>
-														</div>
-														<ul class="list-unstyled mb-4">
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																<strong>One time donation.</strong>
-															</li>
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																Fastest way to donate food.
-															</li>
-															<li class="text-muted">
-																<i class="bi bi-check text-primary"></i>
-																Ad-Hoc.
-															</li>
-														</ul>
-														<div class="d-grid mb-2">
-															<a class="btn btn-success" href="#!">Select</a>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-
-
-										<!-- buttons -->
-										<div class="row mx-2 mb-4 justify-content-center">
-											<div class="col-lg-12 col-sm-12 d-grid mb-2">
-												<button type="button" class="btn btn-light btn-lg prev-btn">
-													Previous
-												</button>
-											</div>
-										</div>
-									</fieldset>
+									
 								</form>
 							</div>
 						</div>
@@ -754,79 +357,73 @@
 		></script>
 		<!-- Core theme JS-->
 		<!-- <script src="/js/scripts.js"></script> !-->
-		<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
 
 		<script>
-			var viewMoreCat = document.getElementById("viewMoreCat");
-			viewMoreCat.addEventListener("click", function (e) {
-				e.preventDefault();
-				let categoryItems = document.getElementsByClassName("cards");
+			const defCtc = document.getElementById("defaultCtc");
+			defCtc.addEventListener('change', selectDefaultCtc);
+			selectDefaultCtc();
 
-				if (this.innerText == "View More") {
-					for (var i = 2; i < categoryItems.length; i++) {
-						categoryItems[i].classList.remove("d-none");
-					}
-					this.innerText = "View Less";
+			function selectDefaultCtc(e) {
+				let strUser = defCtc.value;
+				if (strUser == '1') {
+					document.getElementById('ctcName').value = "Edward";
+					document.getElementById('emailAddress').value = "Edward@mfs.com.sg";
+					document.getElementById('ctcNo').value = "97234567";
+					document.getElementById('companyName').value = "Muffin Manufacturing Singapore";
+					document.getElementById('address').value = "123 Manufacturing Road";
+					document.getElementById('unitNo').value = "-";
+					document.getElementById('postalCode').value = "125656";
+				} else if (strUser == '2') {
+					document.getElementById('ctcName').value = "Jack";
+					document.getElementById('emailAddress').value = "Jack@mfs.com.sg";
+					document.getElementById('ctcNo').value = "96124567";
+					document.getElementById('companyName').value = "Muffin Manufacturing Singapore";
+					document.getElementById('address').value = "123 Manufacturing Road";
+					document.getElementById('unitNo').value = "-";
+					document.getElementById('postalCode').value = "125656";
 				} else {
-					for (var i = 2; i < categoryItems.length; i++) {
-						categoryItems[i].classList.add("d-none");
+					document.getElementById('ctcName').value = null;
+					document.getElementById('emailAddress').value = null;
+					document.getElementById('ctcNo').value = null;
+					document.getElementById('companyName').value = null;
+					document.getElementById('address').value = null;
+					document.getElementById('unitNo').value = null;
+					document.getElementById('postalCode').value = null;
+				}
+			}
+
+			function addNewCtc(){
+				defCtc.value = "0"
+				selectDefaultCtc();
+			}
+
+			const pickUpForm = document.getElementById("pickUpForm");
+			var pickUpDetails = {};
+
+			pickUpForm.addEventListener("submit", function(event){
+				event.preventDefault();
+				if (!pickUpForm.checkValidity()){
+					event.preventDefault();
+					event.stopPropagation();
+				} else {
+					pickUpDetails = {
+						ctcName: document.getElementById('ctcName').value,
+						emailAddress: document.getElementById('emailAddress').value,
+						ctcNo: document.getElementById('ctcNo').value,
+						companyName: document.getElementById('companyName').value,
+						address: document.getElementById('address').value,
+						unitNo: document.getElementById('unitNo').value,
+						postalCode: document.getElementById('postalCode').value
 					}
-					this.innerText = "View More";
+					sessionStorage.setItem('pickUpDetails', JSON.stringify(pickUpDetails))
+					console.log("form details are captured successfully");
+					console.log(sessionStorage.getItem('pickUpDetails'))
 				}
-			});
 
-			const steps = Array.from(document.getElementsByTagName("fieldset"));
-            const progressBar = Array.from(document.querySelectorAll('#progressbar li'));
-			const nextBtns = document.getElementsByClassName("next-btn");
-			const prevBtns = document.getElementsByClassName("prev-btn");
-			console.log(steps);
-			console.log(nextBtns);
-			console.log(prevBtns);
-            console.log(progressBar);
+				pickUpForm.classList.add('was-validated')
+			}, false)
 
-			//add event listener to cards
-			var catItems = document.getElementsByClassName("cards");
-			for (item of catItems) {
-				item.addEventListener("click", (e) => {
-					changeStep("next");
-				});
-			}
-
-			//add event listener to next button
-			for (nextBtn of nextBtns) {
-				nextBtn.addEventListener("click", (e) => {
-					changeStep("next");
-				});
-			}
-
-			//add event listener to previous button
-			for (prevBtn of prevBtns) {
-				prevBtn.addEventListener("click", (e) => {
-					console.log(this.prevBtn);
-					changeStep("prev");
-				});
-			}
-
-			function changeStep(btn) {
-				console.log(btn);
-				let index = 0;
-				const active = document.querySelector("form fieldset.active");
-				console.log(active);
-				index = steps.indexOf(active);
-				console.log("old page: " + index);
-				steps[index].classList.remove("active");
-				steps[index].classList.add("d-none");
-				if (btn === "next") {
-					index++;
-				} else if (btn === "prev") {
-                    progressBar[index].classList.remove("active");
-					index--;
-				}
-                progressBar[index].classList.add("active");
-				steps[index].classList.remove("d-none");
-				steps[index].classList.add("active");
-				console.log("new page: " + index);
-			}
 		</script>
 
 

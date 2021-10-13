@@ -17,10 +17,10 @@
     z-index: 1;
 }
 
-#progressbar #category:before{
+#progressbar #pick-up:before{
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f793"
+    content: "\f0d1"
 
 }
 
