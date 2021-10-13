@@ -150,6 +150,7 @@
 		<div class="container-md mt-5">
 			<div class="row ">
 				<!-- Form page 1 food category selection -->
+
 				<div class="col-sm-12 text-center p-0 mt-3 mb-2">
 					<div class="card px-0 pt-4 pb-0 my-3">
 						<!-- Form Title [remain constant] -->
@@ -162,11 +163,11 @@
 										<li class="active" id="pick-up">
 											<strong>Pick Up</strong>
 										</li>
-										<li id="food-details">
+										<li class="active" id="food-details">
 											<strong>Donation Details</strong>
 										</li>
-										<li id="partners">
-											<strong>Partners</strong>
+										<li class="active" id="partners">
+											<strong>Donation Type</strong>
 										</li>
 										<li id="availability">
 											<strong>Availability</strong>
@@ -176,178 +177,103 @@
 										</li>
 									</ul>
 
-									<!-- actual forms -->
-
-									<!-- Form page 1 delivery details -->
-									<fieldset class="step step1 active">
-										<div class="row mx-3 mb-0 g-2">
-											<div class="col-lg-12">
+									<!-- Step 3 Donation Type -->
+									<fieldset class="step step3">
+										<div class="row mx-2 mb-3 justify-content-center">
+											<h1 class="fs-3 mb-3"><strong>Pick Up Availability</strong></h1>
+											<div class="col-lg-4">
 												<div class="card mb-3">
 													<h1 class="card-header fs-3">
-														<strong>Enter Contact and Pick Up Details</strong>
+														<strong>Pick Up Availability</strong>
 													</h1>
 													<div class="card-body">
-														<div class="row mx-2 mb-3 g-3 text-start">
-															<div class="col-lg-12 col-md-12 col-sm-12">
-																<div class="row">
-																	<div class="col-lg-6">
-																		<label for="unit" class="form-label fw-bolder">Select Default Contact*</label>
-																	</div>
-																	<div class="col-lg-6 justify-content-end text-end">
-																		<div class="text-success" onclick="addNewCtc()"><strong>+ Add New Contact</strong></div>
-																	</div>
-																</div>
-																
-																<select class="form-select" aria-label="Default Contact"
-																	id="defaultCtc">
-																	<option value="0">New</option>
-																	<option value="1" selected>Edward, Sales Manager (MuffinFactory)</option>
-																	<option value="2">Jack, Production Manager (Muffin Factory)</option>
-																</select>
-															</div>
-															<div class="ms-2 form-check form-check-inline">
-																<input class="form-check-input" id="defCtcCbx" type="checkbox"
-																	name="defCtcCbx" checked />
-																<label class="form-check-label" for="defCtcCbx">Make this contact
-																	default in the future</label>
-															</div>
-															<hr>
-															<div class="col-lg-6 col-md-12">
-																<!-- Name input-->
-																<label for="ctcName" class="form-label"
-																	>Food Donor Contact Name*</label
-																>
-																<input
-																	type="text"
-																	class="form-control"
-																	id="ctcName"
-																	placeholder=""
-																	required
-																/>
-																<div class="invalid-feedback">
-																	Contact Name is required.
-																</div>
-															</div>
-															<div class="col-lg-3 col-md-6 col-sm-12">
-																<!-- Email address input-->
-																<label for="emailAddress" class="form-label">Email Address*</label>
-																<input
-																	type="email"
-																	class="form-control"
-																	id="emailAddress"
-																	placeholder=""
-																	required
-																/>
-																<div class="invalid-feedback">
-																	Email Address is not valid
-																</div>
-															</div>
-															<div class="col-lg-3 col-md-6 col-sm-12">
-																<!-- Mobile number input-->
-																<label for="ctcNo" class="form-label">Contact Number*</label>
-																<div class="input-group">
-																	<span class="input-group-text" id="ctcNo65">+65</span>
-																	<input
-																		type="text"
-																		class="form-control"
-																		placeholder=""
-																		aria-label="Username"
-																		aria-describedby="ctcNo"
-																		id="ctcNo"
-																		required
-																	/>
-																	<div class="invalid-feedback">
-																		Contact Number is required
-																	</div>
-																</div>
-															</div>
-		
+														<div class="row">
 															<div class="col-12">
-																<!-- Company Name input-->
-																<label for="companyName" class="form-label">Company Name*</label>
-																<input
-																	type="text"
-																	class="form-control"
-																	id="companyName"
-																	placeholder=""
-																	required
-																/>
+																<div class="text-muted d-none">Your donation cart is empty</div>
 															</div>
-		
-															<div class="col-lg-6 col-md-12">
-																<label for="address" class="form-label">Pick Up Address*</label>
-																<textarea class="form-control" id="address" rows="1" required></textarea>
-																<div class="invalid-feedback">
-																	Address is required
-																</div>
-															</div>
-	
-															<div class="col-lg-6 col-md-12">
-																<div class="row row-cols-sm-1 row-cols-md-2">
-																	<div class="col">
-																		<label for="unitNo" class="form-label"
-																			>Floor / unit number*</label
-																		>
-																		<input
-																			type="text"
-																			class="form-control"
-																			id="unitNo"
-																			placeholder=""
-																			required
-																		/>
-																		<div class="invalid-feedback">
-																			floor / unit number is required
+															<div class="col-12">
+																<ul class="list-group">
+																	
+																	<li id="donationItem1" class="list-group-item text-start">
+																		<strong class="fs-5">Fresh Orange Juice</strong><br>
+																		<div class="mb-2">5 kg</div>
+																		<div class="mb-2">
+																			Stability of product: Shelf-stable<br>
+																			Shelf-Life: 6 months<br>
+																			Expiry Date: 10/10/21<br>
+																			Production Date: 1/05/21<br>
 																		</div>
-																	</div>
-																	<div class="col">
-																		<!-- Postal code input-->
-																		<label for="postalCode" class="form-label">Postal Code*</label>
-																		<div class="input-group">
-																			<span class="input-group-text" 
-																				>S</span
-																			>
-																			<input
-																				type="text"
-																				class="form-control"
-																				placeholder=""
-																				aria-label="Postal Code"
-																				aria-describedby="postalCode"
-																				id="postalCode"
-																				required
-																			/>
-																			<div class="invalid-feedback">
-																				Postal Code is required
+																		<div class="mb-3">
+																			<a id="add-info-btn-1" href="#" onclick="viewMoreDetails1()">View more details</a>
+																			<div id="additional-info-1" class="mb-3 d-none">
+																				Remarks:<br>
+																				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, voluptate!
 																			</div>
 																		</div>
-																	</div>
-																</div>
+																		<div class="mb-3">
+																			<button id="edit-donation-1" class="edit-btn btn btn-warning">
+																				<i class="bi bi-pencil-square"></i>
+																				Edit
+																			</button>
+																			<button id="remove-donation-1" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeItemModal1">
+																				<i class="bi bi-trash"></i>
+																				Remove
+																			</button>
+																		</div>
+																		
+																	</li>
+																	<li id="donationItem2" class="list-group-item text-start">
+																		<strong class="fs-5">Orange Peels</strong><br>
+																		<div class="mb-2">2 kg</div>
+																		<div class="mb-2">
+																			Stability of product: Shelf-stable<br>
+																			Production Date: 1/05/21<br>
+																		</div>
+																		<div class="mb-3">
+																			<a id="add-info-btn-1" href="#" onclick="viewMoreDetails2()">View more details</a>
+																			<div id="additional-info-2" class="mb-3 d-none">
+																				Remarks:<br>
+																				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, voluptate!
+																			</div>
+																		</div>
+																		<div class="mb-3">
+																			<button id="edit-donation-2" class="edit-btn btn btn-warning">
+																				<i class="bi bi-pencil-square"></i>
+																				Edit
+																			</button>
+																			<button id="remove-donation-2" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeItemModal2">
+																				<i class="bi bi-trash"></i>
+																				Remove
+																			</button>
+																		</div>
+																		
+																	</li>
+																</ul>
 															</div>
-															<div class="col-lg-6 col-md-6 col-sm-12"></div>
 														</div>
+														
+
 													</div>
 												</div>
 											</div>
-											
-											<!-- buttons -->
-										<div class="row mx-2 mb-4">
-											<div class="col-lg-6 col-sm-12 d-grid mb-2">
-												<button onclick="location.href='dashboard.html'" type="button" class="btn btn-light btn-lg prev-btn border-success">
-													Close
-												</button>
-											</div>
-											<div class="col-lg-6 col-sm-12 d-grid mb-2">
-												<button
-													type="submit"
-													class="btn btn-success btn-lg next-btn"
-													id="submitBtn"
-												>
-													Next
-												</button>
+											<div class="col-lg-8">
+												<div class="card mb-3">
+													<h1 class="card-header fs-3">
+														<strong>Select Available Pick Up Time</strong>
+													</h1>
+												</div>
 											</div>
 										</div>
 
+
+										<!-- buttons -->
+										<div class="row mx-2 mb-4 justify-content-center">
+											<div class="col-lg-12 col-sm-12 d-grid mb-2">
+												<button onclick="prevBtn()" type="button" class="btn btn-light btn-lg prev-btn">
+													Previous
+												</button>
+											</div>
 										</div>
-										
 									</fieldset>
 
 									
@@ -359,81 +285,111 @@
 			</div>
 		</div>
 
+		<!-- Modal -->
+		<div class="modal fade" id="removeItemModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">Remove Item</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				  Are you sure you want to remove item?
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-danger" onclick="removeItem(donationItem1)" data-bs-dismiss="modal">Remove</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+		  <div class="modal fade" id="removeItemModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">Remove Item</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				  Are you sure you want to remove item?
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-danger" onclick="removeItem(donationItem2)" data-bs-dismiss="modal">Remove</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
 		<!-- Bootstrap and Propper core JS-->
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
-			crossorigin="anonymous"
-		></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<!-- Core theme JS-->
-		<!-- <script src="/js/scripts.js"></script> !-->
+		<script src="/js/scripts.js"></script> 
 
 
 		<script>
-			const defCtc = document.getElementById("defaultCtc");
-			defCtc.addEventListener('change', selectDefaultCtc);
-			selectDefaultCtc();
+			//get contact details from session
+			console.log(sessionStorage.getItem('pickUpDetails'));
 
-			function selectDefaultCtc(e) {
-				let strUser = defCtc.value;
-				if (strUser == '1') {
-					document.getElementById('ctcName').value = "Edward";
-					document.getElementById('emailAddress').value = "Edward@mfs.com.sg";
-					document.getElementById('ctcNo').value = "97234567";
-					document.getElementById('companyName').value = "Muffin Manufacturing Singapore";
-					document.getElementById('address').value = "123 Manufacturing Road";
-					document.getElementById('unitNo').value = "-";
-					document.getElementById('postalCode').value = "125656";
-				} else if (strUser == '2') {
-					document.getElementById('ctcName').value = "Jack";
-					document.getElementById('emailAddress').value = "Jack@mfs.com.sg";
-					document.getElementById('ctcNo').value = "96124567";
-					document.getElementById('companyName').value = "Muffin Manufacturing Singapore";
-					document.getElementById('address').value = "123 Manufacturing Road";
-					document.getElementById('unitNo').value = "-";
-					document.getElementById('postalCode').value = "125656";
-				} else {
-					document.getElementById('ctcName').value = null;
-					document.getElementById('emailAddress').value = null;
-					document.getElementById('ctcNo').value = null;
-					document.getElementById('companyName').value = null;
-					document.getElementById('address').value = null;
-					document.getElementById('unitNo').value = null;
-					document.getElementById('postalCode').value = null;
-				}
+			//view more details
+			function viewMoreDetails1(){
+				if (document.getElementById("additional-info-1").classList.contains("d-none")){
+					document.getElementById("additional-info-1").classList.remove("d-none")
+				}else{
+					document.getElementById("additional-info-1").classList.add("d-none")
+				}				
+			}
+			function viewMoreDetails2(){
+				if (document.getElementById("additional-info-2").classList.contains("d-none")){
+					document.getElementById("additional-info-2").classList.remove("d-none")
+				}else{
+					document.getElementById("additional-info-2").classList.add("d-none")
+				}				
 			}
 
-			function addNewCtc(){
-				defCtc.value = "0"
-				selectDefaultCtc();
+			//remove donation item
+			function removeItem(donItem){
+				donItem.remove(this);
 			}
 
-			const pickUpForm = document.getElementById("pickUpForm");
-			var pickUpDetails = {};
+			//Previous button
+			function prevBtn(){
+				window.location.href = "donate-type.html"
+			}
 
-			pickUpForm.addEventListener("submit", function(event){
-				event.preventDefault();
-				if (!pickUpForm.checkValidity()){
-					event.preventDefault();
-					event.stopPropagation();
-				} else {
-					pickUpDetails = {
-						ctcName: document.getElementById('ctcName').value,
-						emailAddress: document.getElementById('emailAddress').value,
-						ctcNo: document.getElementById('ctcNo').value,
-						companyName: document.getElementById('companyName').value,
-						address: document.getElementById('address').value,
-						unitNo: document.getElementById('unitNo').value,
-						postalCode: document.getElementById('postalCode').value
-					}
-					sessionStorage.setItem('pickUpDetails', JSON.stringify(pickUpDetails))
-					console.log("form details are captured successfully");
-					console.log(sessionStorage.getItem('pickUpDetails'));
-					window.location.href = "donate-details.html";
-				}
+			function nextBtn(){
+				window.location.href = "donate-type.html"
+			}
 
-				pickUpForm.classList.add('was-validated')
-			}, false)
+			var catItems = document.getElementsByClassName("cards");
+			for (item of catItems) {
+				item.addEventListener("click", (e) => {
+					document.getElementById("food-category").classList.add("d-none");
+					document.getElementById("food-data").classList.remove("d-none");
+				});
+			}
+
+			var editBtns = document.getElementsByClassName("edit-btn");
+			for (editBtn of editBtns) {
+				editBtn.addEventListener("click", (e) => {
+					document.getElementById("food-category").classList.add("d-none");
+					document.getElementById("food-data").classList.remove("d-none");
+				});
+			}
+
+
+			//add event listeners 
+			document.getElementById("food-data-back-btn").addEventListener("click", (e)=>{
+			document.getElementById("food-category").classList.remove("d-none");
+			document.getElementById("food-data").classList.add("d-none");
+			})
+
+			// document.getElementById("food-data-add-btn").addEventListener("click")
+
+			
+
+
 
 		</script>
 
