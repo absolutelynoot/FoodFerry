@@ -25,11 +25,42 @@
 		<link href="css/home-nav.css" rel="stylesheet" />
 		<link href="css/donate.css" rel="stylesheet" />
 
-		<!-- jQuery -->
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-		></script>
+		<!-- full calendar -->
+		<link rel="stylesheet" href="fullcalendar/main.css" />
+		<script src="fullcalendar/main.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				var calendarEl = document.getElementById('calendar');
+				var calendar = new FullCalendar.Calendar(calendarEl, {
+					schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+					initialView: 'dayGridMonth',
+					selectable: true,
+					themeSystem: 'standard',
+					showNonCurrentDates: false,
+					contentHeight: 500,
+					events: [
+							{
+								start: '2021-10-04',
+								end: '2021-10-07',
+								display: 'background',
+								color: 'red'
+							}
+						],
+					dateClick: function (info) {
+						// alert('Clicked on: ' + info.dateStr);
+						// alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
+						// alert('Current view: ' + info.view.type);
+						// change the day's background color just for fun
+						info.dayEl.style.backgroundColor = 'red';
+						
+					}
+					
+				});
+				calendar.render();
+			});
+		</script>
 
+		<!-- bootstrap -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	</head>
 
@@ -184,23 +215,141 @@
 											<div class="col-lg-4">
 												<div class="card mb-3">
 													<h5 class="card-header">
-														Donation
+														Contact and Pick Up Details
 													</h5>
-													<div class="card-body">
+													<div class="card-body text-start">
+														<div class="row">
+															<div class="col-12">
+																<div class="form-floating mb-3">
+																	<input type="text" class="form-control" id="ctcName" placeholder="Your name here.." value="Edward" readonly>
+																	<label for="ctcName">Food Donor Contact Name</label>
+																</div>
+															</div>
+															<div class="col-lg-6 col-sm-12">
+																<div class="form-floating mb-3">
+																	<input type="email" class="form-control" id="emailAddress" placeholder="Email here.." value="Edward@mfs.com.sg" readonly>
+																	<label for="emailAddress">Email Address</label>
+																</div>
+															</div>
+															<div class="col-lg-6 col-sm-12">
+																<div class="form-floating mb-3">
+																	<input
+																		type="text"
+																		class="form-control"
+																		placeholder=""
+																		aria-label="Username"
+																		aria-describedby="ctcNo"
+																		id="ctcNo"
+																		value = "97234567"
+																		required
+																		readonly
+																	/>
+																	<label for="ctcNo">Contact No</label>
+																</div>
+															</div>
+															<div class="col-12">
+																<div class="form-floating mb-3">
+																	<input type="text" class="form-control" id="companyName" placeholder="Company name here.." value="Muffin Manufacturing Singapore" readonly>
+																	<label for="companyName">Company Name</label>
+																</div>
+															</div>
+															<div class="col-12">
+																<div class="form-floating mb-3">
+																	<textarea class="form-control" id="address" rows="1" required readonly>123 Singapore Manufacturing Road</textarea>
+																	<label for="address">Company Name</label>
+																</div>
+															</div>
+															<div class="col-12">
+																<div class="form-floating mb-3">
+																	<input type="text" class="form-control" id="unitNo" placeholder="Company name here.." value="-" readonly>
+																	<label for="unitNo">Floor / Unit No</label>
+																</div>
+															</div>
+															<div class="col-12">
+																<div class="form-floating mb-3">
+																	
+																	<input type="text" class="form-control" id="postalCode" placeholder="Postal Code.." value="Singapore 125656" readonly>
+																	<label for="postalCode">Postal Code</label>
+																</div>
+															</div>
 
+														</div>
 													</div>
+													
+													
 												</div>
 											</div>
-											<div class="col-lg-4">
+											<div class="col-lg-8">
 												<div class="card mb-3">
 													<h5 class="card-header">
-														Contact and Pick Up Location
+														Pick Up Availability
 													</h5>
 													<div class="card-body">
-
+														<div id='calendar'>
+														</div>
 													</div>
 												</div>
 											</div>
+											<div class="col-lg-12">
+												<div class="card mb-3">
+													<h5 class="card-header">
+														Donation Cart
+													</h5>
+													<div class="card-body table-responsive">
+														<table class="table table-hover align-middle">
+															<thead>
+																<tr>
+																  <th scope="col">#</th>
+																  <th scope="col">Category</th>
+																  <th scope="col">Name</th>
+																  <th scope="col">Quantity</th>
+																  <th scope="col">Stability</th>
+																  <th scope="col">Production Date</th>
+																  <th scope="col">Expiry Date</th>
+																  <th scope="col">File</th>
+																  <th scope="col">Edit</th>
+																  <th scope="col">Remove</th>
+																</tr>
+															  </thead>
+															  <tbody>
+																<tr>
+																  <th scope="row">1</th>
+																  <td>Non-Perishable</td>
+																  <td>Orange Juice</td>
+																  <td>5 litres</td>
+																  <td>Shelf-stable</td>
+																  <td>5/6/2021</td>
+																  <td>1/12/2021</td>
+																  <td>
+																	<button type="button" class="btn btn-light">
+																		<i class="bi bi-file-earmark-image"></i>
+																	</button>
+																	
+																  </td>
+																  <td>
+																	<button type="button"  id="edit-donation-1" class="edit-btn btn btn-warning">
+																		<i class="bi bi-pencil-square"></i>
+																		Edit
+																	</button>
+																	
+																  </td>
+																  <td>
+																	<button type="button"  id="remove-donation-1" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeItemModal1">
+																		<i class="bi bi-trash"></i>
+																		Remove
+																	</button>
+																  </td>
+																</tr>
+																
+															  </tbody>
+														</table>
+													</div>
+														
+
+												</div>
+											</div>
+											
+											
 										</div>
 
 
