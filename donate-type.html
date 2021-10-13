@@ -301,65 +301,17 @@
 		<!-- Bootstrap and Propper core JS-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<!-- Core theme JS-->
-		<script src="/js/scripts.js"></script> 
+		<!-- <script src="/js/scripts.js"></script>  -->
 
 
 		<script>
 			//get contact details from session
 			console.log(sessionStorage.getItem('pickUpDetails'));
 
-			//view more details
-			function viewMoreDetails1(){
-				if (document.getElementById("additional-info-1").classList.contains("d-none")){
-					document.getElementById("additional-info-1").classList.remove("d-none")
-				}else{
-					document.getElementById("additional-info-1").classList.add("d-none")
-				}				
-			}
-			function viewMoreDetails2(){
-				if (document.getElementById("additional-info-2").classList.contains("d-none")){
-					document.getElementById("additional-info-2").classList.remove("d-none")
-				}else{
-					document.getElementById("additional-info-2").classList.add("d-none")
-				}				
-			}
-
-			//remove donation item
-			function removeItem(donItem){
-				donItem.remove(this);
-			}
-
 			//Previous button
 			function prevBtn(){
 				window.location.href = "donate-details.html"
 			}
-
-			function nextBtn(){
-				window.location.href = "donate-type.html"
-			}
-
-			var catItems = document.getElementsByClassName("cards");
-			for (item of catItems) {
-				item.addEventListener("click", (e) => {
-					document.getElementById("food-category").classList.add("d-none");
-					document.getElementById("food-data").classList.remove("d-none");
-				});
-			}
-
-			var editBtns = document.getElementsByClassName("edit-btn");
-			for (editBtn of editBtns) {
-				editBtn.addEventListener("click", (e) => {
-					document.getElementById("food-category").classList.add("d-none");
-					document.getElementById("food-data").classList.remove("d-none");
-				});
-			}
-
-
-			//add event listeners 
-			document.getElementById("food-data-back-btn").addEventListener("click", (e)=>{
-			document.getElementById("food-category").classList.remove("d-none");
-			document.getElementById("food-data").classList.add("d-none");
-			})
 
 			// document.getElementById("food-data-add-btn").addEventListener("click")
 
