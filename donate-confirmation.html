@@ -31,17 +31,16 @@
 				showNonCurrentDates: false,
 				contentHeight: 500,
 				events: [{
+					title: 'Orange Peels, 5kg donation',
 					start: '2021-10-04',
 					end: '2021-10-07',
-					display: 'background',
+					display: 'block',
 					color: 'red'
 				}],
 				dateClick: function (info) {
-					// alert('Clicked on: ' + info.dateStr);
-					// alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-					// alert('Current view: ' + info.view.type);
+					alert('Clicked on: ' + info.dateStr);
 					// change the day's background color just for fun
-					info.dayEl.style.backgroundColor = 'red';
+					// info.dayEl.style.backgroundColor = 'red';
 
 				}
 
