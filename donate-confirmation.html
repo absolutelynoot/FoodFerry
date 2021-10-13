@@ -211,57 +211,57 @@
 												<div class="row">
 													<div class="col-12">
 														<div class="form-floating mb-3">
-															<input type="text" class="form-control" id="ctcName"
+															<input type="text" class="form-control" id="ctcName2"
 																placeholder="Your name here.." value="Edward" readonly>
-															<label for="ctcName">Food Donor Contact Name</label>
+															<label for="ctcName2">Food Donor Contact Name</label>
 														</div>
 													</div>
 													<div class="col-lg-6 col-sm-12">
 														<div class="form-floating mb-3">
-															<input type="email" class="form-control" id="emailAddress"
+															<input type="email" class="form-control" id="emailAddress2"
 																placeholder="Email here.." value="Edward@mfs.com.sg"
 																readonly>
-															<label for="emailAddress">Email Address</label>
+															<label for="emailAddress2">Email Address</label>
 														</div>
 													</div>
 													<div class="col-lg-6 col-sm-12">
 														<div class="form-floating mb-3">
 															<input type="text" class="form-control" placeholder=""
-																aria-label="Username" aria-describedby="ctcNo"
+																aria-label="Username" aria-describedby="ctcNo2"
 																id="ctcNo" value="97234567" required readonly />
-															<label for="ctcNo">Contact No</label>
+															<label for="ctcNo2">Contact No</label>
 														</div>
 													</div>
 													<div class="col-12">
 														<div class="form-floating mb-3">
-															<input type="text" class="form-control" id="companyName"
+															<input type="text" class="form-control" id="companyName2"
 																placeholder="Company name here.."
 																value="Muffin Manufacturing Singapore" readonly>
-															<label for="companyName">Company Name</label>
+															<label for="companyName2">Company Name</label>
 														</div>
 													</div>
 													<div class="col-12">
 														<div class="form-floating mb-3">
-															<textarea class="form-control" id="address" rows="1"
+															<textarea class="form-control" id="address2" rows="1"
 																required
 																readonly>123 Singapore Manufacturing Road</textarea>
-															<label for="address">Company Name</label>
+															<label for="address2">Adress</label>
 														</div>
 													</div>
 													<div class="col-lg-6 col-sm-12">
 														<div class="form-floating mb-3">
-															<input type="text" class="form-control" id="unitNo"
+															<input type="text" class="form-control" id="unitNo2"
 																placeholder="Company name here.." value="-" readonly>
-															<label for="unitNo">Floor / Unit No</label>
+															<label for="unitNo2">Floor / Unit No</label>
 														</div>
 													</div>
 													<div class="col-lg-6 col-sm-12">
 														<div class="form-floating mb-3">
 
-															<input type="text" class="form-control" id="postalCode"
+															<input type="text" class="form-control" id="postalCode2"
 																placeholder="Postal Code.." value="Singapore 125656"
 																readonly>
-															<label for="postalCode">Postal Code</label>
+															<label for="postalCode2">Postal Code</label>
 														</div>
 													</div>
 													<div class="col-12 d-grid">
@@ -618,6 +618,12 @@
 			document.getElementById('postalCode').value = null;
 		}
 	}
+
+	function addNewCtc(){
+		defCtc.value = "0"
+		selectDefaultCtc();
+	}
+
 </script>
 
 
