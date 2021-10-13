@@ -259,20 +259,25 @@
 																	<label for="address">Company Name</label>
 																</div>
 															</div>
-															<div class="col-12">
+															<div class="col-lg-6 col-sm-12">
 																<div class="form-floating mb-3">
 																	<input type="text" class="form-control" id="unitNo" placeholder="Company name here.." value="-" readonly>
 																	<label for="unitNo">Floor / Unit No</label>
 																</div>
 															</div>
-															<div class="col-12">
+															<div class="col-lg-6 col-sm-12">
 																<div class="form-floating mb-3">
 																	
 																	<input type="text" class="form-control" id="postalCode" placeholder="Postal Code.." value="Singapore 125656" readonly>
 																	<label for="postalCode">Postal Code</label>
 																</div>
 															</div>
-
+															<div class="col-12 d-grid">
+																<button type="button"  id="edit-donation-2" class="edit-btn btn btn-warning" data-bs-toggle="modal" data-bs-target="#editContact">
+																	<i class="bi bi-pencil-square"></i>
+																	Edit Contact and Pick Up Details
+																</button>
+															</div>
 														</div>
 													</div>
 													
@@ -409,6 +414,173 @@
 				<div class="modal-footer">
 				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 				  <button type="button" class="btn btn-danger" onclick="removeItem(donationItem2)" data-bs-dismiss="modal">Remove</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+		  <div class="modal fade" id="editContact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-xl">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">Edit Contact Details</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row mx-3 mb-0 g-2">
+						<div class="col-lg-12">
+							<div class="card mb-3">
+								<h1 class="card-header fs-3">
+									<strong>Enter Contact and Pick Up Details</strong>
+								</h1>
+								<div class="card-body">
+									<div class="row mx-2 mb-3 g-3 text-start">
+										<div class="col-lg-12 col-md-12 col-sm-12">
+											<div class="row">
+												<div class="col-lg-6">
+													<label for="unit" class="form-label fw-bolder">Select Default Contact*</label>
+												</div>
+												<div class="col-lg-6 justify-content-end text-end">
+													<div class="text-success" onclick="addNewCtc()"><strong>+ Add New Contact</strong></div>
+												</div>
+											</div>
+											
+											<select class="form-select" aria-label="Default Contact"
+												id="defaultCtc">
+												<option value="0">New</option>
+												<option value="1" selected>Edward, Sales Manager (MuffinFactory)</option>
+												<option value="2">Jack, Production Manager (Muffin Factory)</option>
+											</select>
+										</div>
+										<div class="ms-2 form-check form-check-inline">
+											<input class="form-check-input" id="defCtcCbx" type="checkbox"
+												name="defCtcCbx" checked />
+											<label class="form-check-label" for="defCtcCbx">Make this contact
+												default in the future</label>
+										</div>
+										<hr>
+										<div class="col-lg-6 col-md-12">
+											<!-- Name input-->
+											<label for="ctcName" class="form-label"
+												>Food Donor Contact Name*</label
+											>
+											<input
+												type="text"
+												class="form-control"
+												id="ctcName"
+												placeholder=""
+												required
+											/>
+											<div class="invalid-feedback">
+												Contact Name is required.
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-6 col-sm-12">
+											<!-- Email address input-->
+											<label for="emailAddress" class="form-label">Email Address*</label>
+											<input
+												type="email"
+												class="form-control"
+												id="emailAddress"
+												placeholder=""
+												required
+											/>
+											<div class="invalid-feedback">
+												Email Address is not valid
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-6 col-sm-12">
+											<!-- Mobile number input-->
+											<label for="ctcNo" class="form-label">Contact Number*</label>
+											<div class="input-group">
+												<span class="input-group-text" id="ctcNo65">+65</span>
+												<input
+													type="text"
+													class="form-control"
+													placeholder=""
+													aria-label="Username"
+													aria-describedby="ctcNo"
+													id="ctcNo"
+													required
+												/>
+												<div class="invalid-feedback">
+													Contact Number is required
+												</div>
+											</div>
+										</div>
+
+										<div class="col-12">
+											<!-- Company Name input-->
+											<label for="companyName" class="form-label">Company Name*</label>
+											<input
+												type="text"
+												class="form-control"
+												id="companyName"
+												placeholder=""
+												required
+											/>
+										</div>
+
+										<div class="col-lg-6 col-md-12">
+											<label for="address" class="form-label">Pick Up Address*</label>
+											<textarea class="form-control" id="address" rows="1" required></textarea>
+											<div class="invalid-feedback">
+												Address is required
+											</div>
+										</div>
+
+										<div class="col-lg-6 col-md-12">
+											<div class="row row-cols-sm-1 row-cols-md-2">
+												<div class="col">
+													<label for="unitNo" class="form-label"
+														>Floor / unit number*</label
+													>
+													<input
+														type="text"
+														class="form-control"
+														id="unitNo"
+														placeholder=""
+														required
+													/>
+													<div class="invalid-feedback">
+														floor / unit number is required
+													</div>
+												</div>
+												<div class="col">
+													<!-- Postal code input-->
+													<label for="postalCode" class="form-label">Postal Code*</label>
+													<div class="input-group">
+														<span class="input-group-text" 
+															>S</span
+														>
+														<input
+															type="text"
+															class="form-control"
+															placeholder=""
+															aria-label="Postal Code"
+															aria-describedby="postalCode"
+															id="postalCode"
+															required
+														/>
+														<div class="invalid-feedback">
+															Postal Code is required
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+						
+
+					</div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-success" onclick="saveContact(ctcDetails)" data-bs-dismiss="modal">Save</button>
 				</div>
 			  </div>
 			</div>
