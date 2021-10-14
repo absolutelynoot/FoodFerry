@@ -411,8 +411,13 @@
                                                     <li class="list-group-item">
                                                         <div class="row">
                                                             <div class="col d-grid">
-                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(upcomingDelivery1)>
+                                                                <button class="btn btn-danger my-1" onclick=cancelConfirm(upcomingDelivery1)>
                                                                     <i class="bi bi-x me-1"></i>Cancel
+                                                                </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deliveredConfirm(upcomingDelivery1)>
+                                                                    <i class="bi bi-check2" ></i>Delivered
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -456,9 +461,15 @@
                                                     <li class="list-group-item">
                                                         <div class="row">
                                                             <div class="col d-grid">
-                                                                <button class="btn btn-danger my-1" onclick=declineConfirm(upcomingDelivery2)>
+                                                                <button class="btn btn-danger my-1" onclick=cancelConfirm(upcomingDelivery2)>
                                                                     <i class="bi bi-x me-1"></i>Cancel
                                                                 </button>
+                                                            </div>
+                                                            <div class="col-lg-6 col-sm-12 d-sm-grid">
+                                                                <button class="btn btn-success my-1" onclick=deliveredConfirm(upcomingDelivery2)>
+                                                                    <i class="bi bi-check2" ></i>Delivered
+                                                                </button>
+                                                            </div>
                                                             </div>
                                                         </div>
                                                     <li class="list-group-item">
@@ -624,6 +635,16 @@
         if (confirm("Do you want to decline this delivery?")) {
             deleteDelivery(delivery); 
         } 
+    }
+
+    function cancelConfirm(delivery){
+        if (confirm("Do you want to cancel this delivery?")) {
+            deleteDelivery(delivery); 
+        } 
+    }
+
+    function deliveredConfirm(delivery){
+        deleteDelivery(delivery);
     }
 
 </script>
