@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>FoodFerry - Donate</title>
+		<!-- Favicon-->
+		<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+		<!-- Bootstrap icons-->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+		<!-- Font Awesome -->
+		<script
+			src="https://kit.fontawesome.com/f20ebef500.js"
+			crossorigin="anonymous"
+		></script>
+		<!-- Core theme CSS (includes Bootstrap)-->
+		<link href="css/donate.css" rel="stylesheet" />
+		<link href="css/home-nav.css" rel="stylesheet" />
+
+		<!-- jQuery -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+		></script>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	</head>
+
+	
+	<header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand px-3 fw-bolder fs-2" href="./index.html" style="color:#7ED7D3">FoodFerry</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav mb-2 mb-md-0">
+                        <!-- Notifications-->
+                        <li>
+                            <!-- Notifications button -->
+                            <button id="notifDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                                </svg>
+                            </button>
+
+                            <!-- Notification dropdown -->
+                            <ul class="dropdown-menu" id="notifDropdownList">
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 1</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 2</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 3</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 4</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 5</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 6</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 7</p>
+                                        <p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+                                    </a></li>
+                                <li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+                                        class="navDropdownItem">
+                                        <p class="mb-0 mx-3 my-0 text-left">Notification 8</p>
+                                        <p class="text-mx-3 my-0 text-end notifTime"><small>Time</small></p>
+                                    </a></li>
+
+                            </ul>
+                        </li>
+
+                        <!-- User settings -->
+                        <li>
+                            <!-- User button-->
+                            <button id="userDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg id="userSvg" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                            </button>
+
+                            <!-- User dropdown -->
+                            <ul class="dropdown-menu" id="userDropdownList">
+                                <li class="navDropdownListItem"><a href="./profile.html" class="navDropdownItem">
+                                    User Profile</a></li>
+                                <li class="navDropdownListItem"><a href="./settings.html" class="navDropdownItem">
+                                    Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li class="navDropdownListItem"><a href="./index.html" class="navDropdownItem">
+                                    Log Out</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+            </div>
+        </nav>
+
+    </header>
+
+		<div class="container-md mt-5">
+			<div class="row ">
+				<!-- Form page 1 food category selection -->
+				<div class="col-sm-12 text-center p-0 mt-3 mb-2">
+					<div class="card px-0 pt-4 pb-0 my-3">
+						<!-- Form Title [remain constant] -->
+						<h2 class="mb-4 fs-1"><strong>Donate Food Waste</strong></h2>
+						<div class="row">
+							<div class="col-md-12">
+								<form class="needs-validation" id="pickUpForm" novalidate>
+									<!-- Progress Bar -->
+									<ul id="progressbar" class='p-0'>
+										<li class="active" id="food-details">
+											<strong>Donation Details</strong>
+										</li>
+										<li class="active" id="pick-up">
+											<strong>Pick Up</strong>
+										</li>
+										<li id="type">
+											<strong>Donation Type</strong>
+										</li>
+										<li id="availability">
+											<strong>Availability</strong>
+										</li>
+										<li id="confirmation">
+											<strong>Confirmation</strong>
+										</li>
+									</ul>
+
+									<!-- actual forms -->
+
+									<!-- Form page 1 delivery details -->
+									<fieldset class="step step1 active">
+										<div class="row mx-3 mb-0 g-2">
+											<div class="col-lg-12">
+												<div class="card mb-3">
+													<h1 class="card-header fs-3">
+														<strong>Enter Contact and Pick Up Details</strong>
+													</h1>
+													<div class="card-body">
+														<div class="row mx-2 mb-3 g-3 text-start">
+															<div class="col-lg-12 col-md-12 col-sm-12">
+																<div class="row">
+																	<div class="col-lg-6">
+																		<label for="unit" class="form-label fw-bolder">Select Default Contact*</label>
+																	</div>
+																	<div class="col-lg-6 justify-content-end text-end">
+																		<div class="text-success" onclick="addNewCtc()"><strong>+ Add New Contact</strong></div>
+																	</div>
+																</div>
+																
+																<select class="form-select" aria-label="Default Contact"
+																	id="defaultCtc">
+																	<option value="0">New</option>
+																	<option value="1" selected>Edward, Sales Manager (MuffinFactory)</option>
+																	<option value="2">Jack, Production Manager (Muffin Factory)</option>
+																</select>
+															</div>
+															<div class="ms-2 form-check form-check-inline">
+																<input class="form-check-input" id="defCtcCbx" type="checkbox"
+																	name="defCtcCbx" checked />
+																<label class="form-check-label" for="defCtcCbx">Make this contact
+																	default in the future</label>
+															</div>
+															<hr>
+															<div class="col-lg-6 col-md-12">
+																<!-- Name input-->
+																<label for="ctcName" class="form-label"
+																	>Food Donor Contact Name*</label
+																>
+																<input
+																	type="text"
+																	class="form-control"
+																	id="ctcName"
+																	placeholder=""
+																	required
+																/>
+																<div class="invalid-feedback">
+																	Contact Name is required.
+																</div>
+															</div>
+															<div class="col-lg-3 col-md-6 col-sm-12">
+																<!-- Email address input-->
+																<label for="emailAddress" class="form-label">Email Address*</label>
+																<input
+																	type="email"
+																	class="form-control"
+																	id="emailAddress"
+																	placeholder=""
+																	required
+																/>
+																<div class="invalid-feedback">
+																	Email Address is not valid
+																</div>
+															</div>
+															<div class="col-lg-3 col-md-6 col-sm-12">
+																<!-- Mobile number input-->
+																<label for="ctcNo" class="form-label">Contact Number*</label>
+																<div class="input-group">
+																	<span class="input-group-text" id="ctcNo65">+65</span>
+																	<input
+																		type="text"
+																		class="form-control"
+																		placeholder=""
+																		aria-label="Username"
+																		aria-describedby="ctcNo"
+																		id="ctcNo"
+																		required
+																	/>
+																	<div class="invalid-feedback">
+																		Contact Number is required
+																	</div>
+																</div>
+															</div>
+		
+															<div class="col-12">
+																<!-- Company Name input-->
+																<label for="companyName" class="form-label">Company Name*</label>
+																<input
+																	type="text"
+																	class="form-control"
+																	id="companyName"
+																	placeholder=""
+																	required
+																/>
+															</div>
+		
+															<div class="col-lg-6 col-md-12">
+																<label for="address" class="form-label">Pick Up Address*</label>
+																<textarea class="form-control" id="address" rows="1" required></textarea>
+																<div class="invalid-feedback">
+																	Address is required
+																</div>
+															</div>
+	
+															<div class="col-lg-6 col-md-12">
+																<div class="row row-cols-sm-1 row-cols-md-2">
+																	<div class="col">
+																		<label for="unitNo" class="form-label"
+																			>Floor / unit number*</label
+																		>
+																		<input
+																			type="text"
+																			class="form-control"
+																			id="unitNo"
+																			placeholder=""
+																			required
+																		/>
+																		<div class="invalid-feedback">
+																			floor / unit number is required
+																		</div>
+																	</div>
+																	<div class="col">
+																		<!-- Postal code input-->
+																		<label for="postalCode" class="form-label">Postal Code*</label>
+																		<div class="input-group">
+																			<span class="input-group-text" 
+																				>S</span
+																			>
+																			<input
+																				type="text"
+																				class="form-control"
+																				placeholder=""
+																				aria-label="Postal Code"
+																				aria-describedby="postalCode"
+																				id="postalCode"
+																				required
+																			/>
+																			<div class="invalid-feedback">
+																				Postal Code is required
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<!-- buttons -->
+										<div class="row mx-2 mb-4">
+											<div class="col-lg-6 col-sm-12 d-grid mb-2">
+												<button onclick="prevBtn()" type="button" class="btn btn-light btn-lg prev-btn border-success">
+													Previous
+												</button>
+											</div>
+											<div class="col-lg-6 col-sm-12 d-grid mb-2">
+												<button
+													type="submit"
+													class="btn btn-success btn-lg next-btn"
+													id="submitBtn"
+												>
+													Next
+												</button>
+											</div>
+										</div>
+
+										</div>
+										
+									</fieldset>
+
+									
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bootstrap and Propper core JS-->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+			crossorigin="anonymous"
+		></script>
+		<!-- Core theme JS-->
+		<!-- <script src="/js/scripts.js"></script> !-->
+
+
+		<script>
+			const defCtc = document.getElementById("defaultCtc");
+			defCtc.addEventListener('change', selectDefaultCtc);
+			selectDefaultCtc();
+
+			function selectDefaultCtc(e) {
+				let strUser = defCtc.value;
+				if (strUser == '1') {
+					document.getElementById('ctcName').value = "Edward";
+					document.getElementById('emailAddress').value = "Edward@mfs.com.sg";
+					document.getElementById('ctcNo').value = "97234567";
+					document.getElementById('companyName').value = "Muffin Manufacturing Singapore";
+					document.getElementById('address').value = "123 Manufacturing Road";
+					document.getElementById('unitNo').value = "-";
+					document.getElementById('postalCode').value = "125656";
+				} else if (strUser == '2') {
+					document.getElementById('ctcName').value = "Jack";
+					document.getElementById('emailAddress').value = "Jack@mfs.com.sg";
+					document.getElementById('ctcNo').value = "96124567";
+					document.getElementById('companyName').value = "Muffin Manufacturing Singapore";
+					document.getElementById('address').value = "123 Manufacturing Road";
+					document.getElementById('unitNo').value = "-";
+					document.getElementById('postalCode').value = "125656";
+				} else {
+					document.getElementById('ctcName').value = null;
+					document.getElementById('emailAddress').value = null;
+					document.getElementById('ctcNo').value = null;
+					document.getElementById('companyName').value = null;
+					document.getElementById('address').value = null;
+					document.getElementById('unitNo').value = null;
+					document.getElementById('postalCode').value = null;
+				}
+			}
+
+			function addNewCtc(){
+				defCtc.value = "0"
+				selectDefaultCtc();
+			}
+
+			//Previous button
+			function prevBtn(){
+				window.location.href = "donate-details.html"
+			}
+
+			const pickUpForm = document.getElementById("pickUpForm");
+			var pickUpDetails = {};
+
+			pickUpForm.addEventListener("submit", function(event){
+				event.preventDefault();
+				if (!pickUpForm.checkValidity()){
+					event.preventDefault();
+					event.stopPropagation();
+				} else {
+					pickUpDetails = {
+						ctcName: document.getElementById('ctcName').value,
+						emailAddress: document.getElementById('emailAddress').value,
+						ctcNo: document.getElementById('ctcNo').value,
+						companyName: document.getElementById('companyName').value,
+						address: document.getElementById('address').value,
+						unitNo: document.getElementById('unitNo').value,
+						postalCode: document.getElementById('postalCode').value
+					}
+					sessionStorage.setItem('pickUpDetails', JSON.stringify(pickUpDetails))
+					console.log("form details are captured successfully");
+					console.log(sessionStorage.getItem('pickUpDetails'));
+					window.location.href = "donate-type.html";
+				}
+
+				pickUpForm.classList.add('was-validated')
+			}, false)
+
+		</script>
+
+
+	</body>
+</html>

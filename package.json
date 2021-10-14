@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "bootstrap": "^5.1.1"
+    "bootstrap": "^5.1.1",
+    "fullcalendar-scheduler": "^5.9.0"
   }
 }
