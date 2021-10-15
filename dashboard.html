@@ -414,17 +414,72 @@
                                                     <li class="list-group-item">
                                                         <div class="row">
                                                             <div class="col d-grid">
-                                                                <button id="upcomingCancel1" class="btn btn-danger my-1" onclick=getModal(upcomingModal1,upcomingCancel1,upcomingClose1)>
+                                                                <button id="upcomingCancel1" class="btn btn-danger my-1" data-toggle="modal" data-target="#upcomingModal1">
                                                                     <i class="bi bi-x me-1"></i>Cancel
-                                                                    
-                                                                    <!-- Modal -->
-                                                                    <div id="upcomingModal1" class="modal" >
-                                                                        <div class="modal-content">
-                                                                          <span id="upcomingClose1" class="close">&times;</span>
-                                                                          <p>Do you want to cancel this delivery?</p>
-                                                                        </div>
-                                                                      </div>
                                                                 </button>
+
+                                                                <div id="upcomingModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="upcomingModalHeader1" aria-hidden="true">
+                                                                    <div class="dialog-content" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="upcomingModalHeader1">Cancel delivery</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true"><i class="bi bi-x me-1"></i></span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                Do you want to cancel this delivery?
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                                                                <button type="button" class="btn btn-primary">Yes</button>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    
+                                                                        <!--
+                                                                        <div id="upcomingClose1" class="close">
+                                                                        <i class="bi bi-x"></i>
+                                                                        </div>
+                                                                        <p>Do you want to cancel this delivery?</p>
+                                                                        <div class="modalBtnGroup">
+                                                                        <div class="btn btn-secondary modalChoice modalNo">No</div>
+                                                                        <div class="btn btn-primary modalChoice modalYes">Yes</div>
+
+                                                                        </div>
+                                                                        -->
+
+                                                                </div>
+
+
+                                                                <!-- Button trigger modal 
+                                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                                    Launch demo modal
+                                                                </button>
+                                                                
+                                                                <!-- Modal 
+                                                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                        ...
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                                -->
                                                             </div>
 
                                                             <div class="col-lg-6 col-sm-12 d-sm-grid">
@@ -703,6 +758,8 @@
 </script>
 
 
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!-- Bootstrap and Propper core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"

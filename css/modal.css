@@ -1,6 +1,5 @@
  /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -25,7 +24,7 @@
 /* The Close Button */
 .close {
     color: #aaa;
-    float: right;
+    text-align: right;
     font-size: 28px;
     font-weight: bold;
 }
@@ -36,3 +35,20 @@
     text-decoration: none;
     cursor: pointer;
 } 
+
+.modalBtnGrp{
+    align-items: end;
+}
+.modalChoice{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.modalYes{
+    width: 20%;
+
+}
+
+.modalNo{
+    width: 15%
+}
