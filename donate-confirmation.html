@@ -31,12 +31,28 @@
 				showNonCurrentDates: false,
 				contentHeight: 500,
 				events: [{
-					title: 'Orange Peels, 5kg donation',
+					title: 'Orange Peels, 5kg',
 					start: '2021-10-04',
 					end: '2021-10-07',
 					display: 'block',
 					color: 'red'
-				}],
+				},
+				{
+					title: 'Orange Peels, 2kg',
+					start: '2021-11-22',
+					end: '2021-11-25',
+					display: 'block',
+					color: 'red'
+				},
+				{
+					title: 'Orange Peels, 2kg',
+					start: '2021-11-26',
+					end: '2021-11-27',
+					display: 'block',
+					color: 'red'
+				}
+			
+			],
 				dateClick: function (info) {
 					alert('Clicked on: ' + info.dateStr);
 					// change the day's background color just for fun
@@ -204,7 +220,7 @@
 									<div class="col-lg-4">
 										<div class="card mb-3">
 											<h5 class="card-header">
-												Contact and Pick Up Details
+												<strong>Contact and Pick Up Details</strong>
 											</h5>
 											<div class="card-body text-start">
 												<div class="row">
@@ -218,7 +234,7 @@
 													<div class="col-lg-6 col-sm-12">
 														<div class="form-floating mb-3">
 															<input type="email" class="form-control" id="emailAddress2"
-																placeholder="Email here.." value="Edward@mfs.com.sg"
+																placeholder="Email here.." value="Edward@mks.com.sg"
 																readonly>
 															<label for="emailAddress2">Email Address</label>
 														</div>
@@ -235,7 +251,7 @@
 														<div class="form-floating mb-3">
 															<input type="text" class="form-control" id="companyName2"
 																placeholder="Company name here.."
-																value="Muffin Manufacturing Singapore" readonly>
+																value="Moonkist Pte Ltd" readonly>
 															<label for="companyName2">Company Name</label>
 														</div>
 													</div>
@@ -280,7 +296,10 @@
 									<div class="col-lg-8">
 										<div class="card mb-3">
 											<h5 class="card-header">
-												Pick Up Availability
+												<strong>Calendar Overview</strong><span class="mx-2 fs-6">
+													<i class="bi bi-info-circle-fill text-primary"
+														data-bs-toggle="tooltip" data-bs-placement="top"
+														title="Calendar overview shows your current schedule and availability based on your listing activities"></i></span>
 											</h5>
 											<div class="card-body">
 												<div id='calendar'>
@@ -312,12 +331,12 @@
 													<tbody>
 														<tr>
 															<th scope="row">1</th>
-															<td>Non-Perishable</td>
-															<td>Orange Juice</td>
-															<td>5 litres</td>
-															<td>Shelf-stable</td>
+															<td>Fruits and Vegetable Peels</td>
+															<td>Orange Peels</td>
+															<td>2 Kg</td>
+															<td>-</td>
 															<td>5/6/2021</td>
-															<td>1/12/2021</td>
+															<td>-</td>
 															<td>
 																<button type="button" class="btn btn-light">
 																	<i class="bi bi-file-earmark-image"></i>
@@ -573,7 +592,7 @@
 	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
 <!-- Core theme JS-->
-<!-- <script src="/js/scripts.js"></script>  -->
+<script src="/js/scripts.js"></script> 
 
 
 <script>
@@ -593,17 +612,17 @@
 		let strUser = defCtc.value;
 		if (strUser == '1') {
 			document.getElementById('ctcName').value = "Edward";
-			document.getElementById('emailAddress').value = "Edward@mfs.com.sg";
+			document.getElementById('emailAddress').value = "Edward@mks.com.sg";
 			document.getElementById('ctcNo').value = "97234567";
-			document.getElementById('companyName').value = "Muffin Manufacturing Singapore";
+			document.getElementById('companyName').value = "Moonkist Pte Ltd";
 			document.getElementById('address').value = "123 Manufacturing Road";
 			document.getElementById('unitNo').value = "-";
 			document.getElementById('postalCode').value = "125656";
 		} else if (strUser == '2') {
 			document.getElementById('ctcName').value = "Jack";
-			document.getElementById('emailAddress').value = "Jack@mfs.com.sg";
+			document.getElementById('emailAddress').value = "Jack@mks.com.sg";
 			document.getElementById('ctcNo').value = "96124567";
-			document.getElementById('companyName').value = "Muffin Manufacturing Singapore";
+			document.getElementById('companyName').value = "Moonkist Pte Ltd";
 			document.getElementById('address').value = "123 Manufacturing Road";
 			document.getElementById('unitNo').value = "-";
 			document.getElementById('postalCode').value = "125656";
