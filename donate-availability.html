@@ -209,85 +209,126 @@
 											<h1 class="card-header fs-3">
 												<strong>Enter Pick Up Availability</strong>
 											</h1>
-											<div class="card-body">
-												<form class="needs validate" novalidate>
-													<div class="row row-cols-2">
-														<div class="col-12 d-none">
-															<div class="form-floating mb-3">
-																<select class="form-select" id="availabilityType" aria-label="Account Type">
-																	<option value="" selected disabled>Choose</option>
-																	<option value="ad">Multiple days</option>
-																	<option value="sd">Specific day</option>
-																</select>
-																<label for="accountType">Availability</label>
-															</div>
-														</div>
-														<div id="date-from" class="col-lg-6 d-none">
-															<div class="form-floating mb-3">
-																<input class="form-control" id="pickUpDateFrom" type="date"
-																	placeholder="dd/mm/yyyy" data-date-format="dd-mm-yyyy"required />
-																<label for="pickUpDateFrom">Pick Up Date From </label>
-																<div class="invalid-feedback">
-																	Pick up date is required.
+											<div class="card-header">
+												<ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+													<li class="nav-item">
+													  <a class="nav-link active" id="singledate-tab" data-bs-toggle="tab" data-bs-target="#singledate" type="button" role="tab" aria-controls="singledate" aria-selected="true">Single Day</a>
+													</li>
+													<li class="nav-item">
+													  <a class="nav-link" id="multidate-tab" data-bs-toggle="tab" data-bs-target="#multidate" type="button" role="tab" aria-controls="multidate" aria-selected="false">Multiple Days</a>
+													</li>
+												</ul>
+											</div>
+											<div class="card-body tab-content" id ="myTabContent">
+												<div class="tab-pane fade show active" id="singledate" role="tabpanel" aria-labelledby = "singledate-tab">
+													<form class="needs validate" novalidate>
+														<div class="row row-cols-2">
+															<div id="date-specific" class="col-12">
+																<div class="form-floating mb-3">
+																	<input class="form-control" id="pickUpDate" type="date"
+																		placeholder="dd/mm/yyyy" data-date-format="dd-mm-yyyy"required />
+																	<label for="pickUpDate">Pick Up Date </label>
+																	<div class="invalid-feedback">
+																		Pick up date is required.
+																	</div>
 																</div>
 															</div>
-														</div>
-														<div id="date-to" class="col-lg-6 d-none">
-															<div class="form-floating mb-3">
-																<input class="form-control" id="pickUpDateTo" type="date"
-																	placeholder="dd/mm/yyyy" data-date-format="dd-mm-yyyy"required />
-																<label for="pickUpDateTo">Pick Up Date To </label>
-																<div class="invalid-feedback">
-																	Pick up date is required.
+															<div id="av-time-from" class="col-6">
+																<div class="form-floating mb-3">
+																	<input class="form-control" id="pickUpTimeFrom" type="time"
+																		placeholder="Date" required />
+																	<label for="pickUpTimeFrom">Available Time From</label>
+																	<div class="invalid-feedback">
+																		Time is required.
+																	</div>
 																</div>
 															</div>
-														</div>
-														<div id="date-specific" class="col-12 d-none">
-															<div class="form-floating mb-3">
-																<input class="form-control" id="pickUpDate" type="date"
-																	placeholder="dd/mm/yyyy" data-date-format="dd-mm-yyyy"required />
-																<label for="pickUpDate">Pick Up Date </label>
-																<div class="invalid-feedback">
-																	Pick up date is required.
+															<div id="av-time-to" class="col-6">
+																<div class="form-floating mb-3">
+																	<input class="form-control" id="pickUpTimeTo" type="time"
+																		placeholder="Date" required />
+																	<label for="pickUpTimeTo">Available Time To</label>
+																	<div class="invalid-feedback">
+																		Time is required.
+																	</div>
 																</div>
 															</div>
-														</div>
-														<div id="av-time-from" class="col-6 d-none">
-															<div class="form-floating mb-3">
-																<input class="form-control" id="pickUpTimeFrom" type="time"
-																	placeholder="Date" required />
-																<label for="pickUpTimeFrom">Available Time From</label>
-																<div class="invalid-feedback">
-																	Time is required.
+															<div id="remarks" class="col-12">
+																<div class="form-floating mb-3">
+																	<textarea class="form-control" id="remark" type="text"
+																		placeholder="Enter your message here..." style="height: 10rem"
+																		data-sb-validations="required"></textarea>
+																	<label for="remark">Remarks (optional)</label>
+																	<div class="invalid-feedback">A message is required.
+																	</div>
 																</div>
 															</div>
-														</div>
-														<div id="av-time-to" class="col-6 d-none">
-															<div class="form-floating mb-3">
-																<input class="form-control" id="pickUpTimeTo" type="time"
-																	placeholder="Date" required />
-																<label for="pickUpTimeTo">Available Time To</label>
-																<div class="invalid-feedback">
-																	Time is required.
-																</div>
+															<div class="col-12 d-grid">
+																<button id='add-availability' class="btn btn-success">Add Availability</button>
 															</div>
 														</div>
-														<div id="remarks" class="col-12 d-none">
-															<div class="form-floating mb-3">
-																<textarea class="form-control" id="remark" type="text"
-																	placeholder="Enter your message here..." style="height: 10rem"
-																	data-sb-validations="required"></textarea>
-																<label for="remark">Remarks (optional)</label>
-																<div class="invalid-feedback">A message is required.
+													</form>
+												</div>
+												<div class="tab-pane fade " id="multidate" role="tabpanel" aria-labelledby = "multidate-tab">
+													<form>
+														<div class="row row-cols-2">
+															<div id="date-from" class="col-lg-6">
+																<div class="form-floating mb-3">
+																	<input class="form-control" id="pickUpDateFrom" type="date"
+																		placeholder="dd/mm/yyyy" data-date-format="dd-mm-yyyy"required />
+																	<label for="pickUpDateFrom">Pick Up Date From </label>
+																	<div class="invalid-feedback">
+																		Pick up date is required.
+																	</div>
 																</div>
 															</div>
+															<div id="date-to" class="col-lg-6">
+																<div class="form-floating mb-3">
+																	<input class="form-control" id="pickUpDateTo" type="date"
+																		placeholder="dd/mm/yyyy" data-date-format="dd-mm-yyyy"required />
+																	<label for="pickUpDateTo">Pick Up Date To </label>
+																	<div class="invalid-feedback">
+																		Pick up date is required.
+																	</div>
+																</div>
+															</div>
+															<div id="av-time-from" class="col-lg-6">
+																<div class="form-floating mb-3">
+																	<input class="form-control" id="pickUpTimeFrom" type="time"
+																		placeholder="Date" required />
+																	<label for="pickUpTimeFrom">Available Time From</label>
+																	<div class="invalid-feedback">
+																		Time is required.
+																	</div>
+																</div>
+															</div>
+															<div id="av-time-to" class="col-lg-6">
+																<div class="form-floating mb-3">
+																	<input class="form-control" id="pickUpTimeTo" type="time"
+																		placeholder="Date" required />
+																	<label for="pickUpTimeTo">Available Time To</label>
+																	<div class="invalid-feedback">
+																		Time is required.
+																	</div>
+																</div>
+															</div>
+															<div id="remarks" class="col-12">
+																<div class="form-floating mb-3">
+																	<textarea class="form-control" id="remark" type="text"
+																		placeholder="Enter your message here..." style="height: 10rem"
+																		data-sb-validations="required"></textarea>
+																	<label for="remark">Remarks (optional)</label>
+																	<div class="invalid-feedback">A message is required.
+																	</div>
+																</div>
+															</div>
+															<div class="col-12 d-grid">
+																<button id='add-availability' class="btn btn-success">Add Availability</button>
+															</div>
 														</div>
-														<div class="col-12 d-grid">
-															<button id='add-availability' class="btn btn-success disabled">Add Availability</button>
-														</div>
-													</div>
-													
-												</form>
+														
+													</form>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -378,13 +419,13 @@
 	function nextBtn() {
 		window.location.href = "donate-type.html"
 	}
-	document.getElementById("date-specific").classList.add("d-none");
-	document.getElementById("date-from").classList.remove("d-none");
-	document.getElementById("date-to").classList.remove("d-none");
-	document.getElementById("av-time-from").classList.remove("d-none");
-	document.getElementById("av-time-to").classList.remove("d-none");
-	document.getElementById("remarks").classList.remove("d-none");
-	document.getElementById("add-availability").classList.remove("disabled");
+	// document.getElementById("date-specific").classList.add("d-none");
+	// document.getElementById("date-from").classList.remove("d-none");
+	// document.getElementById("date-to").classList.remove("d-none");
+	// document.getElementById("av-time-from").classList.remove("d-none");
+	// document.getElementById("av-time-to").classList.remove("d-none");
+	// document.getElementById("remarks").classList.remove("d-none");
+	// document.getElementById("add-availability").classList.remove("disabled");
 
 	// check availability type
 	// document.getElementById("availabilityType").addEventListener('change', function(e){
