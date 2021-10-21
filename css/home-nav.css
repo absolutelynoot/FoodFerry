@@ -8,6 +8,10 @@ header {
 
 }
 
+nav{
+    background-color: #085f63;
+  }
+
 .navIcon {
     color: white;
 }
