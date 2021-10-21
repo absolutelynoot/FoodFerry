@@ -25,6 +25,11 @@ header {
 
 }
 
+#calendarDropdown{
+    right: 0;
+    justify-content: right;
+}
+
 #notifDropdownList {
     left: 650px;
     right: 0;
