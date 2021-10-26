@@ -147,7 +147,7 @@
 				<h2 class="mb-4 fs-1"><strong>Donate Food Waste</strong></h2>
 				<div class="row">
 					<div class="col-md-12">
-						<form class="needs-validation" id="pickUpForm" novalidate>
+						<form class="needs-validation" id="donationForm" novalidate>
 							<!-- Progress Bar -->
 							<ul id="progressbar" class='p-0'>
 								<li class="active" id="food-details">
@@ -277,6 +277,7 @@
 																	elit. Illum,
 																	ut!
 																</p>
+
 															</div>
 														</div>
 													</div>
@@ -317,22 +318,31 @@
 														<label for="prodName" class="form-label">Product / Food Waste
 															Name*</label>
 														<input type="text" class="form-control" id="prodName"
-															placeholder="" />
+															placeholder="" required />
+														<div class="invalid-feedback">
+															Product / Food Waste Name is required
+														</div>
 													</div>
 													<div class="col-lg-4 col-md-8 col-sm-12">
 														<!-- Quantity input-->
 														<label for="qty" class="form-label">Quantity*</label>
-														<input type="text" class="form-control" id="qty"
-															placeholder="" />
+														<input type="text" class="form-control" id="qty" placeholder=""
+															required />
+														<div class="invalid-feedback">
+															Quantity is required
+														</div>
 													</div>
 													<div class="col-lg-2 col-md-4 col-sm-12">
 														<label for="unit" class="form-label">Unit*</label>
-														<select class="form-select" aria-label="Default select example">
-															<option selected>Choose..</option>
+														<select class="form-select" required id="unit">
+															<option value="" selected disabled></option>
 															<option value="1">Kg</option>
 															<option value="2">Oz</option>
 															<option value="3">Litres</option>
 														</select>
+														<div class="invalid-feedback">
+															Unit is required
+														</div>
 													</div>
 													<!-- <div class="col-lg-3 col-md-6 col-sm-12">
 														<label for="unit" class="form-label">Stability of
@@ -355,7 +365,10 @@
 														<label for="prodDate" class="form-label">Production
 															Date*</label>
 														<input type="date" class="form-control" id="prodDate"
-															placeholder="dd/mm/yyyy" />
+															placeholder="dd/mm/yyyy" required />
+														<div class="invalid-feedback">
+															Production Date is required
+														</div>
 													</div>
 													<!-- prod date input-->
 													<!-- <div class="col-lg-3 col-md-6 col-sm-12">
@@ -365,25 +378,29 @@
 													</div> -->
 													<div class="col-12">
 														<label for="address" class="form-label">Remarks</label>
-														<textarea class="form-control" id="address" rows="4"></textarea>
+														<textarea class="form-control" id="remarks" rows="4"></textarea>
 													</div>
 													<div class="col-12">
 														<label class="form-label" for="disabledCustomFile">Photo of
 															Product / Food Waste*</label>
-														<input type="file" class="form-control form-control-lg"
-															aria-label="Large file input example" />
+														<input type="file" id="photo"
+															class="form-control form-control-lg"
+															aria-label="Large file input example" required />
+														<div class="invalid-feedback">
+															Photo is required
+														</div>
 
 													</div>
-													<div class="col-6">
-														<div id="food-data-back-btn"
-															class="btn btn-light border-success d-block">
+													<div class="col-6 d-grid">
+														<div class="btn btn-light border-success d-block"
+															onclick="backDonation()">
 															Back
 														</div>
 													</div>
-													<div class="col-6">
-														<div id="food-data-add-btn" class="btn btn-success d-block">
+													<div class="col-6 d-grid">
+														<button type="submit" class="btn btn-success d-block">
 															Add Donation
-														</div>
+														</button>
 													</div>
 												</div>
 											</div>
@@ -402,34 +419,6 @@
 													<div class="col-12">
 														<ul id="donationlist" class="list-group d-none">
 
-															<!-- <li id="donationItem1 d-none" class="list-group-item text-start">
-																		<strong class="fs-5">Fresh Orange Juice</strong><br>
-																		<div class="mb-2">5 kg</div>
-																		<div class="mb-2">
-																			Stability of product: Shelf-stable<br>
-																			Shelf-Life: 6 months<br>
-																			Expiry Date: 10/10/21<br>
-																			Production Date: 1/05/21<br>
-																		</div>
-																		<div class="mb-3">
-																			<a id="add-info-btn-1" href="#" onclick="viewMoreDetails1()">View more details</a>
-																			<div id="additional-info-1" class="mb-3 d-none">
-																				Remarks:<br>
-																				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, voluptate!
-																			</div>
-																		</div>
-																		<div class="mb-3">
-																			<button type="button"  id="edit-donation-1" class="edit-btn btn btn-warning">
-																				<i class="bi bi-pencil-square"></i>
-																				Edit
-																			</button>
-																			<button type="button"  id="remove-donation-1" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeItemModal1">
-																				<i class="bi bi-trash"></i>
-																				Remove
-																			</button>
-																		</div>
-																		
-																	</li> -->
 															<li id="donationItem2" class="list-group-item text-start">
 																<strong class="fs-5">Orange Peels</strong><br>
 																<div class="mb-2">2 kg</div>
@@ -479,7 +468,7 @@
 											</button>
 										</div>
 										<div class="col-lg-6 col-sm-12 d-grid mb-2">
-											<button type="button" class="btn btn-success btn-lg next-btn"
+											<button type="button" class="btn btn-success btn-lg next-btn" disabled
 												onclick="nextBtn()" ;>
 												Next
 											</button>
@@ -597,18 +586,75 @@
 		});
 	}
 
+	const donationForm = document.querySelector("#donationForm")
+	donationForm.addEventListener("submit", function (event) {
+		event.preventDefault();
+		if (!donationForm.checkValidity()) {
+			event.stopPropagation();
+		} else {
+			// check for further validity
+			var valid = true;
+			var errMsg = [];
+			var productName = document.getElementById("prodName").value;
+			var qty = document.getElementById("qty").value;
+			var unit = document.getElementById("unit").value;
+			var prodDate = document.getElementById("prodDate").value;
+			var photo = document.getElementById("photo").value;
 
-	//add event listeners 
-	document.getElementById("food-data-back-btn").addEventListener("click", (e) => {
+			console.log(prodDate)
+
+			if (productName.toLowerCase() != "orange peels") {
+				valid = false;
+				errMsg.push("Name should be Orange Peels")
+			}
+
+			if (qty != "2") {
+				valid = false;
+				errMsg.push("Quantity is 2")
+			}
+
+			if (unit != "Kg") {
+				valid = false;
+				errMsg.push("Unit should be Kg")
+			}
+
+			if (prodDate != "2021-10-30") {
+				valid = false;
+				errMsg.push("production date is 10 Oct 2021")
+			}
+
+			if (photo != "orange_peels.png") {
+				valid = false;
+				errMsg.push("Please select orange_peels.png")
+			}
+
+			if (valid) {
+				console.log("all input is valid")
+				donationForm.reset();
+				document.getElementById("food-category").classList.remove("d-none");
+				document.getElementById("food-data").classList.add("d-none");
+				document.getElementById("emptyCart").classList.add("d-none");
+				document.getElementById("donationlist").classList.remove("d-none");
+			} else {
+				alert(errMsg.join('\r\n'))
+				console.log("input is still invalid")
+				event.stopPropagation();
+			}
+
+
+
+		}
+
+		donationForm.classList.add('was-validated')
+	}, false)
+
+
+	function backDonation() {
 		document.getElementById("food-category").classList.remove("d-none");
 		document.getElementById("food-data").classList.add("d-none");
-	})
+	}
 
-	document.getElementById("food-data-add-btn").addEventListener("click", (e) => {
-		//check values
-		document.getElementById("emptyCart").classList.add("d-none");
-		document.getElementById("donationlist").classList.remove("d-none");
-	})
+
 </script>
 
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
