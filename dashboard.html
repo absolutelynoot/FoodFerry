@@ -15,36 +15,39 @@
     <link href="css/modal.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="fullcalendar/main.css" />
-	<script src="fullcalendar/main.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			var calendarEl = document.getElementById('calendar');
-			var calendar = new FullCalendar.Calendar(calendarEl, {
-				schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
-				initialView: 'dayGridMonth',
-				selectable: true,
-				themeSystem: 'standard',
-				showNonCurrentDates: false,
+    <script src="fullcalendar/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                headerToolbar: {
+                    start: 'title',
+                    end: 'prev,next'
+                },
+                schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+                initialView: 'dayGridMonth',
+                selectable: true,
+                themeSystem: 'standard',
+                showNonCurrentDates: false,
                 height: 600,
                 contentHeight: 300,
-				events: [{
-					title: 'orange donation, 5kg',
-					start: '2021-10-04',
-					end: '2021-10-07',
-					display: 'block',
-					color: 'red'
-				}],
-				dateClick: function (info) {
-					alert('Clicked on: ' + info.dateStr);
-					// change the day's background color just for fun
-					// info.dayEl.style.backgroundColor = 'red';
+                events: [{
+                    title: 'orange donation, 5kg',
+                    start: '2021-10-04',
+                    end: '2021-10-07',
+                    display: 'block',
+                    color: 'red'
+                }],
+                dateClick: function (info) {
+                    alert('Clicked on: ' + info.dateStr);
+                    // change the day's background color just for fun
+                    // info.dayEl.style.backgroundColor = 'red';
+                }
 
-				}
-
-			});
-			calendar.render();
-		});
-	</script>
+            });
+            calendar.render();
+        });
+    </script>
 
 
 
@@ -77,18 +80,6 @@
                     </ul>
 
                     <ul class="navbar-nav mb-2 mb-md-0">
-                        
-                        <!-- calendar -->
-                        <li>
-                            <button id="calendarDropdownBtn" class="btn dropdown-toggle navIcon" type="button" data-bs-toggle="dropdown">
-                                <i class="bi bi-calendar-fill fs-4"></i>
-                            </button>
-
-                            <ul class="dropdown-menu" id="calendarDropdown">
-                                
-                            </ul>
-                        </li>
-
 
                         <!-- Notifications-->
                         <li>
@@ -155,14 +146,14 @@
                             <!-- User dropdown -->
                             <ul class="dropdown-menu" id="userDropdownList">
                                 <li class="navDropdownListItem"><a href="./profile.html" class="navDropdownItem">
-                                    User Profile</a></li>
+                                        User Profile</a></li>
                                 <li class="navDropdownListItem"><a href="./settings.html" class="navDropdownItem">
-                                    Settings</a></li>
+                                        Settings</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
                                 <li class="navDropdownListItem"><a href="./index.html" class="navDropdownItem">
-                                    Log Out</a></li>
+                                        Log Out</a></li>
                             </ul>
                         </li>
 
@@ -177,27 +168,30 @@
         <div class="row g-2">
             <div class="card mb-3">
                 <div class="row g-0">
-                  <div class="col-md-2">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZd9FkMXYhrobasGKEA3itvxkgjabIuv1GGw&usqp=CAU" class="img-fluid rounded-start" style="width:100%;">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">Moonkist</h5>
-                      <p class="card-text">A food manufacuterer specialising in processed fruit products. <br>
-                        <spann><i class="bi bi-telephone-fill"></i></spann> +65 92345678 <br>
-                        <span><i class="bi bi-envelope-fill"></i></span> transport@moonkist.com
-                    </p>
+                    <div class="card-header"><strong>User Profile</strong></div>
+                    <div class="col-md-2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZd9FkMXYhrobasGKEA3itvxkgjabIuv1GGw&usqp=CAU"
+                            class="img-fluid rounded-start" style="width:100%;">
                     </div>
-                  </div>
+                    <div class="col-md-8">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Moonkist Pte Ltd</h5>
+                            <p class="card-text">A food manufacuterer specialising in processed fruit products. <br>
+                                <spann><i class="bi bi-telephone-fill"></i></spann> +65 92345678 <br>
+                                <span><i class="bi bi-envelope-fill"></i></span> transport@moonkist.com
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-        
+        </div>
+
         <div class="row g-2">
             <!-- user profile / company profile -->
-            <div class="col col-12 col-lg-3" >
-                <div class="card p-4  justify-content-center align-content-center text-center">
-                    
+            <div class="col col-12 col-lg-3">
+                <div class="card p-1 justify-content-center align-content-center text-center">
+
                     <div class="card-body">
                         <div id='calendar'>
                         </div>
@@ -210,19 +204,29 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="nav nav-tabs card-header-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link active" id="nav-confirm-tab" data-bs-toggle="tab" data-bs-target="#nav-confirm" type="button" role="tab" aria-controls="nav-confirm" aria-selected="true">Confirm</button>
-                            <button class="nav-link" id="nav-upcoming-tab" data-bs-toggle="tab" data-bs-target="#nav-upcoming" type="button" role="tab" aria-controls="nav-upcoming" aria-selected="false">Upcoming</button>
-                            <button class="nav-link" id="nav-pending-tab" data-bs-toggle="tab" data-bs-target="#nav-pending" type="button" role="tab" aria-controls="nav-pending" aria-selected="false">Pending</button>
+                            <button class="nav-link active" id="nav-confirm-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-confirm" type="button" role="tab" aria-controls="nav-confirm"
+                                aria-selected="true">Confirm</button>
+                            <button class="nav-link" id="nav-upcoming-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-upcoming" type="button" role="tab" aria-controls="nav-upcoming"
+                                aria-selected="false">Upcoming</button>
+                            <button class="nav-link" id="nav-pending-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-pending" type="button" role="tab" aria-controls="nav-pending"
+                                aria-selected="false">Pending</button>
                         </div>
                     </div>
-                    
+
                     <div class="tab-content" id="nav-tabContent">
 
                         <!-- Confirm deliveries-->
-                        <div class="tab-pane fade show active" id="nav-confirm" role="tabpanel" aria-labelledby="nav-confirm-tab">
+                        <div class="tab-pane fade show active" id="nav-confirm" role="tabpanel"
+                            aria-labelledby="nav-confirm-tab">
                             <div class="card-body">
                                 <div class="row row-cols-lg-12 g-2 g-lg-3 gx-1">
-                                    <div class="text-muted">There's no item to display. Click <button type="button" class="btn btn-sm btn-success" onclick="location.href='./donate-details.html'"> Donate </button> to start redistributing your food waste now. </div>
+                                    <div class="text-muted">There's no item to display. Click <button type="button"
+                                            class="btn btn-sm btn-success"
+                                            onclick="location.href='./donate-details.html'"> Donate </button> to start
+                                        redistributing your food waste now. </div>
                                 </div>
                             </div>
                         </div>
@@ -231,7 +235,10 @@
                         <div class="tab-pane fade" id="nav-upcoming" role="tabpanel" aria-labelledby="nav-upcoming-tab">
                             <div class="card-body ">
                                 <div class="row row-cols-lg-12 g-2 g-lg-3 gx-1">
-                                    <div class="text-muted">There's no item to display. Click <button type="button" class="btn btn-sm btn-success" onclick="location.href='./donate-details.html'"> Donate </button> to start redistributing your food waste now. </div>
+                                    <div class="text-muted">There's no item to display. Click <button type="button"
+                                            class="btn btn-sm btn-success"
+                                            onclick="location.href='./donate-details.html'"> Donate </button> to start
+                                        redistributing your food waste now. </div>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +247,10 @@
                         <div class="tab-pane fade" id="nav-pending" role="tabpanel" aria-labelledby="nav-pending-tab">
                             <div class="card-body">
                                 <div class="row row-cols-lg-12 g-2 g-lg-3 gx-1">
-                                    <div class="text-muted">There's no item to display. Click <button type="button" class="btn btn-sm btn-success" onclick="location.href='./donate-details.html'"> Donate </button> to start redistributing your food waste now. </div>
+                                    <div class="text-muted">There's no item to display. Click <button type="button"
+                                            class="btn btn-sm btn-success"
+                                            onclick="location.href='./donate-details.html'"> Donate </button> to start
+                                        redistributing your food waste now. </div>
                                 </div>
                             </div>
                         </div>
@@ -253,7 +263,9 @@
 
     <!-- Footer-->
     <footer class="mt-5 py-5 bg-dark">
-        <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; FoodFerry 2021</p></div>
+        <div class="container px-5">
+            <p class="m-0 text-center text-white">Copyright &copy; FoodFerry 2021</p>
+        </div>
     </footer>
 
 
@@ -269,59 +281,55 @@
         delivery.remove(this);
     }
 
-    function acceptConfirm(delivery){
+    function acceptConfirm(delivery) {
         if (confirm("Do you want to accept this delivery?")) {
-            deleteDelivery(delivery); 
-        } 
+            deleteDelivery(delivery);
+        }
 
     }
 
-    function declineConfirm(delivery){
+    function declineConfirm(delivery) {
         if (confirm("Do you want to decline this delivery?")) {
-            deleteDelivery(delivery); 
-        } 
+            deleteDelivery(delivery);
+        }
     }
 
-    function cancelConfirm(delivery){
+    function cancelConfirm(delivery) {
         if (confirm("Do you want to cancel this delivery?")) {
-            deleteDelivery(delivery); 
-        } 
+            deleteDelivery(delivery);
+        }
     }
 
-    function deliveredConfirm(delivery){
+    function deliveredConfirm(delivery) {
         deleteDelivery(delivery);
     }
-
 </script>
-    
+
 <script>
-    function getModal(myModal,  myBtn, myClose){
-        var modal = myModal; 
-        var btn = myBtn; 
-        var span = myClose; 
+    function getModal(myModal, myBtn, myClose) {
+        var modal = myModal;
+        var btn = myBtn;
+        var span = myClose;
 
         modal.style.display = "block";
 
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
+        span.onclick = function () {
             modal.style.display = "none";
         }
 
         // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
-            } 
+            }
         }
     }
-
-
-
 </script>
 <script>
-    function upcomingEmpty(row){
+    function upcomingEmpty(row) {
 
-        if(row.contents().length == 0 ) {
+        if (row.contents().length == 0) {
             newNode = document.createElement('div');
             newText = document.createTextNode('There are no upcoming deliveries.');
             newNode.appendChild(newText);
