@@ -35,10 +35,11 @@ nav{
 }
 
 #notifDropdownList {
-    left: 650px;
-    right: 0;
+    left: 75%;
+    right: -10px;
     margin-right: -10px;
 
+    width: 25%; 
     max-height: 300px;
     overflow: scroll;
 
