@@ -336,9 +336,9 @@
 														<label for="unit" class="form-label">Unit*</label>
 														<select class="form-select" required id="unit">
 															<option value="" selected disabled></option>
-															<option value="1">Kg</option>
-															<option value="2">Oz</option>
-															<option value="3">Litres</option>
+															<option value="Kg">Kg</option>
+															<option value="Oz">Oz</option>
+															<option value="Litres">Litres</option>
 														</select>
 														<div class="invalid-feedback">
 															Unit is required
@@ -601,8 +601,6 @@
 			var prodDate = document.getElementById("prodDate").value;
 			var photo = document.getElementById("photo").value;
 
-			console.log(prodDate)
-
 			if (productName.toLowerCase() != "orange peels") {
 				valid = false;
 				errMsg.push("Name should be Orange Peels")
@@ -618,14 +616,17 @@
 				errMsg.push("Unit should be Kg")
 			}
 
-			if (prodDate != "2021-10-30") {
+			if (prodDate != "2021-10-26") {
 				valid = false;
 				errMsg.push("production date is 10 Oct 2021")
 			}
-
-			if (photo != "orange_peels.png") {
+			
+			var arr = photo.split("\")
+			var filename = arr[arr.length - 1];
+			console.log(filename)
+			if (filename != "orange_peels.jpg") {
 				valid = false;
-				errMsg.push("Please select orange_peels.png")
+				errMsg.push("Please select orange_peels.jpg")
 			}
 
 			if (valid) {
