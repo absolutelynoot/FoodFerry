@@ -53,21 +53,6 @@
 				</ul>
 
 				<ul class="navbar-nav mb-2 mb-md-0">
-					<!-- calendar -->
-					<li>
-						<button id="calendarDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
-							data-bs-toggle="dropdown">
-							<i class="bi bi-calendar-fill fs-4"></i>
-						</button>
-
-						<ul class="dropdown-menu" id="calendarDropdown">
-							<li>Calendar Overview</li>
-							<div id='calendar'>
-							</div>
-						</ul>
-
-					</li>
-
 
 					<!-- Notifications-->
 					<li>
@@ -349,35 +334,35 @@
 															<option value="3">Litres</option>
 														</select>
 													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
+													<!-- <div class="col-lg-3 col-md-6 col-sm-12">
 														<label for="unit" class="form-label">Stability of
 															products*</label>
-														<select class="form-select" aria-label="Default select example">
+														<select class="form-select" aria-label="Default select example" disabled>
 															<option selected>Choose..</option>
 															<option value="1">Shelf stable</option>
 															<option value="2">Refrigeration (0°C to 5°C)</option>
 															<option value="3">Frozen (below -18°C)</option>
 														</select>
-													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
-														<!-- Shelf Life input-->
+													</div> -->
+													<!-- Shelf Life input-->
+													<!-- <div class="col-lg-3 col-md-6 col-sm-12">
 														<label for="shelfLife" class="form-label">Shelf Life*</label>
 														<input type="text" class="form-control" id="shelfLife"
-															placeholder="14 days / 2 weeks" />
-													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
+															placeholder="" disabled/>
+													</div> -->
+													<div class="col-lg-12 col-md-12 col-sm-12">
 														<!-- prod date input-->
 														<label for="prodDate" class="form-label">Production
 															Date*</label>
-														<input type="text" class="form-control" id="prodDate"
+														<input type="date" class="form-control" id="prodDate"
 															placeholder="dd/mm/yyyy" />
 													</div>
-													<div class="col-lg-3 col-md-6 col-sm-12">
-														<!-- prod date input-->
+													<!-- prod date input-->
+													<!-- <div class="col-lg-3 col-md-6 col-sm-12">
 														<label for="expDate" class="form-label">Expiry Date*</label>
-														<input type="text" class="form-control" id="expDate"
-															placeholder="dd/mm/yyyy" />
-													</div>
+														<input type="date" class="form-control" id="expDate"
+															placeholder="dd/mm/yyyy" disabled />
+													</div> -->
 													<div class="col-12">
 														<label for="address" class="form-label">Remarks</label>
 														<textarea class="form-control" id="address" rows="4"></textarea>
@@ -620,6 +605,7 @@
 	})
 
 	document.getElementById("food-data-add-btn").addEventListener("click", (e) => {
+		//check values
 		document.getElementById("emptyCart").classList.add("d-none");
 		document.getElementById("donationlist").classList.remove("d-none");
 	})
