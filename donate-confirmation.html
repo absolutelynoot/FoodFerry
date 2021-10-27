@@ -41,16 +41,16 @@
 					title: 'Orange Peels, 2kg',
 					start: '2021-11-22',
 					end: '2021-11-25',
+					allDay: true,
 					display: 'block',
-					color: 'red'
 				},
 				{
 					title: 'Orange Peels, 2kg',
 					start: '2021-11-26',
-					end: '2021-11-27',
+					allDay: true,
 					display: 'block',
-					color: 'red'
 				}
+
 			
 			],
 				dateClick: function (info) {
@@ -335,10 +335,11 @@
 															<td>Orange Peels</td>
 															<td>2 Kg</td>
 															<td>-</td>
-															<td>5/6/2021</td>
+															<td>26/10/21</td>
 															<td>-</td>
 															<td>
-																<button type="button" class="btn btn-light">
+																<button type="button" class="btn btn-light" data-bs-toggle="modal"
+																data-bs-target="#displayImageModal">
 																	<i class="bi bi-file-earmark-image"></i>
 																</button>
 
@@ -412,7 +413,7 @@
 				Thank you for donating with FoodFerry.
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-success" onclick="location.href = 'dashboard.html'"
+				<button type="button" class="btn btn-success" onclick="location.href = 'dashboard-after.html'"
 					data-bs-dismiss="modal">Ok</button>
 			</div>
 		</div>
@@ -433,25 +434,6 @@
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 				<button type="button" class="btn btn-danger" onclick="removeItem(donationItem1)"
-					data-bs-dismiss="modal">Remove</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="modal fade" id="removeItemModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Remove Item</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				Are you sure you want to remove item?
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-danger" onclick="removeItem(donationItem2)"
 					data-bs-dismiss="modal">Remove</button>
 			</div>
 		</div>
@@ -582,6 +564,25 @@
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 				<button type="button" class="btn btn-success" onclick="saveContact(ctcDetails)"
 					data-bs-dismiss="modal">Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="displayImageModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">orange_peels.jpg</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="https://images.ctfassets.net/isq5xwjfoz2m/5FEtkhEIn4J57Nfkudfu12/8c4912aa3ab53fa59652305f0376192e/Listing_-_CE_Example_-_DeClique.png" width="100%">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
