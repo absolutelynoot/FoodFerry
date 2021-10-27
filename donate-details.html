@@ -468,7 +468,7 @@
 											</button>
 										</div>
 										<div class="col-lg-6 col-sm-12 d-grid mb-2">
-											<button type="button" class="btn btn-success btn-lg next-btn" disabled
+											<button id="next-btn" type="button" class="btn btn-success btn-lg next-btn" disabled
 												onclick="nextBtn()" ;>
 												Next
 											</button>
@@ -599,7 +599,7 @@
 			var qty = document.getElementById("qty").value;
 			var unit = document.getElementById("unit").value;
 			var prodDate = document.getElementById("prodDate").value;
-			var photo = document.getElementById("photo").value;
+			var photo = document.getElementById("photo");
 
 			if (productName.toLowerCase() != "orange peels") {
 				valid = false;
@@ -621,8 +621,7 @@
 				errMsg.push("production date is 10 Oct 2021")
 			}
 			
-			var arr = photo.split("\")
-			var filename = arr[arr.length - 1];
+			var filename = photo.files.item(0).name;
 			console.log(filename)
 			if (filename != "orange_peels.jpg") {
 				valid = false;
@@ -636,6 +635,7 @@
 				document.getElementById("food-data").classList.add("d-none");
 				document.getElementById("emptyCart").classList.add("d-none");
 				document.getElementById("donationlist").classList.remove("d-none");
+				document.querySelector("#next-btn").disabled = false;
 			} else {
 				alert(errMsg.join('\r\n'))
 				console.log("input is still invalid")
