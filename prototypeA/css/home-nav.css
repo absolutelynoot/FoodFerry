@@ -1,0 +1,111 @@
+header {
+    position: relative;
+}
+
+#userDropdownBtn:focus {
+    outline: none;
+    box-shadow: none;
+
+}
+
+
+nav{
+    background-color: #085f63;
+  }
+
+.navIcon {
+    color: white;
+}
+
+.navIcon:hover {
+    color: white;
+}
+
+#userDropdownList {
+    left: 1250px;
+    right: 0;
+    margin-right: -10px;
+
+    background-color: white;
+
+}
+
+#calendarDropdown{
+    right: 0;
+    justify-content: right;
+}
+
+#notifDropdownList {
+    left: 75%;
+    right: -10px;
+    margin-right: -10px;
+
+    width: 25%; 
+    max-height: 300px;
+    overflow: scroll;
+
+    background-color: white;
+
+}
+
+.navDropdownItem {
+    text-decoration: none;
+    background-color: white;
+    color: #212529;
+
+    border-bottom: #212529;
+
+    margin: 10px;
+    padding: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    text-align: var(--bs-body-text-align);
+}
+
+#navDropdownItemEmpty{
+
+    text-decoration: none;
+    background-color: white;
+
+    margin: 10px;
+    padding: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    text-align: var(--bs-body-text-align);
+
+}
+.navDropdownListItem:hover{
+        background-color: #6c757d;
+        color: white;
+    }
+
+.navDropdownListItem:hover > .navDropdownItem{
+    background-color: #6c757d;
+    color: white; 
+
+}
+
+.notifTime {
+    margin-bottom: 0px;
+}
+
+
+
+
+
+.overflow-scroll {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 400px;
+
+}
+
+#deliveryNav {
+    position: absolute;
+    top: 75px;
+
+}

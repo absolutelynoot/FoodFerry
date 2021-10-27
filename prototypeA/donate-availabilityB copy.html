@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="fullcalendar/main.css" />
 	<script src="fullcalendar/main.js"></script>
 
+
+
 </head>
 
 
@@ -38,7 +40,7 @@
 			<div class="collapse navbar-collapse fs-5 fw-bold px-3" id="navbarCollapse">
 				<ul class="navbar-nav me-auto mb-2 mb-md-0">
 					<li class="nav-item">
-						<a class="nav-link" aria-current="page" href="./dashboard-after.html">Dashboard</a>
+						<a class="nav-link" aria-current="page" href="./dashboard.html">Dashboard</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link active" href="donate-details.html">Donate</a>
@@ -138,6 +140,7 @@
 
 <body>
 
+
 	<div class="container-md mt-5">
 		<div class="row ">
 			<!-- Form page 1 food category selection -->
@@ -148,7 +151,6 @@
 					<h2 class="mb-4 fs-1"><strong>Donate Food Waste</strong></h2>
 					<div class="row">
 						<div class="col-md-12">
-
 							<!-- Progress Bar -->
 							<ul id="progressbar" class='p-0'>
 								<li class="active" id="food-details">
@@ -176,44 +178,41 @@
 											<h1 class="card-header fs-3">
 												<strong>Availability Form</strong>
 											</h1>
-											<div class="card-header">
-												<ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-													<li class="nav-item">
-														<a class="nav-link active" id="singledate-tab"
-															data-bs-toggle="tab" data-bs-target="#singledate"
-															type="button" role="tab" aria-controls="singledate"
-															aria-selected="true">Single Day</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link" id="multidate-tab" data-bs-toggle="tab"
-															data-bs-target="#multidate" type="button" role="tab"
-															aria-controls="multidate" aria-selected="false">Multiple
-															Days</a>
-													</li>
-												</ul>
-											</div>
-											<div class="card-body tab-content" id="myTabContent">
-												<div class="tab-pane fade show active" id="singledate" role="tabpanel"
-													aria-labelledby="singledate-tab">
-													<form id="single-date-form" class="row row-cols-2 needs-validation"
-														novalidate>
+											<div class="card-body">
+												<div class="row row-cols-2">
+													<div class="col-12 text-start mb-2">
+														<h6>Availability Type</h6>
+														<div class="form-check form-check-inline">
+															<input class="form-check-input" type="radio"
+																name="availOptions" id="singledate" value="sd" checked>
+															<label class="form-check-label" for="singledate">Single
+																Day</label>
+														</div>
+														<div class="form-check form-check-inline">
+															<input class="form-check-input" type="radio"
+																name="availOptions" id="multidate" value="ad">
+															<label class="form-check-label" for="multidate">Multiple
+																Days</label>
+														</div>
+													</div>
+													<form id="single-date-form" class="needs-validation" novalidate>
 														<div id="date-specific" class="col-12">
 															<div class="form-floating mb-3">
 																<input class="form-control" id="pickUpDate" type="date"
-																	required />
-																<label for="pickUpDate">Pick Up Date</label>
+																	placeholder="dd/mm/yyyy"
+																	data-date-format="dd-mm-yyyy" required />
+																<label for="pickUpDate">Pick Up Date </label>
 																<div class="invalid-feedback">
 																	Pick up date is required.
 																</div>
 															</div>
-
 														</div>
 														<div id="av-time-from" class="col-6">
 															<div class="form-floating mb-3">
 																<input class="form-control" id="pickUpTimeFrom"
 																	type="time" placeholder="Date" required />
 																<label for="pickUpTimeFrom">Available Time
-																	From</label>
+																	from</label>
 																<div class="invalid-feedback">
 																	Time is required.
 																</div>
@@ -234,7 +233,8 @@
 															<div class="form-floating mb-3">
 																<textarea class="form-control" id="remark" type="text"
 																	placeholder="Enter your message here..."
-																	style="height: 10rem"></textarea>
+																	style="height: 10rem"
+																	data-sb-validations="required"></textarea>
 																<label for="remark">Remarks (optional)</label>
 																<div class="invalid-feedback">A message is
 																	required.
@@ -242,25 +242,19 @@
 															</div>
 														</div>
 														<div class="col-12 d-grid">
-															<button type="submit" id='add-availability-single'
+															<button type="submit" id='add-availability'
 																class="btn btn-success">Add
 																Availability</button>
 														</div>
 													</form>
-												</div>
-
-
-												<div class="tab-pane fade" id="multidate" role="tabpanel"
-													aria-labelledby="multidate-tab">
-
-													<form id="multi-date-form" class="row row-cols-2 needs-validation"
+													<form id="multi-date-form" class="needs-validation d-none"
 														novalidate>
 														<div id="date-from" class="col-lg-6">
 															<div class="form-floating mb-3">
-																<input class="form-control" id="pickUpDateFromMulti"
+																<input class="form-control" id="pickUpDateFrom"
 																	type="date" placeholder="dd/mm/yyyy"
 																	data-date-format="dd-mm-yyyy" required />
-																<label for="pickUpDateFromMulti">Pick Up Date From
+																<label for="pickUpDateFrom">Pick Up Date To
 																</label>
 																<div class="invalid-feedback">
 																	Pick up date is required.
@@ -269,61 +263,58 @@
 														</div>
 														<div id="date-to" class="col-lg-6">
 															<div class="form-floating mb-3">
-																<input class="form-control" id="pickUpDateToMulti"
+																<input class="form-control" id="pickUpDateTo"
 																	type="date" placeholder="dd/mm/yyyy"
 																	data-date-format="dd-mm-yyyy" required />
-																<label for="pickUpDateToMulti">Pick Up Date To
+																<label for="pickUpDateTo">Pick Up Date To
 																</label>
 																<div class="invalid-feedback">
 																	Pick up date is required.
 																</div>
 															</div>
 														</div>
-														<div id="av-time-from" class="col-lg-6">
+														<div id="av-time-from-multi" class="col-6">
 															<div class="form-floating mb-3">
 																<input class="form-control" id="pickUpTimeFromMulti"
 																	type="time" placeholder="Date" required />
-																<label for="pickUpTimeFromMulti">
-																	Available Time From
-																</label>
+																<label for="pickUpTimeFrom">Available Time
+																	from</label>
 																<div class="invalid-feedback">
 																	Time is required.
 																</div>
 															</div>
 														</div>
-														<div id="av-time-to" class="col-lg-6">
+														<div id="av-time-to-multi" class="col-6">
 															<div class="form-floating mb-3">
 																<input class="form-control" id="pickUpTimeToMulti"
 																	type="time" placeholder="Date" required />
-																<label for="pickUpTimeToMulti">
-																	Available Time To
-																</label>
+																<label for="pickUpTimeTo">Available Time
+																	To</label>
 																<div class="invalid-feedback">
 																	Time is required.
 																</div>
 															</div>
 														</div>
-														<div class="col-12">
+														<div id="remarks-multi" class="col-12">
 															<div class="form-floating mb-3">
-																<textarea class="form-control" id="remarkMulti"
+																<textarea class="form-control" id="remark-multi"
 																	type="text" placeholder="Enter your message here..."
-																	style="height: 10rem"></textarea>
-																<label for="remarkMulti">Remarks (optional)</label>
-																<div class="invalid-feedback">
-																	A message is required.
+																	style="height: 10rem"
+																	data-sb-validations="required"></textarea>
+																<label for="remark">Remarks (optional)</label>
+																<div class="invalid-feedback">A message is
+																	required.
 																</div>
 															</div>
 														</div>
 														<div class="col-12 d-grid">
 															<button type="submit" id='add-availability-multi'
-																class="btn btn-success">
-																Add Availability
-															</button>
+																class="btn btn-success">Add
+																Availability</button>
 														</div>
 													</form>
-
-
 												</div>
+
 
 											</div>
 										</div>
@@ -331,13 +322,10 @@
 									<div class="col-lg-7">
 										<div class="card mb-3">
 											<h1 class="card-header fs-3">
-												<strong>Calendar Overview</strong>
-												<span class="mx-2 fs-6">
+												<strong>Calendar Overview</strong><span class="mx-2 fs-6">
 													<i class="bi bi-info-circle-fill text-primary"
 														data-bs-toggle="tooltip" data-bs-placement="top"
-														title="Calendar overview shows your current schedule and availability based on your listing activities">
-													</i>
-												</span>
+														title="Calendar overview shows your current schedule and availability based on your listing activities"></i></span>
 											</h1>
 											<div class="card-body">
 												<div id='calendar'>
@@ -358,16 +346,12 @@
 										</button>
 									</div>
 									<div class="col-lg-6 col-sm-12 d-grid mb-2">
-										<button type="button" class="btn btn-success btn-lg next-btn" id="next-btn"
-											onclick="nextBtn()">
+										<button type="submit" class="btn btn-success btn-lg next-btn" id="submitBtn">
 											Next
 										</button>
 									</div>
 								</div>
 							</fieldset>
-
-
-
 						</div>
 					</div>
 				</div>
@@ -375,23 +359,37 @@
 		</div>
 	</div>
 
-
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!-- loop 11 -->
 	<script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 
 	<!-- Bootstrap and Propper core JS-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 	</script>
 
 	<!-- Popovers and core theme [MUST INCLUDE FOR POPOVERS/TOOLTIPS] -->
 	<script src="js/scripts.js"></script>
 
 </body>
-
-
-
 
 
 
@@ -405,22 +403,12 @@
 		showNonCurrentDates: false,
 		contentHeight: 450,
 		events: [{
-				title: 'orange donation, 5kg',
-				start: '2021-10-04',
-				end: '2021-10-07',
-				display: 'block',
-				color: 'red'
-			},
-			{
-				id: 'timeslot1',
-				title: 'Orange Peels, 2kg',
-				start: '2021-11-22',
-				end: '2021-11-25',
-				allDay: true,
-				display: 'block',
-			},
-
-		],
+			title: 'orange donation, 5kg',
+			start: '2021-10-04',
+			end: '2021-10-07',
+			display: 'block',
+			color: 'red'
+		}],
 		dateClick: function (info) {
 			alert('Clicked on: ' + info.dateStr);
 			// change the day's background color just for fun
@@ -429,7 +417,6 @@
 
 	});
 	calendar.render();
-
 
 	//get contact details from session
 	console.log(sessionStorage.getItem('pickUpDetails'));
@@ -440,10 +427,28 @@
 	}
 
 	function nextBtn() {
-		window.location.href = "donate-confirmation-reschedule.html"
+		window.location.href = "donate-type.html"
 	}
 
-	const singleDateForm = document.querySelector("#single-date-form");
+	var availRadio = document.getElementsByName("availOptions");
+	console.log(availRadio);
+
+
+	// check availability type
+	for (i in availRadio) {
+		availRadio[i].onclick = function () {
+			if (this.value == "ad") {
+				document.getElementById("single-date-form").classList.add("d-none");
+				document.getElementById("multi-date-form").classList.remove("d-none");
+			} else if (this.value == "sd") {
+				document.getElementById("multi-date-form").classList.add("d-none");
+				document.getElementById("single-date-form").classList.remove("d-none");
+			}
+		}
+	}
+
+	const singleDateForm = document.getElementById("#single-date-form");
+	console.log(singleDateForm);
 	singleDateForm.addEventListener("submit", function (event) {
 		console.log("event is fired")
 		event.preventDefault();
@@ -458,7 +463,7 @@
 			var pickUpTimeFrom = document.getElementById("pickUpTimeFrom").value;
 			var pickUpTimeTo = document.getElementById("pickUpTimeTo").value;
 
-			if (pickUpDate != "2021-11-27") {
+			if (pickUpDate != "2021-11-26") {
 				valid = false;
 				errMsg.push("Pick up date should be 26 Nov 2021 (single day)")
 			}
@@ -473,18 +478,18 @@
 				errMsg.push("Pick up time (to) should be 12:00 PM (single day)")
 			}
 
-
 			if (valid) {
 				console.log("all input is valid")
 				singleDateForm.reset();
 				document.querySelector("#next-btn").disabled = false
+				dateStr = new Date(pickUpDate);
 				calendar.addEvent({
 					title: 'Orange Peels',
 					start: pickUpDate,
 					allDay: true
 				})
-				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
-
+				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " +
+					pickUpTimeFrom + " to " + pickUpTimeTo)
 			} else {
 				alert(errMsg.join('\r\n'))
 				console.log("input is still invalid")
@@ -494,9 +499,67 @@
 		}
 	})
 
-	
+	const multiDateForm = document.querySelector("#multi-date-form");
+	multiDateForm.addEventListener("submit", function (event) {
+		event.preventDefault();
+		if (!multiDateForm.checkValidity()) {
+			console.log("form is invalid")
+			event.stopPropagation();
+		} else {
+			// check for further validity
+			var valid = true;
+			var errMsg = [];
+			var pickUpDateFrom = document.getElementById("pickUpDateFromMulti").value;
+			var pickUpDateTo = document.getElementById("pickUpDateToMulti").value;
+			var pickUpTimeFrom = document.getElementById("pickUpTimeFromMulti").value;
+			var pickUpTimeTo = document.getElementById("pickUpTimeToMulti").value;
+
+			if (pickUpDateFrom != "2021-11-22") {
+				valid = false;
+				errMsg.push("Pick up date from should be 22 Nov 2021 (multiple days)")
+			}
+
+			if (pickUpDateTo != "2021-11-25") {
+				valid = false;
+				errMsg.push("Pick up date from should be 25 Nov 2021 (multiple days)")
+			}
+
+			if (pickUpTimeFrom != "15:00") {
+				valid = false;
+				errMsg.push("Pick up time (from) should be 3:00 PM (multiple days)")
+			}
+
+			if (pickUpTimeTo != "17:00") {
+				valid = false;
+				errMsg.push("Pick up time (to) should be 17:00 PM  (multiple days)")
+			}
+
+
+			if (valid) {
+				console.log("all input is valid")
+				singleDateForm.reset();
+				document.querySelector("#next-btn").disabled = false
+				dateStr = new Date(pickUpDate);
+				calendar.addEvent({
+					title: 'Orange Peels',
+					start: pickUpDateFrom,
+					end: pickUpDateTo,
+					allDay: true,
+				})
+				alert("Availability has been added to calendar! \r\n Date: " + pickUpDateFrom + " to " +
+					pickUpDateTo + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
+
+			} else {
+				alert(errMsg.join('\r\n'))
+				console.log("input is still invalid")
+				event.stopPropagation();
+			}
+
+		}
+	})
 </script>
 
 
+</body>
 
 </html>
