@@ -359,7 +359,7 @@
 									</div>
 									<div class="col-lg-6 col-sm-12 d-grid mb-2">
 										<button type="button" class="btn btn-success btn-lg next-btn" id="next-btn"
-											onclick="nextBtn()">
+											onclick="nextBtn()" disabled>
 											Next
 										</button>
 									</div>
@@ -421,6 +421,7 @@
 	});
 	calendar.render();
 
+	
 
 	//get contact details from session
 	console.log(sessionStorage.getItem('pickUpDetails'));
@@ -433,6 +434,10 @@
 	function nextBtn() {
 		window.location.href = "donate-confirmation.html"
 	}
+
+	// error checking for date
+	var sdValid = false;
+	var mdValid = false;
 
 	const singleDateForm = document.querySelector("#single-date-form");
 	singleDateForm.addEventListener("submit", function (event) {
@@ -451,7 +456,7 @@
 
 			if (pickUpDate != "2021-11-26") {
 				valid = false;
-				errMsg.push("Pick up date should be 26 Nov 2021 (single day)")
+				errMsg.push("Pick up date should be 26 Nov 2021 (single day)");
 			}
 
 			if (pickUpTimeFrom != "09:00") {
@@ -476,6 +481,10 @@
 					allDay: true
 				})
 				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
+				sdValid = true;
+				if (sdValid && mdValid){
+					document.querySelector("#next-btn").disabled = false;
+				}
 			} else {
 				alert(errMsg.join('\r\n'))
 				console.log("input is still invalid")
@@ -533,6 +542,11 @@
 					allDay: true,
 				})
 				alert("Availability has been added to calendar! \r\n Date: " + pickUpDateFrom + " to " + pickUpDateTo + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
+				mdValid = true;
+
+				if (sdValid && mdValid){
+					document.querySelector("#next-btn").disabled = false;
+				}
 
 			} else {
 				alert(errMsg.join('\r\n'))
@@ -542,6 +556,9 @@
 
 		}
 	})
+
+
+
 </script>
 
 
