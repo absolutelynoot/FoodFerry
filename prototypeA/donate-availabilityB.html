@@ -242,8 +242,8 @@
 															Availability</button>
 													</div>
 												</form>
-												<form id="multi-date-form" class="row row-cols-2 needs-validation mt-2 d-none"
-													novalidate>
+												<form id="multi-date-form"
+													class="row row-cols-2 needs-validation mt-2 d-none" novalidate>
 													<div id="date-from" class="col-lg-6">
 														<div class="form-floating mb-3">
 															<input class="form-control" id="pickUpDateFromMulti"
@@ -438,6 +438,10 @@
 		}
 	}
 
+	// error checking for date
+	var sdValid = false;
+	var mdValid = false;
+
 	const singleDateForm = document.querySelector("#single-date-form");
 	singleDateForm.addEventListener("submit", function (event) {
 		console.log("event is fired")
@@ -481,6 +485,10 @@
 				})
 				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " +
 					pickUpTimeFrom + " to " + pickUpTimeTo)
+				sdValid = true;
+				if (sdValid && mdValid) {
+					document.querySelector("#next-btn").disabled = false;
+				}
 			} else {
 				alert(errMsg.join('\r\n'))
 				console.log("input is still invalid")
@@ -489,6 +497,8 @@
 
 		}
 	})
+
+
 
 	const multiDateForm = document.querySelector("#multi-date-form");
 	multiDateForm.addEventListener("submit", function (event) {
@@ -528,7 +538,7 @@
 
 			if (valid) {
 				console.log("all input is valid")
-				singleDateForm.reset();
+				multiDateForm.reset();
 				document.querySelector("#next-btn").disabled = false
 				dateStr = new Date(pickUpDate);
 				calendar.addEvent({
@@ -539,7 +549,10 @@
 				})
 				alert("Availability has been added to calendar! \r\n Date: " + pickUpDateFrom + " to " +
 					pickUpDateTo + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
-
+				mdValid = true;
+				if (sdValid && mdValid) {
+					document.querySelector("#next-btn").disabled = false;
+				}
 			} else {
 				alert(errMsg.join('\r\n'))
 				console.log("input is still invalid")
