@@ -22,41 +22,13 @@
 	<!-- full calendar -->
 	<link rel="stylesheet" href="fullcalendar/main.css" />
 	<script src="fullcalendar/main.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			var calendarEl = document.getElementById('calendar');
-			var calendar = new FullCalendar.Calendar(calendarEl, {
-				schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
-				initialView: 'dayGridMonth',
-				selectable: true,
-				themeSystem: 'standard',
-				showNonCurrentDates: false,
-				contentHeight: 450,
-				events: [{
-					title: 'orange donation, 5kg',
-					start: '2021-10-04',
-					end: '2021-10-07',
-					display: 'block',
-					color: 'red'
-				}],
-				dateClick: function (info) {
-					alert('Clicked on: ' + info.dateStr);
-					// change the day's background color just for fun
-					// info.dayEl.style.backgroundColor = 'red';
-
-				}
-
-			});
-			calendar.render();
-		});
-	</script>
-
 
 </head>
 
 
+<!-- Responsive navbar and header-->
 <header>
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top">
 		<div class="container-fluid">
 			<a class="navbar-brand px-3 fw-bolder fs-2" href="./index.html" style="color:#7ED7D3">FoodFerry</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -66,70 +38,70 @@
 			<div class="collapse navbar-collapse fs-5 fw-bold px-3" id="navbarCollapse">
 				<ul class="navbar-nav me-auto mb-2 mb-md-0">
 					<li class="nav-item">
-						<a class="nav-link " aria-current="page" href="dashboard.htmll">Dashboard</a>
+						<a class="nav-link" aria-current="page" href="./dashboard-after.html">Dashboard</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="./donate-details.html">Donate</a>
+						<a class="nav-link active" href="donate-details.html">Donate</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="./history.html">History</a>
+						<a class="nav-link" href="history.html">History</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./partners.html">Our Partners</a>
 					</li>
 				</ul>
 
 				<ul class="navbar-nav mb-2 mb-md-0">
+
 					<!-- Notifications-->
 					<li>
 						<!-- Notifications button -->
 						<button id="notifDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
 							data-bs-toggle="dropdown" aria-expanded="false">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-								class="bi bi-bell-fill" viewBox="0 0 16 16">
-								<path
-									d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
-							</svg>
+							<i class="bi bi-bell-fill fs-4"></i>
 						</button>
 
 						<!-- Notification dropdown -->
 						<ul class="dropdown-menu" id="notifDropdownList">
-							<li class="notifDropdownListItem border-bottom"><a href="./home.html"
-									class="notifDropdownItem">
-									<p class="mb-0 text-left">Notification 1</p>
-									<p class="text-end notifTime"><small>Time</small></p>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 1</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
 								</a></li>
-							<li class="notifDropdownListItem border-bottom"><a href="./home.html"
-									class="notifDropdownItem">
-									<p class="mb-0 text-left">Notification 2</p>
-									<p class="text-end notifTime"><small>Time</small></p>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 2</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
 								</a></li>
-							<li class="notifDropdownListItem border-bottom"><a href="./home.html"
-									class="notifDropdownItem">
-									<p class="mb-0 text-left">Notification 3</p>
-									<p class="text-end notifTime"><small>Time</small></p>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 3</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
 								</a></li>
-							<li class="notifDropdownListItem border-bottom"><a href="./home.html"
-									class="notifDropdownItem">
-									<p class="mb-0 text-left">Notification 4</p>
-									<p class="text-end notifTime"><small>Time</small></p>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 4</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
 								</a></li>
-							<li class="notifDropdownListItem border-bottom"><a href="./home.html"
-									class="notifDropdownItem">
-									<p class="mb-0 text-left">Notification 5</p>
-									<p class="text-end notifTime"><small>Time</small></p>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 5</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
 								</a></li>
-							<li class="notifDropdownListItem border-bottom"><a href="./home.html"
-									class="notifDropdownItem">
-									<p class="mb-0 text-left">Notification 6</p>
-									<p class="text-end notifTime"><small>Time</small></p>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 6</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
 								</a></li>
-							<li class="notifDropdownListItem border-bottom"><a href="./home.html"
-									class="notifDropdownItem">
-									<p class="mb-0 text-left">Notification 7</p>
-									<p class="text-end notifTime"><small>Time</small></p>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 7</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
 								</a></li>
-							<li class="notifDropdownListItem border-bottom"><a href="./home.html"
-									class="notifDropdownItem">
-									<p class="mb-0 text-left">Notification 8</p>
-									<p class="text-end notifTime"><small>Time</small></p>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 8</p>
+									<p class="text-mx-3 my-0 text-end notifTime"><small>Time</small></p>
 								</a></li>
 
 						</ul>
@@ -140,23 +112,20 @@
 						<!-- User button-->
 						<button id="userDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
 							data-bs-toggle="dropdown" aria-expanded="false">
-							<svg id="userSvg" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-								fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-								<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-							</svg>
+							<i class="bi bi-person-fill fs-4"></i>
 						</button>
 
 						<!-- User dropdown -->
 						<ul class="dropdown-menu" id="userDropdownList">
-							<li class="userDropdownListItem"><a href="./profile.html" class="userDropdownItem">User
-									Profile</a></li>
-							<li class="userDropdownListItem"><a href="./settings.html"
-									class="userDropdownItem">Settings</a></li>
+							<li class="navDropdownListItem"><a href="./profile.html" class="navDropdownItem">
+									User Profile</a></li>
+							<li class="navDropdownListItem"><a href="./settings.html" class="navDropdownItem">
+									Settings</a></li>
 							<li>
 								<hr class="dropdown-divider">
 							</li>
-							<li class="userDropdownListItem"><a href="./index.html" class="userDropdownItem">Log
-									Out</a></li>
+							<li class="navDropdownListItem"><a href="./index.html" class="navDropdownItem">
+									Log Out</a></li>
 						</ul>
 					</li>
 
@@ -179,221 +148,226 @@
 					<h2 class="mb-4 fs-1"><strong>Donate Food Waste</strong></h2>
 					<div class="row">
 						<div class="col-md-12">
-							<form class="needs-validation" id="pickUpForm" novalidate>
-								<!-- Progress Bar -->
-								<ul id="progressbar" class='p-0'>
-									<li class="active" id="food-details">
-										<strong>Donation Details</strong>
-									</li>
-									<li class="active" id="pick-up">
-										<strong>Pick Up</strong>
-									</li>
-									<li class="active" id="type">
-										<strong>Donation Type</strong>
-									</li>
-									<li class="active" id="availability">
-										<strong>Availability</strong>
-									</li>
-									<li id="confirmation">
-										<strong>Confirmation</strong>
-									</li>
-								</ul>
 
-								<!-- Pick Up Availability -->
-								<fieldset class="step step3">
-									<div class="row mx-2 mb-3 justify-content-center">
-										<div class="col-lg-5">
-											<div class="card mb-3">
-												<h1 class="card-header fs-3">
-													<strong>Availability Form</strong>
-												</h1>
-												<div class="card-header">
-													<ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-														<li class="nav-item">
-															<a class="nav-link active" id="singledate-tab"
-																data-bs-toggle="tab" data-bs-target="#singledate"
-																type="button" role="tab" aria-controls="singledate"
-																aria-selected="true">Single Day</a>
-														</li>
-														<li class="nav-item">
-															<a class="nav-link" id="multidate-tab" data-bs-toggle="tab"
-																data-bs-target="#multidate" type="button" role="tab"
-																aria-controls="multidate" aria-selected="false">Multiple
-																Days</a>
-														</li>
-													</ul>
-												</div>
-												<div class="card-body tab-content" id="myTabContent">
-													<div class="tab-pane fade show active" id="singledate"
-														role="tabpanel" aria-labelledby="singledate-tab">
-														<form class="needs validate" novalidate>
-															<div class="row row-cols-2">
-																<div id="date-specific" class="col-12">
-																	<div class="form-floating mb-3">
-																		<input class="form-control" id="pickUpDate"
-																			type="date" placeholder="DD/MM/YYYY"
-																			data-bs-date-format="DD/MM/YYYY" required />
-																		<label for="pickUpDate">Pick Up Date </label>
-																		<div class="invalid-feedback">
-																			Pick up date is required.
-																		</div>
-																	</div>
-																</div>
-																<div id="av-time-from" class="col-6">
-																	<div class="form-floating mb-3">
-																		<input class="form-control" id="pickUpTimeFrom"
-																			type="time" placeholder="Date" required />
-																		<label for="pickUpTimeFrom">Available Time
-																			From</label>
-																		<div class="invalid-feedback">
-																			Time is required.
-																		</div>
-																	</div>
-																</div>
-																<div id="av-time-to" class="col-6">
-																	<div class="form-floating mb-3">
-																		<input class="form-control" id="pickUpTimeTo"
-																			type="time" placeholder="Date" required />
-																		<label for="pickUpTimeTo">Available Time
-																			To</label>
-																		<div class="invalid-feedback">
-																			Time is required.
-																		</div>
-																	</div>
-																</div>
-																<div id="remarks" class="col-12">
-																	<div class="form-floating mb-3">
-																		<textarea class="form-control" id="remark"
-																			type="text"
-																			placeholder="Enter your message here..."
-																			style="height: 10rem"
-																			data-sb-validations="required"></textarea>
-																		<label for="remark">Remarks (optional)</label>
-																		<div class="invalid-feedback">A message is
-																			required.
-																		</div>
-																	</div>
-																</div>
-																<div class="col-12 d-grid">
-																	<button id='add-availability'
-																		class="btn btn-success">Add
-																		Availability</button>
-																</div>
-															</div>
-														</form>
-													</div>
-													<div class="tab-pane fade " id="multidate" role="tabpanel"
-														aria-labelledby="multidate-tab">
-														<form>
-															<div class="row row-cols-2">
-																<div id="date-from" class="col-lg-6">
-																	<div class="form-floating mb-3">
-																		<input class="form-control" id="pickUpDateFrom"
-																			type="date" placeholder="dd/mm/yyyy"
-																			data-date-format="dd-mm-yyyy" required />
-																		<label for="pickUpDateFrom">Pick Up Date From
-																		</label>
-																		<div class="invalid-feedback">
-																			Pick up date is required.
-																		</div>
-																	</div>
-																</div>
-																<div id="date-to" class="col-lg-6">
-																	<div class="form-floating mb-3">
-																		<input class="form-control" id="pickUpDateTo"
-																			type="date" placeholder="dd/mm/yyyy"
-																			data-date-format="dd-mm-yyyy" required />
-																		<label for="pickUpDateTo">Pick Up Date To
-																		</label>
-																		<div class="invalid-feedback">
-																			Pick up date is required.
-																		</div>
-																	</div>
-																</div>
-																<div id="av-time-from" class="col-lg-6">
-																	<div class="form-floating mb-3">
-																		<input class="form-control" id="pickUpTimeFrom"
-																			type="time" placeholder="Date" required />
-																		<label for="pickUpTimeFrom">Available Time
-																			From</label>
-																		<div class="invalid-feedback">
-																			Time is required.
-																		</div>
-																	</div>
-																</div>
-																<div id="av-time-to" class="col-lg-6">
-																	<div class="form-floating mb-3">
-																		<input class="form-control" id="pickUpTimeTo"
-																			type="time" placeholder="Date" required />
-																		<label for="pickUpTimeTo">Available Time
-																			To</label>
-																		<div class="invalid-feedback">
-																			Time is required.
-																		</div>
-																	</div>
-																</div>
-																<div id="remarks" class="col-12">
-																	<div class="form-floating mb-3">
-																		<textarea class="form-control" id="remark"
-																			type="text"
-																			placeholder="Enter your message here..."
-																			style="height: 10rem"
-																			data-sb-validations="required"></textarea>
-																		<label for="remark">Remarks (optional)</label>
-																		<div class="invalid-feedback">A message is
-																			required.
-																		</div>
-																	</div>
-																</div>
-																<div class="col-12 d-grid">
-																	<button id='add-availability'
-																		class="btn btn-success">Add
-																		Availability</button>
-																</div>
-															</div>
+							<!-- Progress Bar -->
+							<ul id="progressbar" class='p-0'>
+								<li class="active" id="food-details">
+									<strong>Donation Details</strong>
+								</li>
+								<li class="active" id="pick-up">
+									<strong>Pick Up</strong>
+								</li>
+								<li class="active" id="type">
+									<strong>Donation Type</strong>
+								</li>
+								<li class="active" id="availability">
+									<strong>Availability</strong>
+								</li>
+								<li id="confirmation">
+									<strong>Confirmation</strong>
+								</li>
+							</ul>
 
-														</form>
-													</div>
-												</div>
+							<!-- Pick Up Availability -->
+							<fieldset class="step step3">
+								<div class="row mx-2 mb-3 justify-content-center">
+									<div class="col-lg-5">
+										<div class="card mb-3">
+											<h1 class="card-header fs-3">
+												<strong>Availability Form</strong>
+											</h1>
+											<div class="card-header">
+												<ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link active" id="singledate-tab"
+															data-bs-toggle="tab" data-bs-target="#singledate"
+															type="button" role="tab" aria-controls="singledate"
+															aria-selected="true">Single Day</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" id="multidate-tab" data-bs-toggle="tab"
+															data-bs-target="#multidate" type="button" role="tab"
+															aria-controls="multidate" aria-selected="false">Multiple
+															Days</a>
+													</li>
+												</ul>
 											</div>
-										</div>
-										<div class="col-lg-7">
-											<div class="card mb-3">
-												<h1 class="card-header fs-3">
-													<strong>Calendar Overview</strong><span class="mx-2 fs-6">
-														<i class="bi bi-info-circle-fill text-primary"
-															data-bs-toggle="tooltip" data-bs-placement="top"
-															title="Calendar overview shows your current schedule and availability based on your listing activities"></i></span>
-												</h1>
-												<div class="card-body">
-													<div id='calendar'>
-													</div>
+											<div class="card-body tab-content" id="myTabContent">
+												<div class="tab-pane fade show active" id="singledate" role="tabpanel"
+													aria-labelledby="singledate-tab">
+													<form id="single-date-form" class="row row-cols-2 needs-validation"
+														novalidate>
+														<div id="date-specific" class="col-12">
+															<div class="form-floating mb-3">
+																<input class="form-control" id="pickUpDate" type="date"
+																	required />
+																<label for="pickUpDate">Pick Up Date</label>
+																<div class="invalid-feedback">
+																	Pick up date is required.
+																</div>
+															</div>
+
+														</div>
+														<div id="av-time-from" class="col-6">
+															<div class="form-floating mb-3">
+																<input class="form-control" id="pickUpTimeFrom"
+																	type="time" placeholder="Date" required />
+																<label for="pickUpTimeFrom">Available Time
+																	From</label>
+																<div class="invalid-feedback">
+																	Time is required.
+																</div>
+															</div>
+														</div>
+														<div id="av-time-to" class="col-6">
+															<div class="form-floating mb-3">
+																<input class="form-control" id="pickUpTimeTo"
+																	type="time" placeholder="Date" required />
+																<label for="pickUpTimeTo">Available Time
+																	To</label>
+																<div class="invalid-feedback">
+																	Time is required.
+																</div>
+															</div>
+														</div>
+														<div id="remarks" class="col-12">
+															<div class="form-floating mb-3">
+																<textarea class="form-control" id="remark" type="text"
+																	placeholder="Enter your message here..."
+																	style="height: 10rem"></textarea>
+																<label for="remark">Remarks (optional)</label>
+																<div class="invalid-feedback">A message is
+																	required.
+																</div>
+															</div>
+														</div>
+														<div class="col-12 d-grid">
+															<button type="submit" id='add-availability-single'
+																class="btn btn-success">Add
+																Availability</button>
+														</div>
+													</form>
+												</div>
+
+
+												<div class="tab-pane fade" id="multidate" role="tabpanel"
+													aria-labelledby="multidate-tab">
+
+													<form id="multi-date-form" class="row row-cols-2 needs-validation"
+														novalidate>
+														<div id="date-from" class="col-lg-6">
+															<div class="form-floating mb-3">
+																<input class="form-control" id="pickUpDateFromMulti"
+																	type="date" placeholder="dd/mm/yyyy"
+																	data-date-format="dd-mm-yyyy" required />
+																<label for="pickUpDateFromMulti">Pick Up Date From
+																</label>
+																<div class="invalid-feedback">
+																	Pick up date is required.
+																</div>
+															</div>
+														</div>
+														<div id="date-to" class="col-lg-6">
+															<div class="form-floating mb-3">
+																<input class="form-control" id="pickUpDateToMulti"
+																	type="date" placeholder="dd/mm/yyyy"
+																	data-date-format="dd-mm-yyyy" required />
+																<label for="pickUpDateToMulti">Pick Up Date To
+																</label>
+																<div class="invalid-feedback">
+																	Pick up date is required.
+																</div>
+															</div>
+														</div>
+														<div id="av-time-from" class="col-lg-6">
+															<div class="form-floating mb-3">
+																<input class="form-control" id="pickUpTimeFromMulti"
+																	type="time" placeholder="Date" required />
+																<label for="pickUpTimeFromMulti">
+																	Available Time From
+																</label>
+																<div class="invalid-feedback">
+																	Time is required.
+																</div>
+															</div>
+														</div>
+														<div id="av-time-to" class="col-lg-6">
+															<div class="form-floating mb-3">
+																<input class="form-control" id="pickUpTimeToMulti"
+																	type="time" placeholder="Date" required />
+																<label for="pickUpTimeToMulti">
+																	Available Time To
+																</label>
+																<div class="invalid-feedback">
+																	Time is required.
+																</div>
+															</div>
+														</div>
+														<div class="col-12">
+															<div class="form-floating mb-3">
+																<textarea class="form-control" id="remarkMulti"
+																	type="text" placeholder="Enter your message here..."
+																	style="height: 10rem"></textarea>
+																<label for="remarkMulti">Remarks (optional)</label>
+																<div class="invalid-feedback">
+																	A message is required.
+																</div>
+															</div>
+														</div>
+														<div class="col-12 d-grid">
+															<button type="submit" id='add-availability-multi'
+																class="btn btn-success">
+																Add Availability
+															</button>
+														</div>
+													</form>
+
+
 												</div>
 
 											</div>
 										</div>
 									</div>
+									<div class="col-lg-7">
+										<div class="card mb-3">
+											<h1 class="card-header fs-3">
+												<strong>Calendar Overview</strong>
+												<span class="mx-2 fs-6">
+													<i class="bi bi-info-circle-fill text-primary"
+														data-bs-toggle="tooltip" data-bs-placement="top"
+														title="Calendar overview shows your current schedule and availability based on your listing activities">
+													</i>
+												</span>
+											</h1>
+											<div class="card-body">
+												<div id='calendar'>
+												</div>
+											</div>
 
-
-									<!-- buttons -->
-									<div class="row mx-2 mb-4 justify-content-center">
-										<div class="col-lg-6 col-sm-12 d-grid mb-2">
-											<button onclick="prevBtn()" type="button"
-												class="btn btn-light btn-lg prev-btn border-success">
-												Previous
-											</button>
-										</div>
-										<div class="col-lg-6 col-sm-12 d-grid mb-2">
-											<button type="button" class="btn btn-success btn-lg next-btn" id="submitBtn"
-												onclick="location.href = 'donate-confirmation.html'">
-												Next
-											</button>
 										</div>
 									</div>
-								</fieldset>
+								</div>
 
 
-							</form>
+								<!-- buttons -->
+								<div class="row mx-2 mb-4 justify-content-center">
+									<div class="col-lg-6 col-sm-12 d-grid mb-2">
+										<button onclick="prevBtn()" type="button"
+											class="btn btn-light btn-lg prev-btn border-success">
+											Previous
+										</button>
+									</div>
+									<div class="col-lg-6 col-sm-12 d-grid mb-2">
+										<button type="button" class="btn btn-success btn-lg next-btn" id="next-btn"
+											onclick="nextBtn()">
+											Next
+										</button>
+									</div>
+								</div>
+							</fieldset>
+
+
+
 						</div>
 					</div>
 				</div>
@@ -401,33 +375,16 @@
 		</div>
 	</div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					...
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
-				</div>
-			</div>
-		</div>
-	</div>
+
 
 	<!-- loop 11 -->
 	<script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 
 	<!-- Bootstrap and Propper core JS-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
 	</script>
-	
+
 	<!-- Popovers and core theme [MUST INCLUDE FOR POPOVERS/TOOLTIPS] -->
 	<script src="js/scripts.js"></script>
 
@@ -439,6 +396,41 @@
 
 
 <script>
+	var calendarEl = document.getElementById('calendar');
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+		schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+		initialView: 'dayGridMonth',
+		selectable: true,
+		themeSystem: 'standard',
+		showNonCurrentDates: false,
+		contentHeight: 450,
+		events: [{
+				title: 'orange donation, 5kg',
+				start: '2021-10-04',
+				end: '2021-10-07',
+				display: 'block',
+				color: 'red'
+			},
+			{
+				id: 'timeslot1',
+				title: 'Orange Peels, 2kg',
+				start: '2021-11-22',
+				end: '2021-11-25',
+				allDay: true,
+				display: 'block',
+			},
+
+		],
+		dateClick: function (info) {
+			alert('Clicked on: ' + info.dateStr);
+			// change the day's background color just for fun
+			// info.dayEl.style.backgroundColor = 'red';
+		}
+
+	});
+	calendar.render();
+
+
 	//get contact details from session
 	console.log(sessionStorage.getItem('pickUpDetails'));
 
@@ -448,41 +440,61 @@
 	}
 
 	function nextBtn() {
-		window.location.href = "donate-type.html"
+		window.location.href = "donate-confirmation-reschedule.html"
 	}
 
+	const singleDateForm = document.querySelector("#single-date-form");
+	singleDateForm.addEventListener("submit", function (event) {
+		console.log("event is fired")
+		event.preventDefault();
+		if (!singleDateForm.checkValidity()) {
+			console.log("form is invalid")
+			event.stopPropagation();
+		} else {
+			// check for further validity
+			var valid = true;
+			var errMsg = [];
+			var pickUpDate = document.getElementById("pickUpDate").value;
+			var pickUpTimeFrom = document.getElementById("pickUpTimeFrom").value;
+			var pickUpTimeTo = document.getElementById("pickUpTimeTo").value;
+
+			if (pickUpDate != "2021-11-27") {
+				valid = false;
+				errMsg.push("Pick up date should be 26 Nov 2021 (single day)")
+			}
+
+			if (pickUpTimeFrom != "09:00") {
+				valid = false;
+				errMsg.push("Pick up time (from) should be 09:00 AM (single day)")
+			}
+
+			if (pickUpTimeTo != "12:00") {
+				valid = false;
+				errMsg.push("Pick up time (to) should be 12:00 PM (single day)")
+			}
 
 
-	// document.getElementById("date-specific").classList.add("d-none");
-	// document.getElementById("date-from").classList.remove("d-none");
-	// document.getElementById("date-to").classList.remove("d-none");
-	// document.getElementById("av-time-from").classList.remove("d-none");
-	// document.getElementById("av-time-to").classList.remove("d-none");
-	// document.getElementById("remarks").classList.remove("d-none");
-	// document.getElementById("add-availability").classList.remove("disabled");
+			if (valid) {
+				console.log("all input is valid")
+				singleDateForm.reset();
+				document.querySelector("#next-btn").disabled = false
+				calendar.addEvent({
+					title: 'Orange Peels',
+					start: pickUpDate,
+					allDay: true
+				})
+				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
 
-	// check availability type
-	// document.getElementById("availabilityType").addEventListener('change', function(e){
-	// 	console.log(this.value);
-	// 	if (this.value == "ad"){
-	// 		document.getElementById("date-specific").classList.add("d-none");
-	// 		document.getElementById("date-from").classList.remove("d-none");
-	// 		document.getElementById("date-to").classList.remove("d-none");
-	// 		document.getElementById("av-time-from").classList.remove("d-none");
-	// 		document.getElementById("av-time-to").classList.remove("d-none");
-	// 		document.getElementById("remarks").classList.remove("d-none");
-	// 		document.getElementById("add-availability").classList.remove("disabled");
+			} else {
+				alert(errMsg.join('\r\n'))
+				console.log("input is still invalid")
+				event.stopPropagation();
+			}
 
-	// 	} else if (this.value == "sd"){
-	// 		document.getElementById("date-from").classList.add("d-none");
-	// 		document.getElementById("date-to").classList.add("d-none");
-	// 		document.getElementById("date-specific").classList.remove("d-none");
-	// 		document.getElementById("av-time-from").classList.remove("d-none");
-	// 		document.getElementById("av-time-to").classList.remove("d-none");
-	// 		document.getElementById("remarks").classList.remove("d-none");
-	// 		document.getElementById("add-availability").classList.remove("disabled");
-	// 	}
-	// })
+		}
+	})
+
+	
 </script>
 
 

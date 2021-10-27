@@ -475,7 +475,7 @@
 					start: pickUpDate,
 					allDay: true
 				})
-
+				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
 			} else {
 				alert(errMsg.join('\r\n'))
 				console.log("input is still invalid")
@@ -532,6 +532,7 @@
 					end: pickUpDateTo,
 					allDay: true,
 				})
+				alert("Availability has been added to calendar! \r\n Date: " + pickUpDateFrom + " to " + pickUpDateTo + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
 
 			} else {
 				alert(errMsg.join('\r\n'))
