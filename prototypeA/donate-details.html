@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>FoodFerry - Donate</title>
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+	<!-- Bootstrap icons-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/f20ebef500.js" crossorigin="anonymous"></script>
+
+
+	<!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link href="css/donate.css" rel="stylesheet" />
+	<link href="css/home-nav.css" rel="stylesheet" />
+</head>
+
+
+<!-- Responsive navbar and header-->
+<header>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand px-3 fw-bolder fs-2" href="./index.html" style="color:#7ED7D3">FoodFerry</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse fs-5 fw-bold px-3" id="navbarCollapse">
+				<ul class="navbar-nav me-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="./dashboard.html">Dashboard</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="donate-details.html">Donate</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="history.html">History</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./partners.html">Our Partners</a>
+					</li>
+				</ul>
+
+				<ul class="navbar-nav mb-2 mb-md-0">
+
+					<!-- Notifications-->
+					<li>
+						<!-- Notifications button -->
+						<button id="notifDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="bi bi-bell-fill fs-4"></i>
+						</button>
+
+						<!-- Notification dropdown -->
+						<ul class="dropdown-menu" id="notifDropdownList">
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 1</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+								</a></li>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 2</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+								</a></li>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 3</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+								</a></li>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 4</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+								</a></li>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 5</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+								</a></li>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 6</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+								</a></li>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 7</p>
+									<p class="text-end mx-3 my-0 notifTime"><small>Time</small></p>
+								</a></li>
+							<li class="navDropdownListItem border-bottom"><a href="./dashboard.html"
+									class="navDropdownItem">
+									<p class="mb-0 mx-3 my-0 text-left">Notification 8</p>
+									<p class="text-mx-3 my-0 text-end notifTime"><small>Time</small></p>
+								</a></li>
+
+						</ul>
+					</li>
+
+					<!-- User settings -->
+					<li>
+						<!-- User button-->
+						<button id="userDropdownBtn" class="btn dropdown-toggle navIcon" type="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="bi bi-person-fill fs-4"></i>
+						</button>
+
+						<!-- User dropdown -->
+						<ul class="dropdown-menu" id="userDropdownList">
+							<li class="navDropdownListItem"><a href="./profile.html" class="navDropdownItem">
+									User Profile</a></li>
+							<li class="navDropdownListItem"><a href="./settings.html" class="navDropdownItem">
+									Settings</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+							<li class="navDropdownListItem"><a href="./index.html" class="navDropdownItem">
+									Log Out</a></li>
+						</ul>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+</header>
+
+<div class="container-md mt-5">
+	<div class="row ">
+		<!-- Form page 1 food category selection -->
+
+		<div class="col-sm-12 text-center p-0 mt-3 mb-2">
+			<div class="card px-0 pt-4 pb-0 my-3">
+				<!-- Form Title [remain constant] -->
+				<h2 class="mb-4 fs-1"><strong>Donate Food Waste</strong></h2>
+				<div class="row">
+					<div class="col-md-12">
+						<form class="needs-validation" id="donationForm" novalidate>
+							<!-- Progress Bar -->
+							<ul id="progressbar" class='p-0'>
+								<li class="active" id="food-details">
+									<strong>Donation Details</strong>
+								</li>
+								<li id="pick-up">
+									<strong>Pick Up</strong>
+								</li>
+								<li id="type">
+									<strong>Donation Type</strong>
+								</li>
+								<li id="availability">
+									<strong>Availability</strong>
+								</li>
+								<li id="confirmation">
+									<strong>Confirmation</strong>
+								</li>
+							</ul>
+
+
+							<!-- Enter Donation Details -->
+							<fieldset class="step step1 active">
+								<div class="row mx-3 mb-0 g-2">
+
+									<div id="food-category" class="col-lg-8">
+										<div class="card mb-3">
+											<h1 class="card-header fs-3">
+												<strong>Enter Food Details - Select Category</strong>
+											</h1>
+											<div class="card-body">
+												<div class="row mx-3 mb-0 g-2">
+													<div class="col-md-6 col-sm-12">
+														<div class="card bg-dark text-white cards border-0">
+															<img src="assets/non-perishable-category.jpg"
+																class="card-img" alt="Non-Perishable" />
+															<div class="
+																			card-img-overlay
+																			d-flex
+																			flex-column
+																			align-items-center
+																			justify-content-center
+																		">
+																<h5 class="card-title">Non-Perishable</h5>
+																<p class="card-text">
+																	Lorem ipsum dolor sit amet consectetur adipisicing
+																	elit. Illum,
+																	ut!
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="card bg-dark text-white cards border-0">
+
+															<img src="assets/perishable.jpg" class="card-img"
+																alt="Non-Perishable" />
+															<div class="
+																			card-img-overlay
+																			d-flex
+																			flex-column
+																			align-items-center
+																			justify-content-center
+																		">
+																<h5 class="card-title">Perishable</h5>
+																<p class="card-text">
+																	Lorem ipsum dolor sit amet consectetur adipisicing
+																	elit. Illum,
+																	ut!
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="card bg-dark text-white cards border-0">
+															<img src="assets/peels.jpg" class="card-img"
+																alt="Non-Perishable" />
+															<div class="
+																			card-img-overlay
+																			d-flex
+																			flex-column
+																			align-items-center
+																			justify-content-center
+																		">
+																<h5 class="card-title">Fruit and Vegetable Peels</h5>
+																<p class="card-text">
+																	Lorem ipsum dolor sit amet consectetur adipisicing
+																	elit. Illum,
+																	ut!
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="card bg-dark text-white cards border-0">
+															<img src="assets/bottled-drinks.jpg" class="card-img"
+																alt="Non-Perishable" />
+															<div class="
+																			card-img-overlay
+																			d-flex
+																			flex-column
+																			align-items-center
+																			justify-content-center
+																		">
+																<h5 class="card-title">Beverages</h5>
+																<p class="card-text">
+																	Lorem ipsum dolor sit amet consectetur adipisicing
+																	elit. Illum,
+																	ut!
+																</p>
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="card bg-dark text-white cards border-0">
+															<img src="assets/dairy.jpg" class="card-img"
+																alt="Non-Perishable" />
+															<div class="
+																			card-img-overlay
+																			d-flex
+																			flex-column
+																			align-items-center
+																			justify-content-center
+																		">
+																<h5 class="card-title">Dairy Products</h5>
+																<p class="card-text">
+																	Lorem ipsum dolor sit amet consectetur adipisicing
+																	elit. Illum,
+																	ut!
+																</p>
+
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6 col-sm-12">
+														<div class="card bg-dark text-white cards border-0">
+															<img src="assets/other-products.jpg" class="card-img"
+																alt="Non-Perishable" />
+															<div class="
+																			card-img-overlay
+																			d-flex
+																			flex-column
+																			align-items-center
+																			justify-content-center
+																		">
+																<h5 class="card-title">Others</h5>
+																<p class="card-text">
+																	Lorem ipsum dolor sit amet consectetur adipisicing
+																	elit. Illum,
+																	ut!
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+									<div id="food-data" class="col-lg-8 d-none">
+										<div class="card mb-3">
+											<h1 class="card-header fs-3">
+												<strong>Enter Food Details</strong>
+											</h1>
+											<div class="card-body">
+												<div class="row mx-2 mb-3 g-3 text-start">
+													<div class="col-lg-6 col-md-12">
+														<!-- Product Name input-->
+														<label for="prodName" class="form-label">Product / Food Waste
+															Name*</label>
+														<input type="text" class="form-control" id="prodName"
+															placeholder="" required />
+														<div class="invalid-feedback">
+															Product / Food Waste Name is required
+														</div>
+													</div>
+													<div class="col-lg-4 col-md-8 col-sm-12">
+														<!-- Quantity input-->
+														<label for="qty" class="form-label">Quantity*</label>
+														<input type="text" class="form-control" id="qty" placeholder=""
+															required />
+														<div class="invalid-feedback">
+															Quantity is required
+														</div>
+													</div>
+													<div class="col-lg-2 col-md-4 col-sm-12">
+														<label for="unit" class="form-label">Unit*</label>
+														<select class="form-select" required id="unit">
+															<option value="" selected disabled></option>
+															<option value="Kg">Kg</option>
+															<option value="Oz">Oz</option>
+															<option value="Litres">Litres</option>
+														</select>
+														<div class="invalid-feedback">
+															Unit is required
+														</div>
+													</div>
+													<!-- <div class="col-lg-3 col-md-6 col-sm-12">
+														<label for="unit" class="form-label">Stability of
+															products*</label>
+														<select class="form-select" aria-label="Default select example" disabled>
+															<option selected>Choose..</option>
+															<option value="1">Shelf stable</option>
+															<option value="2">Refrigeration (0°C to 5°C)</option>
+															<option value="3">Frozen (below -18°C)</option>
+														</select>
+													</div> -->
+													<!-- Shelf Life input-->
+													<!-- <div class="col-lg-3 col-md-6 col-sm-12">
+														<label for="shelfLife" class="form-label">Shelf Life*</label>
+														<input type="text" class="form-control" id="shelfLife"
+															placeholder="" disabled/>
+													</div> -->
+													<div class="col-lg-12 col-md-12 col-sm-12">
+														<!-- prod date input-->
+														<label for="prodDate" class="form-label">Production
+															Date*</label>
+														<input type="date" class="form-control" id="prodDate"
+															placeholder="dd/mm/yyyy" required />
+														<div class="invalid-feedback">
+															Production Date is required
+														</div>
+													</div>
+													<!-- prod date input-->
+													<!-- <div class="col-lg-3 col-md-6 col-sm-12">
+														<label for="expDate" class="form-label">Expiry Date*</label>
+														<input type="date" class="form-control" id="expDate"
+															placeholder="dd/mm/yyyy" disabled />
+													</div> -->
+													<div class="col-12">
+														<label for="address" class="form-label">Remarks</label>
+														<textarea class="form-control" id="remarks" rows="4"></textarea>
+													</div>
+													<div class="col-12">
+														<label class="form-label" for="disabledCustomFile">Photo of
+															Product / Food Waste*</label>
+														<input type="file" id="photo"
+															class="form-control form-control-lg"
+															aria-label="Large file input example" required />
+														<div class="invalid-feedback">
+															Photo is required
+														</div>
+
+													</div>
+													<div class="col-6 d-grid">
+														<div class="btn btn-light border-success d-block"
+															onclick="backDonation()">
+															Back
+														</div>
+													</div>
+													<div class="col-6 d-grid">
+														<button type="submit" class="btn btn-success d-block">
+															Add Donation
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="card mb-3">
+											<h1 class="card-header fs-3">
+												<strong>Donation Cart</strong>
+											</h1>
+											<div class="card-body">
+												<div class="row">
+													<div id="emptyCart" class="col-12">
+														<div class="fs-4 text-muted">Your donation cart is empty</div>
+													</div>
+													<div class="col-12">
+														<ul id="donationlist" class="list-group d-none">
+
+															<li id="donationItem2" class="list-group-item text-start">
+																<strong class="fs-5">Orange Peels</strong><br>
+																<div class="mb-2">2 kg</div>
+																<div class="mb-2">
+																	Stability of product: Shelf-stable<br>
+																	Production Date: 1/05/21<br>
+																</div>
+																<div class="mb-3">
+																	<a id="add-info-btn-1" href="#"
+																		onclick="viewMoreDetails2()">View more
+																		details</a>
+																	<div id="additional-info-2" class="mb-3 d-none">
+																		Remarks:<br>
+																		Lorem ipsum dolor sit, amet consectetur
+																		adipisicing elit. Eum, voluptate!
+																	</div>
+																</div>
+																<div class="mb-3">
+																	<button type="button" id="edit-donation-2"
+																		class="edit-btn btn btn-warning">
+																		<i class="bi bi-pencil-square"></i>
+																		Edit
+																	</button>
+																	<button type="button" id="remove-donation-2"
+																		class="btn btn-danger" data-bs-toggle="modal"
+																		data-bs-target="#removeItemModal2">
+																		<i class="bi bi-trash"></i>
+																		Remove
+																	</button>
+																</div>
+
+															</li>
+														</ul>
+													</div>
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+									<!-- buttons -->
+									<div class="row mx-2 mb-4">
+										<div class="col-lg-6 col-sm-12 d-grid mb-2">
+											<button type="button" class="btn btn-light btn-lg prev-btn border-success"
+												onclick="prevBtn()">
+												Close
+											</button>
+										</div>
+										<div class="col-lg-6 col-sm-12 d-grid mb-2">
+											<button id="next-btn" type="button" class="btn btn-success btn-lg next-btn" disabled
+												onclick="nextBtn()" ;>
+												Next
+											</button>
+										</div>
+									</div>
+
+								</div>
+
+							</fieldset>
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="removeItemModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Remove Item</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to remove <strong>Fresh Orange Juice, 5kg</strong> from donation cart?
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger" onclick="removeItem(donationItem1)"
+					data-bs-dismiss="modal">Remove</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="removeItemModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Remove Item</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to remove <strong>Orange Peels, 2kg</strong> from donation cart?
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger" onclick="removeItem(donationItem2)"
+					data-bs-dismiss="modal">Remove</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Bootstrap and Propper core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+</script>
+<!-- Core theme JS-->
+<!-- <script src="/js/scripts.js"></script>  -->
+
+
+<script>
+	//get contact details from session
+	console.log(sessionStorage.getItem('pickUpDetails'));
+
+	//view more details
+	function viewMoreDetails1() {
+		if (document.getElementById("additional-info-1").classList.contains("d-none")) {
+			document.getElementById("additional-info-1").classList.remove("d-none")
+		} else {
+			document.getElementById("additional-info-1").classList.add("d-none")
+		}
+	}
+
+	function viewMoreDetails2() {
+		if (document.getElementById("additional-info-2").classList.contains("d-none")) {
+			document.getElementById("additional-info-2").classList.remove("d-none")
+		} else {
+			document.getElementById("additional-info-2").classList.add("d-none")
+		}
+	}
+
+	//remove donation item
+	function removeItem(donItem) {
+		donItem.remove(this);
+	}
+
+	//Previous button
+	function prevBtn() {
+		window.location.href = "dashboard.html"
+	}
+
+	function nextBtn() {
+		window.location.href = "donate-delivery.html"
+	}
+
+	var catItems = document.getElementsByClassName("cards");
+	for (item of catItems) {
+		item.addEventListener("click", (e) => {
+			document.getElementById("food-category").classList.add("d-none");
+			document.getElementById("food-data").classList.remove("d-none");
+		});
+	}
+
+	var editBtns = document.getElementsByClassName("edit-btn");
+	for (editBtn of editBtns) {
+		editBtn.addEventListener("click", (e) => {
+			document.getElementById("food-category").classList.add("d-none");
+			document.getElementById("food-data").classList.remove("d-none");
+		});
+	}
+
+	const donationForm = document.querySelector("#donationForm")
+	donationForm.addEventListener("submit", function (event) {
+		event.preventDefault();
+		if (!donationForm.checkValidity()) {
+			event.stopPropagation();
+		} else {
+			// check for further validity
+			var valid = true;
+			var errMsg = [];
+			var productName = document.getElementById("prodName").value;
+			var qty = document.getElementById("qty").value;
+			var unit = document.getElementById("unit").value;
+			var prodDate = document.getElementById("prodDate").value;
+			var photo = document.getElementById("photo");
+
+			if (productName.toLowerCase() != "orange peels") {
+				valid = false;
+				errMsg.push("Name should be Orange Peels")
+			}
+
+			if (qty != "2") {
+				valid = false;
+				errMsg.push("Quantity is 2")
+			}
+
+			if (unit != "Kg") {
+				valid = false;
+				errMsg.push("Unit should be Kg")
+			}
+
+			if (prodDate != "2021-10-26") {
+				valid = false;
+				errMsg.push("production date is 10 Oct 2021")
+			}
+			
+			var filename = photo.files.item(0).name;
+			console.log(filename)
+			if (filename != "orange_peels.jpg") {
+				valid = false;
+				errMsg.push("Please select orange_peels.jpg")
+			}
+
+			if (valid) {
+				console.log("all input is valid")
+				donationForm.reset();
+				document.getElementById("food-category").classList.remove("d-none");
+				document.getElementById("food-data").classList.add("d-none");
+				document.getElementById("emptyCart").classList.add("d-none");
+				document.getElementById("donationlist").classList.remove("d-none");
+				document.querySelector("#next-btn").disabled = false;
+			} else {
+				alert(errMsg.join('\r\n'))
+				console.log("input is still invalid")
+				event.stopPropagation();
+			}
+
+
+
+		}
+
+		donationForm.classList.add('was-validated')
+	}, false)
+
+
+	function backDonation() {
+		document.getElementById("food-category").classList.remove("d-none");
+		document.getElementById("food-data").classList.add("d-none");
+	}
+
+
+</script>
+
+<script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
+</body>
+
+</html>
