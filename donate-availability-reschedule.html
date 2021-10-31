@@ -321,10 +321,7 @@
 															</button>
 														</div>
 													</form>
-
-
 												</div>
-
 											</div>
 										</div>
 									</div>
@@ -343,7 +340,6 @@
 												<div id='calendar'>
 												</div>
 											</div>
-
 										</div>
 									</div>
 								</div>
@@ -365,9 +361,6 @@
 									</div>
 								</div>
 							</fieldset>
-
-
-
 						</div>
 					</div>
 				</div>
@@ -419,9 +412,24 @@
 				allDay: true,
 				display: 'block',
 			},
+			{
+				id: '2a',
+				title: 'Orange Peels, 2kg',
+				start: '2021-11-26',
+				allDay: true,
+				display: 'block',
+			},
 
 		],
 		dateClick: function (info) {
+
+			if (info.dateStr == "2021-11-26") {
+				console.log(this.getEventById('2a'))
+				this.getEventById('2a').remove
+
+			}
+
+
 			alert('Clicked on: ' + info.dateStr);
 			// change the day's background color just for fun
 			// info.dayEl.style.backgroundColor = 'red';
@@ -483,7 +491,8 @@
 					start: pickUpDate,
 					allDay: true
 				})
-				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " + pickUpTimeFrom + " to " + pickUpTimeTo)
+				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " +
+					pickUpTimeFrom + " to " + pickUpTimeTo)
 
 			} else {
 				alert(errMsg.join('\r\n'))
@@ -493,8 +502,6 @@
 
 		}
 	})
-
-	
 </script>
 
 
