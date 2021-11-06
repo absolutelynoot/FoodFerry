@@ -376,7 +376,7 @@
 	<!-- Bootstrap and Propper core JS-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
-	</script>
+		</script>
 
 	<!-- Popovers and core theme [MUST INCLUDE FOR POPOVERS/TOOLTIPS] -->
 	<script src="js/scripts.js"></script>
@@ -398,27 +398,27 @@
 		showNonCurrentDates: false,
 		contentHeight: 450,
 		events: [{
-				title: 'orange donation, 5kg',
-				start: '2021-10-04',
-				end: '2021-10-07',
-				display: 'block',
-				color: 'red'
-			},
-			{
-				id: 'timeslot1',
-				title: 'Orange Peels, 2kg',
-				start: '2021-11-22',
-				end: '2021-11-25',
-				allDay: true,
-				display: 'block',
-			},
-			{
-				id: '2a',
-				title: 'Orange Peels, 2kg',
-				start: '2021-11-26',
-				allDay: true,
-				display: 'block',
-			},
+			title: 'orange donation, 5kg',
+			start: '2021-10-04',
+			end: '2021-10-07',
+			display: 'block',
+			color: 'red'
+		},
+		{
+			id: 'timeslot1',
+			title: 'Orange Peels, 2kg',
+			start: '2021-11-22',
+			end: '2021-11-25',
+			allDay: true,
+			display: 'block',
+		},
+		{
+			id: '2a',
+			title: 'Orange Peels, 2kg',
+			start: '2021-11-26',
+			allDay: true,
+			display: 'block',
+		},
 
 		],
 		dateClick: function (info) {
@@ -428,13 +428,10 @@
 				this.getEventById('2a').remove
 
 			}
-
-
 			alert('Clicked on: ' + info.dateStr);
 			// change the day's background color just for fun
 			// info.dayEl.style.backgroundColor = 'red';
-		}
-
+		},
 	});
 	calendar.render();
 
@@ -468,7 +465,7 @@
 
 			if (pickUpDate != "2021-11-27") {
 				valid = false;
-				errMsg.push("Pick up date should be 26 Nov 2021 (single day)")
+				errMsg.push("Pick up date should be 27 Nov 2021 (single day)")
 			}
 
 			if (pickUpTimeFrom != "09:00") {
@@ -480,9 +477,9 @@
 				valid = false;
 				errMsg.push("Pick up time (to) should be 12:00 PM (single day)")
 			}
-
-
 			if (valid) {
+
+
 				console.log("all input is valid")
 				singleDateForm.reset();
 				document.querySelector("#next-btn").disabled = false
@@ -491,7 +488,9 @@
 					start: pickUpDate,
 					allDay: true
 				})
-				alert("Availability has been added to calendar! \r\n Date: " + pickUpDate + "\r\n Time: " +
+				calendar.getEventById('2a').remove()
+				calendar.getEventById('timeslot1').remove()
+				alert("Pick up date has been rescheduled! \r\n Date: " + pickUpDate + "\r\n Time: " +
 					pickUpTimeFrom + " to " + pickUpTimeTo)
 
 			} else {
